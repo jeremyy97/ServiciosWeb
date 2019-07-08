@@ -1,0 +1,242 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Menu.master.cs" Inherits="B_Cientificas.Menu" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>B-Cientificas</title>
+    <!-- Custom fonts for this template-->
+    <link href="./vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="./styles/sb-admin-2.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <div className="App">
+        <div id="wrapper">
+          <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="Default.aspx">
+              <div class="sidebar-brand-icon rotate-n-15">
+                <i ><img src="img/logo.png" width="50px;"/></i>
+              </div>
+              <div class="sidebar-brand-text mx-3">Inicio</div>
+            </a>
+
+            <hr class="sidebar-divider my-0"/>
+
+            <li class="nav-item">
+              <a class="nav-link" href="Default.aspx">
+                <i class="fas fa-fw fa-circle"></i>
+                <span>Inicio</span></a>
+            </li>
+
+            <hr class="sidebar-divider"/>
+
+            <div class="sidebar-heading">
+              Seguridad
+            </div>
+
+            <li class="nav-item">
+              <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                <i class="fas fa-fw fa-cog"></i>
+                <span>Usuarios</span>
+              </a>
+              <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                
+                  <a class="collapse-item" href="CrearUsuarios.aspx">Crear Usuarios</a>
+                  <a class="collapse-item" href="RolesSimples.aspx">Roles simples</a>
+                  <a class="collapse-item" href="RolesLaboratorio.aspx">Roles Laboratorio</a>
+                  <a class="collapse-item" href="Puestos.aspx">Puestos</a>
+                </div>
+              </div>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link collapsed" href="Consecutivos.aspx" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+                <i class="fas fa-fw fa-list-ul"></i>
+                <span>Tipos de Consecutivo</span>
+              </a>
+              
+            </li>
+             <li class="nav-item">
+              <a class="nav-link collapsed" href="Consecutivos.aspx"  data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+                <i class="fas fa-fw fa-list-alt"></i>
+                <span>Consecutivos</span>
+              </a>
+              
+            </li>
+             <li class="nav-item">
+              <a class="nav-link collapsed" href="NivelAcademico.aspx" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+                <i class="fas fa-fw fa-list-alt"></i>
+                <span>Nivel Académico</span>
+              </a>
+              
+            </li>
+
+            <hr class="sidebar-divider"/>
+
+            <div class="sidebar-heading">
+              Administración
+            </div>
+
+            <li class="nav-item ">
+              <a class="nav-link collapsed" href="RamasCientificas.aspx" data-target="#collapseGeneral" aria-expanded="true" aria-controls="collapseUtilities">
+                <i class="fas fa-fw fa-list-ul"></i>
+                <span>Ramas Científicas</span>
+              </a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link collapsed" href="Proyectos.aspx"  data-target="#collapseGeneral" aria-expanded="true" aria-controls="collapseUtilities">
+                <i class="fas fa-fw fa-list-alt"></i>
+                <span>Proyectos</span>
+              </a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link collapsed" href="BitacoraExperimental.aspx" data-target="#collapseGeneral" aria-expanded="true" aria-controls="collapseUtilities">
+                <i class="fas fa-fw fa-list-alt"></i>
+                <span>Bitácora Experimental</span>
+              </a>
+            </li>
+            <hr class="sidebar-divider"/>
+
+            <div class="sidebar-heading">
+              Consultas
+            </div>
+
+
+            <li class="nav-item ">
+              <a class="nav-link" href="Bitacora.aspx"  data-target="#collapseConsulta" aria-expanded="true" aria-controls="collapsePages">
+                <i class="fas fa-fw fa-book-open"></i>
+                <span>Bitácora</span>
+              </a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="Errores.aspx"  data-target="#collapseConsulta" aria-expanded="true" aria-controls="collapsePages">
+                <i class="fas fa-fw fa-exclamation-triangle"></i>
+                <span>Errores</span>
+              </a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="Descargas.aspx"  data-target="#collapseConsulta" aria-expanded="true" aria-controls="collapsePages">
+                <i class="fas fa-fw fa-download"></i>
+                <span>Descargas</span>
+              </a>
+            </li>
+          </ul>
+
+        <div id="content-wrapper" class="d-flex flex-column">
+
+          <div id="content">
+
+            <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+              <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                <i class="fa fa-bars"></i>
+              </button>
+              <asp:Label id="label1" runat="server">Usted está en: </asp:Label>
+              &nbsp;<asp:Label id="lblRuta" runat="server" ViewStateMode="Inherit">Inicio</asp:Label>
+              
+              <ul class="navbar-nav ml-auto">
+
+                
+
+                <div class="topbar-divider d-none d-sm-block"></div>
+
+                <li class="nav-item dropdown no-arrow">
+                  <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="mr-2 d-none d-lg-inline text-gray-600 small">Usuario</span>
+                    <img class="img-profile rounded-circle" src="img/silueta.gif"/>
+                  </a>
+                  <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                    <a class="dropdown-item" href="#">
+                      <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                      Profile
+                    </a>
+                    
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                      <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                      Logout
+                    </a>
+                  </div>
+                </li>
+
+              </ul>
+
+            </nav>
+
+            <div class="container-fluid">
+
+              
+       
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+ 
+          
+          <!-- <img src=".\logofondoblancotrans.png" width="750px" style="padding: 70px;"/> --> 
+          
+            </div>
+
+          </div>
+          
+          <footer class="sticky-footer bg-white">
+            <div class="container my-auto">
+              <div class="copyright text-center my-auto">
+                <span>Copyright &copy; B-Cientificas 2019</span>
+              </div>
+            </div>
+          </footer>
+
+        </div>
+
+        </div>
+
+        <a class="scroll-to-top rounded" href="#page-top">
+            <asp:DropDownList class="form-control" ID="ddlIdiomas" runat="server"></asp:DropDownList>
+        <i class="fas fa-angle-up"></i>
+        </a>
+
+        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Cerrar Sesión</h5>
+              <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">×</span>
+              </button>
+            </div>
+            <div class="modal-body">¿Está seguro que desea salir del sistema?</div>
+            <div class="modal-footer">
+              <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
+              <a class="btn btn-primary" href="login.html">Cerrar Sesión</a>
+            </div>
+          </div>
+        </div>
+        </div>
+
+        <script src="./vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+        <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+        <script src="js/sb-admin-2.min.js"></script>
+
+      </div>
+
+        </div>
+    </form>
+</body>
+</html>

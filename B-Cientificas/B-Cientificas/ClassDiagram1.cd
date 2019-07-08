@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="B_Cientificas.Bitacora">
+    <Position X="9.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAIAAAAAAACAAAIgAAgAACAAEAgAAAAAAIAAAA=</HashCode>
+      <FileName>Bitacora.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="B_Cientificas.BitacoraExperimental">
+    <Position X="9.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAQAAAQAAgBCAAAAADAABACQAAgAAIAIAA=</HashCode>
+      <FileName>BitacoraExperimental.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="B_Cientificas.Consecutivos">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAIAACA=</HashCode>
+      <FileName>Consecutivos.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="B_Cientificas.CrearUsuarios">
+    <Position X="7.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAAAAAAAAAggAAAAAAAAAAAAAQAIAAAA=</HashCode>
+      <FileName>CrearUsuarios.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="B_Cientificas.Default">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>Default.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="B_Cientificas.Descargas">
+    <Position X="2.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAAAAAAAIAAAgAAAAAAAgAAAAAAIAAAA=</HashCode>
+      <FileName>Descargas.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="B_Cientificas.Errores">
+    <Position X="4" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAAAAAAAIAAAgAAAAAAAgAAAAAAIAAAA=</HashCode>
+      <FileName>Errores.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="B_Cientificas.InformacionConsecutivo">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAIAACA=</HashCode>
+      <FileName>InformacionConsecutivo.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="B_Cientificas.Login">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>Login.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="B_Cientificas.Menu">
+    <Position X="2.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAAABAAAAAAAAABIAAAAAAAEAAAAAIAAAA=</HashCode>
+      <FileName>Menu.Master.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="B_Cientificas.NivelAcademico">
+    <Position X="4" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>NivelAcademico.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="B_Cientificas.Proyectos">
+    <Position X="5.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAIAAAA=</HashCode>
+      <FileName>Proyectos.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="B_Cientificas.Puestos">
+    <Position X="0.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>Puestos.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="B_Cientificas.RamasCientificas">
+    <Position X="2.25" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>RamasCientificas.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="B_Cientificas.RolesLaboratorio">
+    <Position X="4" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>RolesLaboratorio.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="B_Cientificas.RolesSimples">
+    <Position X="7.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAgAAAAACAAAAAAAAAAAAAAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>RolesSimples.aspx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
