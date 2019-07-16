@@ -13,6 +13,15 @@ namespace B_Cientificas {
     public partial class Consecutivos {
         
         /// <summary>
+        /// gvConsecutivos control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gvConsecutivos;
+        
+        /// <summary>
         /// ddlDescripcion control.
         /// </summary>
         /// <remarks>

@@ -59,7 +59,7 @@ namespace BLL
                     {
                         for (int i = 0; i < dt.Rows.Count; i++)
                         {
-                            if (dt.Rows[i]["Usuario"].ToString() == usuario && dt.Rows[i]["Password"].ToString() == password)
+                            if (dt.Rows[i][1].ToString() == usuario && dt.Rows[i][2].ToString() == password)
                             {
                                 return true;
                             }
@@ -70,32 +70,6 @@ namespace BLL
             }
         }
 
-        public DataSet CargarUsuarios()
-        {
-            cnn = DAL.DAL.trae_conexion("BDConnectionString", ref error, ref numeroError);
-            if (cnn == null)
-            {
-                //insertar en la table de errores
-                HttpContext.Current.Response.Redirect("Error.aspx?error=" + numeroError.ToString() + "&men=" + error);
-                return null;
-            }
-            else
-            {
-                sql = "sp_Lista_Usuario";
-                ds = DAL.DAL.ejecuta_dataset(cnn, sql, true, ref error, ref numeroError);
-                if (numeroError != 0)
-                {
-                    //insertar en la table de errores
-                    HttpContext.Current.Response.Redirect("Error.aspx?error=" + numeroError.ToString() + "&men=" + error);
-                    return null;
-                }
-                else
-                {
-                    return ds;
-                }
-            }
-
-        }
         #endregion
     }
 }

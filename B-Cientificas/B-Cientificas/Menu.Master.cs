@@ -9,9 +9,14 @@ namespace B_Cientificas
 {
     public partial class Menu : System.Web.UI.MasterPage
     {
+        public static string usuario;
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if(usuario!= null)
+            {
+                lblUsuario.Text = usuario;
+            }
+            
         }
     }
 }

@@ -20,6 +20,7 @@ namespace B_Cientificas
         {
             if (logica.Login(txtUsuario.Text, txtPassword.Text))
             {
+                Menu.usuario = txtUsuario.Text;
                 Response.Redirect("Default.aspx");
             }
         }
