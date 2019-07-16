@@ -30,25 +30,12 @@
                                         </div>
                                         <form class="user">
                                             <div class="form-group">
-                                                <input
-                                                    type="text"
-                                                    class="form-control form-control-user"
-                                                    placeholder="Usuario"
-                                                    name="username"
-                                                    />
+                                                <asp:TextBox class="form-control form-control-user" ID="txtUsuario"  placeholder="Usuario" runat="server"></asp:TextBox>
                                             </div>
                                             <div class="form-group">
-                                                <input
-                                                    type="password"
-                                                    class="form-control form-control-user"
-                                                    placeholder="Contraseña"
-                                                    name="password"
-                                                     />
+                                                <asp:TextBox class="form-control form-control-user" placeholder="Contraseña" ID="txtPassword" runat="server"></asp:TextBox>
                                             </div>
-
-                                            <button class="btn btn-primary btn-user btn-block">
-                                                Login
-                                            </button>
+                                            <asp:Button class="btn btn-primary btn-user btn-block" ID="btnLogin" runat="server" Text="Login" OnClick="btnLogin_Click" />
                                             <div>
                                                 <br></br>
                                                 <div class="container" align="center">

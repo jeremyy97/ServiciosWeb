@@ -1,0 +1,6 @@
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas\DAL\bin\Debug\DAL.dll
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas\DAL\bin\Debug\DAL.pdb
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas\DAL\obj\Debug\DAL.dll
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas\DAL\obj\Debug\DAL.pdb
