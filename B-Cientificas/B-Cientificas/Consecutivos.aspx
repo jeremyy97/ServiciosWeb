@@ -1,12 +1,22 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Menu.Master" AutoEventWireup="true" CodeBehind="Consecutivos.aspx.cs" Inherits="B_Cientificas.Consecutivos" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <script>
+        void Check_Clicked(Object sender, EventArgs e) 
+      {
+
+         // Calculate the subtotal and display the result in currency format.
+         // Include tax if the check box is selected.
+         Message.Text = CalculateTotal(checkbox1.Checked).ToString("c");
+
+      }
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container">
         <form class="card">
             <fieldset>
                 <legend>Lista de consecutivos</legend>
-                <asp:GridView class="table" ID="gvConsecutivos" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None">
+                <asp:GridView class="table" ID="gvConsecutivos" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" OnRowCommand="gvConsecutivos_RowCommand">
                     <AlternatingRowStyle BackColor="White" />
                     <Columns>
                         <asp:ButtonField Text="Editar" />
@@ -74,17 +84,7 @@
                             </td>
                             <td>
                                 <div class="form-group">
-                                    <asp:DropDownList ID="ddlDescripcion" class="form-control" runat="server">
-                                        <asp:ListItem Value="1">Proyectos</asp:ListItem>
-                                        <asp:ListItem Value="2">Bitácora Experimental</asp:ListItem>
-                                        <asp:ListItem Value="3">Roles</asp:ListItem>
-                                        <asp:ListItem Value="4">Ramas Científicas</asp:ListItem>
-                                        <asp:ListItem Value="5">Puestos</asp:ListItem>
-                                        <asp:ListItem Value="6">Nivel Académico</asp:ListItem>
-                                        <asp:ListItem Value="7">Bitácora</asp:ListItem>
-                                        <asp:ListItem Value="8">Errores</asp:ListItem>
-                                        <asp:ListItem Value="9">Usuarios</asp:ListItem>
-                                    </asp:DropDownList>
+                                    <asp:TextBox  class="form-control input-md"  ID="txtDescripcion" runat="server" ReadOnly="true" ></asp:TextBox>
                                 </div>
                             </td>
                         </tr>
@@ -94,7 +94,7 @@
                             </td>
                             <td>
                                 <div class="form-group">
-                                    <input id="consecutivo" name="consecutivo1"  type="text" placeholder="" class="form-control input-md" />
+                                    <asp:TextBox class="form-control input-md" ID="txtConsecutivo" runat="server"></asp:TextBox>
                                 </div>
                             </td>
                         </tr>
@@ -104,10 +104,7 @@
                             </td>
                             <td align="left">
                                 <div class="form-group">
-                                    <label class="checkbox-inline" for="prefijoCheck-0">
-                                        <input type="checkbox" name="prefijoCheck" value="1" />
-                                        Sí
-                                    </label>
+                                    <asp:CheckBox  ID="chkBoxPrefijo" class="checkbox-inline" runat="server" Text="Sí" OnCheckedChanged="chkBoxPrefijo_CheckedChanged" />
                                 </div>
                             </td>
                         </tr>
@@ -117,7 +114,7 @@
                             </td>
                             <td>
                                 <div class="form-group">
-                                    <input id="prefijo"  name="prefijo" type="text"  placeholder="" class="form-control input-md" disabled="true"/>
+                                    <asp:TextBox ID="txtPrefijo" class="form-control input-md" runat="server"></asp:TextBox>
                                 </div>
                             </td>
                         </tr>
@@ -127,10 +124,7 @@
                             </td>
                             <td align="left">
                                 <div class="form-group">
-                                    <label class="checkbox-inline" for="rangoCheck-0">
-                                        <input type="checkbox" name="rangoCheck" id="rangoCheck-0" value="false" />
-                                        Sí
-                                    </label>
+                                    <asp:CheckBox class="checkbox-inline" Text="Si" ID="chkBoxRango" runat="server" OnCheckedChanged="chkBoxRango_CheckedChanged" />
                                 </div>
                             </td>
                         </tr>
@@ -140,7 +134,7 @@
                             </td>
                             <td>
                                 <div class="form-group">
-                                    <input id="rangoInicial" name="rango_inicial" type="text"  placeholder="" class="form-control input-md"/>
+                                    <asp:TextBox class="form-control input-md" ID="txtInicio" runat="server"></asp:TextBox>
                                 </div>
                             </td>
                         </tr>
@@ -150,7 +144,7 @@
                             </td>
                             <td>
                                 <div class="form-group">
-                                    <input id="rangoFinal"  name="rango_final" type="text" placeholder="" class="form-control input-md" disabled="true" />
+                                    <asp:TextBox class="form-control input-md" ID="txtFinal" runat="server"></asp:TextBox>
                                 </div>
                             </td>
                         </tr>
