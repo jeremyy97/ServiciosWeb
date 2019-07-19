@@ -68,6 +68,7 @@
                 <legend>Editar Consecutivo</legend>
                 <label class="col-md-4 control-label" for="usuario"></label>
                 <br>
+                <br>
                 <br></br>
                 <div>
                     <table runat="server" align="center">
@@ -87,8 +88,11 @@
                                 Consecutivo:</label> </td>
                             <td>
                                 <div class="form-group">
-                                    <asp:TextBox ID="txtConsecutivo" runat="server" class="form-control input-md"></asp:TextBox>
+                                    <asp:TextBox ID="txtConsecutivo" runat="server" class="form-control input-md" MaxLength="10"></asp:TextBox>
                                 </div>
+                            </td>
+                            <td>
+                                <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="txtConsecutivo" ErrorMessage="Ingrese únicamente números" Font-Size="Medium" ForeColor="Red" ValidationExpression="^\d+$"></asp:RegularExpressionValidator>
                             </td>
                         </tr>
                         <tr>
@@ -153,6 +157,8 @@
                         </tr>
                     </table>
                 </div>
+                <br></br>
+                </br>
                 </br>   
             </fieldset>
         </asp:Panel>

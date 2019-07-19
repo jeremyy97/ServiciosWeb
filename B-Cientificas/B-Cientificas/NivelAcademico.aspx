@@ -15,11 +15,7 @@
                             </td>
                             <td>
                                 <div class="form-group">
-                                    <input
-                                        type="text"
-                                        placeholder=""
-                                        class="form-control"
-                                        name="id" disabled/>
+                                    <asp:TextBox class="form-control" ID="txtCodigo" runat="server"></asp:TextBox>
                                 </div>
                             </td>
                         </tr>
@@ -50,11 +46,7 @@
                             </td>
                             <td>
                                 <div class="form-group">
-                                    <input
-                                        type="text"
-                                        placeholder=""
-                                        class="form-control"
-                                        name="usuario1"/>
+                                    <asp:TextBox class="form-control" ID="txtDetalle" runat="server"></asp:TextBox>
                                 </div>
                             </td>
                         </tr>
@@ -62,13 +54,13 @@
                             <td></td>
                             <td>
                                 <div class="form-group">
-                                    <button id="crearUsuario"  name="crearUsuario" class="btn btn-primary">Guardar Registro</button>
+                                    <asp:Button  class="btn btn-primary" ID="btnGuardar Registro" runat="server" Text="Button" />
                                 </div>
                             </td>
                             
                             <td>
                                 <div class="form-group">
-                                    <button id="limpiar" name="limpiar" class="btn btn-primary">Limpiar</button>
+                                    <asp:Button  class="btn btn-primary" ID="btnLimpiar" runat="server" Text="Limpiar" />
                                 </div>
                             </td>
                         </tr>
@@ -76,15 +68,16 @@
                             <td></td>
                             <td>
                                 <div class="form-group">
-                                    <button id="eliminarRegistro" name="eliminarRegistro" class="btn btn-primary">Eliminar Registro</button>
+                                    <asp:Button  class="btn btn-primary" ID="btnEliminarRegistro" runat="server" Text="Eliminar Registro" />
                                 </div>
                             </td>
                         </tr>
                     </table>
                     <div class="card">
                         <div class="form-group">
-                            <button id="ActualizarTabla" name="ActualizarTabla" class="btn btn-primary">Actualizar Tabla</button>
+                            <asp:Button  class="btn btn-primary" ID="btnActualizar" runat="server" Text="Actualizar Tabla" />
                         </div>
+                        <asp:GridView ID="gvNivelAcademico" runat="server"></asp:GridView>
                         <table class="table">
                             <thead class="thead-dark">
                                 <tr>

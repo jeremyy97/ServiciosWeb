@@ -92,38 +92,42 @@ namespace B_Cientificas
 
         protected void aceptar_Click(object sender, EventArgs e)
         {
-            ConsecutivoLogica consecutivo = new ConsecutivoLogica();
-            consecutivo.Consecutivo_id = id;
-            consecutivo.Nombre = txtDescripcion.Text;
-            consecutivo.Consecutivo = txtConsecutivo.Text;
-            if (chkBoxPrefijo.Checked)
+            if (Page.IsValid)
             {
-                consecutivo.PoseePrefijo = "true";
-                consecutivo.Prefijo = txtPrefijo.Text;
-            }
-            else
-            {
-                consecutivo.PoseePrefijo = "false";
-                consecutivo.Prefijo = "";
-            }
-            if (chkBoxRango.Checked)
-            {
-                consecutivo.PoseeRango = "true";
-                consecutivo.Inicio = txtInicio.Text;
-                consecutivo.Fin = txtFinal.Text;
-            }
-            else
-            {
-                consecutivo.PoseeRango = "false";
-                consecutivo.Inicio = "0";
-                consecutivo.Fin = "0";
-            }
-            consecutivo.TipoConsecutivo_Id = id;
-            if (logica.ActualizarConsecutivo(consecutivo))
-            {
+                ConsecutivoLogica consecutivo = new ConsecutivoLogica();
+                consecutivo.Consecutivo_id = id;
+                consecutivo.Nombre = txtDescripcion.Text;
+                consecutivo.Consecutivo = txtConsecutivo.Text;
+                if (chkBoxPrefijo.Checked)
+                {
+                    consecutivo.PoseePrefijo = "true";
+                    consecutivo.Prefijo = txtPrefijo.Text;
+                }
+                else
+                {
+                    consecutivo.PoseePrefijo = "false";
+                    consecutivo.Prefijo = "";
+                }
+                if (chkBoxRango.Checked)
+                {
+                    consecutivo.PoseeRango = "true";
+                    consecutivo.Inicio = txtInicio.Text;
+                    consecutivo.Fin = txtFinal.Text;
+                }
+                else
+                {
+                    consecutivo.PoseeRango = "false";
+                    consecutivo.Inicio = "0";
+                    consecutivo.Fin = "0";
+                }
+                consecutivo.TipoConsecutivo_Id = id;
+                if (logica.ActualizarConsecutivo(consecutivo))
+                {
 
-                lblMensaje.Text = "Consecutivo " + txtDescripcion.Text + " actualizado correctamente";
-            }
+                    lblMensaje.Text = "Consecutivo " + txtDescripcion.Text + " actualizado correctamente";
+                }
+            }    
+            
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -133,38 +137,6 @@ namespace B_Cientificas
         protected void Button1_Click1(object sender, EventArgs e)
         {
             
-            ConsecutivoLogica consecutivo = new ConsecutivoLogica();
-            consecutivo.Consecutivo_id = id;
-            consecutivo.Nombre = txtDescripcion.Text;
-            consecutivo.Consecutivo = txtConsecutivo.Text;
-            if (chkBoxPrefijo.Checked)
-            {
-                consecutivo.PoseePrefijo = "true";
-                consecutivo.Prefijo = txtPrefijo.Text;
-            }
-            else
-            {
-                consecutivo.PoseePrefijo = "false";
-                consecutivo.Prefijo = "";
-            }
-            if (chkBoxRango.Checked)
-            {
-                consecutivo.PoseeRango = "true";
-                consecutivo.Inicio = txtInicio.Text;
-                consecutivo.Fin = txtFinal.Text;
-            }
-            else
-            {
-                consecutivo.PoseeRango = "false";
-                consecutivo.Inicio = "0";
-                consecutivo.Fin = "0";
-            }
-            consecutivo.TipoConsecutivo_Id = id;
-            if (logica.ActualizarConsecutivo(consecutivo))
-            {
-                
-                lblMensaje.Text = "Consecutivo " + txtDescripcion.Text + " actualizado correctamente";
-            }
         }
 
         protected void txtConsecutivo_TextChanged(object sender, EventArgs e)

@@ -4,7 +4,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container">
-        <form class="card">
+        <asp:Panel ID="Panel1" class="card" runat="server">
             <fieldset>
                 <legend>Usuarios</legend>
                 <label class="col-md-4 control-label" for="usuario">Crear nueva cuenta </label>
@@ -17,11 +17,7 @@
                             </td>
                             <td>
                                 <div class="form-group">
-                                    <input
-                                        type="text"
-                                        placeholder=""
-                                        class="form-control"
-                                        name="id" disabled/>
+                                    <asp:TextBox class="form-control" ID="txtCodigo" runat="server"></asp:TextBox>
                                 </div>
                             </td>
                         </tr>
@@ -32,11 +28,7 @@
                             </td>
                             <td>
                                 <div class="form-group">
-                                    <input
-                                        type="text"
-                                        placeholder=""
-                                        class="form-control"
-                                        name="usuario1"/>
+                                    <asp:TextBox class="form-control" ID="txtNombre" runat="server"></asp:TextBox>
                                 </div>
                             </td>
                         </tr>
@@ -46,11 +38,7 @@
                             </td>
                             <td>
                                 <div class="form-group">
-                                    <input
-                                        type="text"
-                                        placeholder=""
-                                        class="form-control"
-                                        name="nombre"/>
+                                    <asp:TextBox class="form-control" ID="txtPrimerApellido" runat="server"></asp:TextBox>
                                 </div>
                             </td>
                         </tr>
@@ -60,11 +48,7 @@
                             </td>
                             <td>
                                 <div class="form-group">
-                                    <input
-                                        type="text"
-                                        placeholder=""
-                                        class="form-control"
-                                        name="primer_apellido" />
+                                    <asp:TextBox class="form-control" ID="txtSegundoApellido" runat="server"></asp:TextBox>
                                 </div>
                             </td>
                         </tr>
@@ -74,11 +58,7 @@
                             </td>
                             <td>
                                 <div class="form-group">
-                                    <input
-                                        type="text"
-                                        placeholder=""
-                                        class="form-control"
-                                        name="segundo_apellido" />
+                                    <asp:TextBox class="form-control" ID="txtCelular" runat="server"></asp:TextBox>
                                 </div>
                             </td>
                         </tr>
@@ -105,11 +85,7 @@
                             </td>
                             <td>
                                 <div class="form-group">
-                                    <input
-                                        type="text"
-                                        placeholder=""
-                                        class="form-control"
-                                        name="nombreUsuario" />
+                                    <asp:TextBox class="form-control" ID="txtNombreUsuario" runat="server"></asp:TextBox>
                                 </div>
                             </td>
                         </tr>
@@ -124,11 +100,7 @@
                             </td>
                             <td>
                                 <div class="form-group">
-                                    <input
-                                        type="password"
-                                        placeholder=""
-                                        class="form-control"
-                                        name="contrasenna" disabled/>
+                                    <asp:TextBox class="form-control" ID="txtPassword" runat="server"></asp:TextBox>
                                 </div>
                             </td>
                         </tr>
@@ -138,11 +110,7 @@
                             </td>
                             <td>
                                 <div class="form-group">
-                                    <input
-                                        type="password"
-                                        placeholder=""
-                                        class="form-control"
-                                        name="contrasenna" disabled />
+                                    <asp:TextBox class="form-control" ID="txtConfirmarPassword" runat="server"></asp:TextBox>
                                 </div>
                             </td>
                         </tr>
@@ -173,11 +141,7 @@
                             </td>
                             <td>
                                 <div class="form-group">
-                                    <input
-                                        type="text"
-                                        placeholder=""
-                                        class="form-control"
-                                        name="respuesta" />
+                                    <asp:DropDownList CssClass="form-control" ID="ddlNivelesAcademicos" runat="server"></asp:DropDownList>                                        
                                 </div>
                             </td>
                         </tr>
@@ -187,11 +151,7 @@
                             </td>
                             <td>
                                 <div class="form-group">
-                                    <input
-                                        type="text"
-                                        placeholder=""
-                                        class="form-control"
-                                        name="respuesta" />
+                                    <asp:DropDownList CssClass="form-control" ID="ddlPuestos" runat="server"></asp:DropDownList>                                        
                                 </div>
                             </td>
                         </tr>
@@ -199,10 +159,11 @@
                             <tr>
                                 <td colspan="2">
                                     <div class="form-group">
-                                        <button id="crearUsuario" name="crearUsuario" class="btn btn-primary" onclick="{this.controlarSubmit}">Crear Usuario</button>
+                                        <asp:Button ID="btnCrearUsuario" class="btn btn-primary" runat="server" Text="Crear Usuario" />
                                     </div>
                                 </td>
                             </tr>
+                        <asp:GridView ID="gvUsuarios" runat="server"></asp:GridView>
                     </table>
                     <table class="table">
                         <thead class="thead-dark">
@@ -230,7 +191,7 @@
                     </table>
                 </div>
             </fieldset>
-        </form>
+       </asp:Panel>
         <script src="vendor/jquery/jquery.min.js"></script>
         <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
