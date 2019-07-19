@@ -48,7 +48,7 @@ namespace B_Cientificas
                 txtInicio.ReadOnly = false;
                 txtInicio.Text = consecutivo.Inicio;
                 txtFinal.ReadOnly = false;
-                txtFinal.Text = consecutivo.Inicio;
+                txtFinal.Text = consecutivo.Fin;
             }
             else
             {
@@ -101,7 +101,7 @@ namespace B_Cientificas
                 if (chkBoxPrefijo.Checked)
                 {
                     consecutivo.PoseePrefijo = "true";
-                    consecutivo.Prefijo = txtPrefijo.Text;
+                    consecutivo.Prefijo = txtPrefijo.Text; 
                 }
                 else
                 {
@@ -120,7 +120,7 @@ namespace B_Cientificas
                     consecutivo.Inicio = "0";
                     consecutivo.Fin = "0";
                 }
-                consecutivo.TipoConsecutivo_Id = id;
+                consecutivo.TipoConsecutivo_Id = logica.BuscarConsecutivo(id).TipoConsecutivo_Id;
                 if (logica.ActualizarConsecutivo(consecutivo))
                 {
 
@@ -149,6 +149,11 @@ namespace B_Cientificas
 
         protected void CheckBox1_CheckedChanged(object sender, EventArgs e)
         {
+        }
+
+        protected void nuevobtn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("InformacionConsecutivo.aspx");
         }
     }
 }

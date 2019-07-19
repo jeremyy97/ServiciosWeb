@@ -3,9 +3,9 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container">
-        <asp:Button ID="Button1" runat="server" Text="Button" OnClick="Button1_Click1" />
+        <!--<asp:Button ID="Button1" runat="server" Text="Button" OnClick="Button1_Click1" />
         <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
-        <asp:CheckBox ID="CheckBox1" runat="server" AutoPostBack="True" OnCheckedChanged="CheckBox1_CheckedChanged" />
+        <asp:CheckBox ID="CheckBox1" runat="server" AutoPostBack="True" OnCheckedChanged="CheckBox1_CheckedChanged" />-->
         <asp:Panel class="card" ID="Panel2" runat="server"></asp:Panel>
             <fieldset>
                 <legend>Lista de consecutivos</legend>
@@ -16,7 +16,7 @@
                     </Columns>
                     <EditRowStyle BackColor="#7C6F57" />
                     <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
-                    <HeaderStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
+                    <HeaderStyle BackColor="#0067c6" Font-Bold="True" ForeColor="White" />
                     <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
                     <RowStyle BackColor="#E3EAEB" />
                     <SelectedRowStyle BackColor="#C5BBAF" Font-Bold="True" ForeColor="#333333" />
@@ -25,7 +25,7 @@
                     <SortedDescendingCellStyle BackColor="#D4DFE1" />
                     <SortedDescendingHeaderStyle BackColor="#15524A" />
                 </asp:GridView>
-                <table id="idTable" class="table">
+                <!--<table id="idTable" class="table">
                     <thead class="thead-dark">
                         <tr>
                             <th>Codigo</th>
@@ -54,11 +54,12 @@
                             <td><a href="InformacionConsecutivo.aspx">Editar</a></td>
                         </tr>
                     </tbody>
-                </table>
+                </table>-->
                 <div class="form-group">
                     <label class="col-md-4 control-label" for="nuevo"></label>
                     <div class="col-md-4">
-                        <button id="nuevo" name="nuevo" class="btn btn-primary" onclick="{this.mostrarNuevoConsecutivo}">Nuevo</button>
+                        
+                        <asp:Button ID="nuevobtn" runat="server" class="btn btn-primary" name="nuevo"  Text="Nuevo" OnClick="nuevobtn_Click" />
                     </div>
                 </div>
             </fieldset>

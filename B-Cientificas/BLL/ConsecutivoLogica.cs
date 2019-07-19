@@ -140,6 +140,51 @@ namespace BLL
                 }
             }
         }
+
+        public Boolean InsertarConsecutivo(ConsecutivoLogica consecutivo)
+        {
+            cnn = DAL.DAL.trae_conexion("BDConnectionString", ref error, ref numeroError);
+            if (cnn == null)
+            {
+                //insertar en la table de errores
+                HttpContext.Current.Response.Redirect("Error.aspx?error=" + numeroError.ToString() + "&men=" + error);
+                return false;
+            }
+            else
+            {
+                sql = "sp_Inserta_Consecutivo";
+                ParamStruct[] parametros = new ParamStruct[10];
+                DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@Consecutivo_id", SqlDbType.Int, consecutivo.Consecutivo_id);
+                DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 1, "@nombre", SqlDbType.VarChar, consecutivo.Nombre);
+                DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 2, "@Consecutivo", SqlDbType.VarChar, consecutivo.Consecutivo);
+                DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 3, "@PoseePrefijo", SqlDbType.VarChar, consecutivo.PoseePrefijo);
+                DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 4, "@Prefijo", SqlDbType.VarChar, consecutivo.Prefijo);
+                DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 5, "@PoseeRanGO", SqlDbType.VarChar, consecutivo.PoseeRango);
+                DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 6, "@Inicio", SqlDbType.VarChar, consecutivo.Inicio);
+                DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 7, "@Fin", SqlDbType.VarChar, consecutivo.Fin);
+                DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 8, "@TipoConsecutivo_Id", SqlDbType.Int, consecutivo.TipoConsecutivo_Id);
+                DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 9, "@Password", SqlDbType.VarChar, "password");
+                DAL.DAL.conectar(cnn, ref error, ref numeroError);
+                DAL.DAL.ejecuta_sqlcommand(cnn, sql, true, parametros, ref error, ref numeroError);
+                if (numeroError != 0)
+                {
+                    //insertar en la table de errores
+                    HttpContext.Current.Response.Redirect("Error.aspx?error=" + numeroError.ToString() + "&men=" + error);
+                    DAL.DAL.desconectar(cnn, ref error, ref numeroError);
+                    return false;
+                }
+                else
+                {
+                    DAL.DAL.desconectar(cnn, ref error, ref numeroError);
+                    return true;
+                }
+            }
+        }
+
+
+        
+
+
         #endregion
     }
 }

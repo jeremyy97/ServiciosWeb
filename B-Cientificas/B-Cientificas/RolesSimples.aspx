@@ -7,7 +7,7 @@
         <table>
             <tr>
                 <td>
-                    <asp:ListBox ID="ListBox1" runat="server" Height="252px" Width="163px"></asp:ListBox>
+                    <asp:ListBox ID="lbxUsuarios" runat="server" Height="252px" Width="163px" OnSelectedIndexChanged="lbxUsuarios_SelectedIndexChanged"></asp:ListBox>
                 </td>
                 <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
                 <td class="form-group">
@@ -15,7 +15,7 @@
                         <fieldset>
                         <legend>Lista de Roles</legend>
                         <div class="form-group">
-                           <asp:CheckBoxList ID="CheckBoxList1" runat="server">
+                           <asp:CheckBoxList ID="cbxList" runat="server">
                                <asp:ListItem Value="1">Administrador</asp:ListItem>
                                <asp:ListItem Value="2">Seguridad</asp:ListItem>
                                <asp:ListItem Value="3">Consecutivos</asp:ListItem>

@@ -70,6 +70,7 @@
     <Content Include="Bitacora.aspx" />
     <Content Include="BitacoraExperimental.aspx" />
     <Content Include="Consecutivos.aspx" />
+    <Content Include="CrearTipoConsecutivo.aspx" />
     <Content Include="CrearUsuarios.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="Descargas.aspx" />
@@ -92,6 +93,7 @@
     <Content Include="RolesSimples.aspx" />
     <Content Include="styles\sb-admin-2.css" />
     <Content Include="styles\sb-admin-2.min.css" />
+    <Content Include="TipoConsecutivos.aspx" />
     <Content Include="vendor\bootstrap\js\bootstrap.bundle.js" />
     <Content Include="vendor\bootstrap\js\bootstrap.bundle.min.js" />
     <Content Include="vendor\bootstrap\js\bootstrap.js" />
@@ -1673,6 +1675,13 @@
     <Compile Include="Consecutivos.aspx.designer.cs">
       <DependentUpon>Consecutivos.aspx</DependentUpon>
     </Compile>
+    <Compile Include="CrearTipoConsecutivo.aspx.cs">
+      <DependentUpon>CrearTipoConsecutivo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CrearTipoConsecutivo.aspx.designer.cs">
+      <DependentUpon>CrearTipoConsecutivo.aspx</DependentUpon>
+    </Compile>
     <Compile Include="CrearUsuarios.aspx.cs">
       <DependentUpon>CrearUsuarios.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1764,6 +1773,13 @@
     </Compile>
     <Compile Include="RolesSimples.aspx.designer.cs">
       <DependentUpon>RolesSimples.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TipoConsecutivos.aspx.cs">
+      <DependentUpon>TipoConsecutivos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TipoConsecutivos.aspx.designer.cs">
+      <DependentUpon>TipoConsecutivos.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -1926,6 +1942,10 @@
       <Project>{a6de26dc-b48e-4196-bf9a-8ddf4edc1e04}</Project>
       <Name>BLL</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="usuarios\firmas\" />
+    <Folder Include="usuarios\fotos\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
