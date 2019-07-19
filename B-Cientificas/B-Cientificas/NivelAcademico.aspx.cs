@@ -9,9 +9,11 @@ namespace B_Cientificas
 {
     public partial class NivelAcademico : System.Web.UI.Page
     {
+        NivelAcademicoLogica logica = new NivelAcademicoLogica();
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            gvNivelAcademico.DataSource = logica.CargarNivelesAcademicos().Tables[0];
+            gvNivelAcademico.DataBind();
         }
     }
 }
