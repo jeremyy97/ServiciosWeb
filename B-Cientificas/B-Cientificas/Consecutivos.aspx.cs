@@ -11,10 +11,13 @@ namespace B_Cientificas
     public partial class Consecutivos : System.Web.UI.Page
     {
         ConsecutivoLogica logica = new ConsecutivoLogica();
+        static int id = 1;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             gvConsecutivos.DataSource = logica.CargarConsecutivos().Tables[0];
             gvConsecutivos.DataBind();
+
         }
 
         protected void gvConsecutivos_RowCommand(object sender, GridViewCommandEventArgs e)
@@ -24,6 +27,7 @@ namespace B_Cientificas
             ConsecutivoLogica consecutivo = new ConsecutivoLogica();
             consecutivo = logica.BuscarConsecutivo(index +1);
 
+            id = consecutivo.Consecutivo_id;
             txtDescripcion.Text = consecutivo.Nombre;
             txtConsecutivo.Text = consecutivo.Consecutivo;
             chkBoxPrefijo.Checked = Convert.ToBoolean(consecutivo.PoseePrefijo);
@@ -79,6 +83,100 @@ namespace B_Cientificas
                 txtInicio.ReadOnly = true;
                 txtFinal.ReadOnly = true;
             }
+        }
+
+        protected void chkBoxPrefijo_Load(object sender, EventArgs e)
+        {
+           
+        }
+
+        protected void aceptar_Click(object sender, EventArgs e)
+        {
+            ConsecutivoLogica consecutivo = new ConsecutivoLogica();
+            consecutivo.Consecutivo_id = id;
+            consecutivo.Nombre = txtDescripcion.Text;
+            consecutivo.Consecutivo = txtConsecutivo.Text;
+            if (chkBoxPrefijo.Checked)
+            {
+                consecutivo.PoseePrefijo = "true";
+                consecutivo.Prefijo = txtPrefijo.Text;
+            }
+            else
+            {
+                consecutivo.PoseePrefijo = "false";
+                consecutivo.Prefijo = "";
+            }
+            if (chkBoxRango.Checked)
+            {
+                consecutivo.PoseeRango = "true";
+                consecutivo.Inicio = txtInicio.Text;
+                consecutivo.Fin = txtFinal.Text;
+            }
+            else
+            {
+                consecutivo.PoseeRango = "false";
+                consecutivo.Inicio = "0";
+                consecutivo.Fin = "0";
+            }
+            consecutivo.TipoConsecutivo_Id = id;
+            if (logica.ActualizarConsecutivo(consecutivo))
+            {
+
+                lblMensaje.Text = "Consecutivo " + txtDescripcion.Text + " actualizado correctamente";
+            }
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+        }
+
+        protected void Button1_Click1(object sender, EventArgs e)
+        {
+            
+            ConsecutivoLogica consecutivo = new ConsecutivoLogica();
+            consecutivo.Consecutivo_id = id;
+            consecutivo.Nombre = txtDescripcion.Text;
+            consecutivo.Consecutivo = txtConsecutivo.Text;
+            if (chkBoxPrefijo.Checked)
+            {
+                consecutivo.PoseePrefijo = "true";
+                consecutivo.Prefijo = txtPrefijo.Text;
+            }
+            else
+            {
+                consecutivo.PoseePrefijo = "false";
+                consecutivo.Prefijo = "";
+            }
+            if (chkBoxRango.Checked)
+            {
+                consecutivo.PoseeRango = "true";
+                consecutivo.Inicio = txtInicio.Text;
+                consecutivo.Fin = txtFinal.Text;
+            }
+            else
+            {
+                consecutivo.PoseeRango = "false";
+                consecutivo.Inicio = "0";
+                consecutivo.Fin = "0";
+            }
+            consecutivo.TipoConsecutivo_Id = id;
+            if (logica.ActualizarConsecutivo(consecutivo))
+            {
+                
+                lblMensaje.Text = "Consecutivo " + txtDescripcion.Text + " actualizado correctamente";
+            }
+        }
+
+        protected void txtConsecutivo_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        protected void txtConsecutivo_Unload(object sender, EventArgs e)
+        {
+        }
+
+        protected void CheckBox1_CheckedChanged(object sender, EventArgs e)
+        {
         }
     }
 }

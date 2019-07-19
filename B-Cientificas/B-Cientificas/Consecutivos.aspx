@@ -1,19 +1,12 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Menu.Master" AutoEventWireup="true" CodeBehind="Consecutivos.aspx.cs" Inherits="B_Cientificas.Consecutivos" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <script>
-        void Check_Clicked(Object sender, EventArgs e) 
-      {
-
-         // Calculate the subtotal and display the result in currency format.
-         // Include tax if the check box is selected.
-         Message.Text = CalculateTotal(checkbox1.Checked).ToString("c");
-
-      }
-    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container">
-        <form class="card">
+        <asp:Button ID="Button1" runat="server" Text="Button" OnClick="Button1_Click1" />
+        <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+        <asp:CheckBox ID="CheckBox1" runat="server" AutoPostBack="True" OnCheckedChanged="CheckBox1_CheckedChanged" />
+        <asp:Panel class="card" ID="Panel2" runat="server"></asp:Panel>
             <fieldset>
                 <legend>Lista de consecutivos</legend>
                 <asp:GridView class="table" ID="gvConsecutivos" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" OnRowCommand="gvConsecutivos_RowCommand">
@@ -69,97 +62,100 @@
                     </div>
                 </div>
             </fieldset>
-        </form>
-        <form class="card">
-            <fieldset>
+        <asp:Panel class="card"  ID="Panel1" runat="server">
+            <fieldset runat="server">
                 <hr class="sidebar-divider" />
                 <legend>Editar Consecutivo</legend>
                 <label class="col-md-4 control-label" for="usuario"></label>
+                <br>
                 <br></br>
                 <div>
-                    <table align="center">
+                    <table runat="server" align="center">
                         <tr>
                             <td align="left">
-                                <label class="" for="selectDescripcion">Descripción</label>
-                            </td>
+                                <label class="" for="selectDescripcion">
+                                Descripción</label> </td>
                             <td>
                                 <div class="form-group">
-                                    <asp:TextBox  class="form-control input-md"  ID="txtDescripcion" runat="server" ReadOnly="true" ></asp:TextBox>
+                                    <asp:TextBox ID="txtDescripcion" runat="server" class="form-control input-md" ReadOnly="true"></asp:TextBox>
                                 </div>
                             </td>
                         </tr>
                         <tr>
                             <td align="left">
-                                <label class="" for="consecutivo">Consecutivo:</label>
-                            </td>
+                                <label class="" for="consecutivo">
+                                Consecutivo:</label> </td>
                             <td>
                                 <div class="form-group">
-                                    <asp:TextBox class="form-control input-md" ID="txtConsecutivo" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="txtConsecutivo" runat="server" class="form-control input-md"></asp:TextBox>
                                 </div>
                             </td>
                         </tr>
                         <tr>
                             <td align="left">
-                                <label class="" for="prefijoCheck">Posee prefijo:</label>
-                            </td>
+                                <label class="" for="prefijoCheck">
+                                Posee prefijo:</label> </td>
                             <td align="left">
                                 <div class="form-group">
-                                    <asp:CheckBox  ID="chkBoxPrefijo" class="checkbox-inline" runat="server" Text="Sí" OnCheckedChanged="chkBoxPrefijo_CheckedChanged" />
+                                    <asp:CheckBox ID="chkBoxPrefijo" runat="server" AutoPostBack="True" class="checkbox-inline" OnCheckedChanged="chkBoxPrefijo_CheckedChanged" OnLoad="chkBoxPrefijo_Load" Text="Sí" />
                                 </div>
                             </td>
                         </tr>
                         <tr>
                             <td align="left">
-                                <label class="" for="prefijo">Prefijo:</label>
-                            </td>
+                                <label class="" for="prefijo">
+                                Prefijo:</label> </td>
                             <td>
                                 <div class="form-group">
-                                    <asp:TextBox ID="txtPrefijo" class="form-control input-md" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="txtPrefijo" runat="server" class="form-control input-md"></asp:TextBox>
                                 </div>
                             </td>
                         </tr>
                         <tr>
                             <td align="left">
-                                <label class="" for="rangoCheck">Posee Rango:</label>
-                            </td>
+                                <label class="" for="rangoCheck">
+                                Posee Rango:</label> </td>
                             <td align="left">
                                 <div class="form-group">
-                                    <asp:CheckBox class="checkbox-inline" Text="Si" ID="chkBoxRango" runat="server" OnCheckedChanged="chkBoxRango_CheckedChanged" />
+                                    <asp:CheckBox ID="chkBoxRango" runat="server" AutoPostBack="True" class="checkbox-inline" OnCheckedChanged="chkBoxRango_CheckedChanged" Text="Si" />
                                 </div>
                             </td>
                         </tr>
                         <tr>
                             <td align="left">
-                                <label class="" for="rangoInicial">Rango Inicial:</label>
-                            </td>
+                                <label class="" for="rangoInicial">
+                                Rango Inicial:</label> </td>
                             <td>
                                 <div class="form-group">
-                                    <asp:TextBox class="form-control input-md" ID="txtInicio" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="txtInicio" runat="server" class="form-control input-md"></asp:TextBox>
                                 </div>
                             </td>
                         </tr>
                         <tr>
                             <td align="left">
-                                <label class="" for="rangoFinal">Rango Final:</label>
-                            </td>
+                                <label class="" for="rangoFinal">
+                                Rango Final:</label> </td>
                             <td>
                                 <div class="form-group">
-                                    <asp:TextBox class="form-control input-md" ID="txtFinal" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="txtFinal" runat="server" class="form-control input-md"></asp:TextBox>
                                 </div>
                             </td>
                         </tr>
                         <tr>
                             <td colspan="2">
                                 <div class="form-group">
-                                    <asp:Button id="aceptar" name="aceptar" class="btn btn-primary"  runat="server" Text="Actualizar Consecutivo" />
-                                    <asp:Button id="cancelar" name="cancelar" class="btn btn-default" runat="server" Text="Cancelar" />
+                                    <asp:Button ID="aceptar" runat="server" class="btn btn-primary" name="aceptar" OnClick="aceptar_Click" Text="Actualizar Consecutivo" />
+                                    <asp:Button ID="cancelar" runat="server" class="btn btn-default" name="cancelar" Text="Cancelar" />
+                                    <br />
+                                    <asp:Label ID="lblMensaje" runat="server" Text="Label"></asp:Label>
                                 </div>
                             </td>
                         </tr>
                     </table>
                 </div>
+                </br>   
             </fieldset>
-        </form>
+        </asp:Panel>
     </div>
 
 </asp:Content>

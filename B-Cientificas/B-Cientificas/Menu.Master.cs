@@ -17,6 +17,6 @@ namespace B_Cientificas
                 lblUsuario.Text = usuario;
             }
             
-        }
+            }
     }
 }
