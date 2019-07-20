@@ -8,7 +8,7 @@
                 <legend>Bitacora</legend>
             </fieldset>
         </form>
-        <form class="card">
+        <asp:Panel class="card" ID="Panel1" runat="server">
             <fieldset>
                 <hr class="sidebar-divider" />
                 <legend>Consultar acciones en bitacora</legend>
@@ -70,9 +70,24 @@
                     </table>
                 </div>
             </fieldset>
-        </form>
-        <asp:Panel ID="panelResultados" runat="server" Visible="true">
-            <form class="card">
+        </asp:Panel>
+        <asp:Panel class="card" ID="panelResultados" runat="server" Visible="false">
+            <asp:GridView class="table " ID="gvBitacora" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" OnRowCommand="gvBitacora_RowCommand">
+                <AlternatingRowStyle BackColor="White" />
+                <Columns>
+                    <asp:ButtonField Text="Ver Detalle" />
+                </Columns>
+                <EditRowStyle BackColor="#7C6F57" />
+                <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
+                <HeaderStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
+                <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
+                <RowStyle BackColor="#E3EAEB" />
+                <SelectedRowStyle BackColor="#C5BBAF" Font-Bold="True" ForeColor="#333333" />
+                <SortedAscendingCellStyle BackColor="#F8FAFA" />
+                <SortedAscendingHeaderStyle BackColor="#246B61" />
+                <SortedDescendingCellStyle BackColor="#D4DFE1" />
+                <SortedDescendingHeaderStyle BackColor="#15524A" />
+            </asp:GridView>
                 <table class="table ">
                     <thead class="thead-dark">
                         <tr>
@@ -103,7 +118,6 @@
                         </tr>
                     </tbody>
                 </table>
-            </form>
         </asp:Panel>
     </div>
 

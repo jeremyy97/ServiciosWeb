@@ -28,3 +28,13 @@ C:\Users\Josue\Desktop\ServiciosWeb\B-Cientificas\BLL\bin\Debug\de\DevExpress.Xp
 C:\Users\Josue\Desktop\ServiciosWeb\B-Cientificas\BLL\bin\Debug\es\DevExpress.Xpo.v17.1.resources.dll
 C:\Users\Josue\Desktop\ServiciosWeb\B-Cientificas\BLL\bin\Debug\ja\DevExpress.Xpo.v17.1.resources.dll
 C:\Users\Josue\Desktop\ServiciosWeb\B-Cientificas\BLL\bin\Debug\ru\DevExpress.Xpo.v17.1.resources.dll
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas\BLL\bin\Debug\DevExpress.Data.v17.1.xml
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas\BLL\bin\Debug\DevExpress.Xpo.v17.1.xml
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas\BLL\bin\Debug\de\DevExpress.Data.v17.1.resources.dll
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas\BLL\bin\Debug\es\DevExpress.Data.v17.1.resources.dll
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas\BLL\bin\Debug\ja\DevExpress.Data.v17.1.resources.dll
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas\BLL\bin\Debug\ru\DevExpress.Data.v17.1.resources.dll
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas\BLL\bin\Debug\de\DevExpress.Xpo.v17.1.resources.dll
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas\BLL\bin\Debug\es\DevExpress.Xpo.v17.1.resources.dll
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas\BLL\bin\Debug\ja\DevExpress.Xpo.v17.1.resources.dll
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas\BLL\bin\Debug\ru\DevExpress.Xpo.v17.1.resources.dll
