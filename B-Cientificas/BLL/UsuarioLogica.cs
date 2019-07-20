@@ -112,6 +112,51 @@ namespace BLL
             }
         }
 
+        //LISTA
+        public DataTable CargarUsuariosResu()
+        {
+            cnn = DAL.DAL.trae_conexion("BDConnectionString", ref error, ref numeroError);
+            if (cnn == null)
+            {
+                //insertar en la table de errores
+                HttpContext.Current.Response.Redirect("Error.aspx?error=" + numeroError.ToString() + "&men=" + error);
+                return null;
+            }
+            else
+            {
+                sql = "sp_Lista_Usuario";
+                ParamStruct[] parametros = new ParamStruct[1];
+                DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@Password", SqlDbType.VarChar, "password");
+                ds = DAL.DAL.ejecuta_dataset(cnn, sql, true, parametros, ref error, ref numeroError);
+                if (numeroError != 0)
+                {
+                    //insertar en la table de errores
+                    HttpContext.Current.Response.Redirect("Error.aspx?error=" + numeroError.ToString() + "&men=" + error);
+                    return null;
+                }
+                else
+                {
+                    DataTable dt = new DataTable();
+                    dt = ds.Tables[0];
+                    dt.Columns[0].ColumnName = "Usuario_ID";
+                    dt.Columns[1].ColumnName = "Nombre";
+                    dt.Columns[2].ColumnName = "Primer_Apellido";
+                    dt.Columns[3].ColumnName = "Segundo_Apellido";
+                    dt.Columns.RemoveAt(4);
+                    dt.Columns.RemoveAt(5);
+                    dt.Columns.RemoveAt(6);
+                    dt.Columns.RemoveAt(4);
+             
+
+                    return dt;
+
+
+
+                    /*return ds;*/
+                }
+            }
+        }
+
         //CREAR
         public Boolean CrearUsuario(UsuarioLogica usuario)
         {

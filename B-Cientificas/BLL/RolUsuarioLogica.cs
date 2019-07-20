@@ -58,6 +58,71 @@ namespace BLL
             }
         }
 
+        //Elimina
+        public Boolean EliminarRoles(string usuarioID)
+        {
+            cnn = DAL.DAL.trae_conexion("BDConnectionString", ref error, ref numeroError);
+            if (cnn == null)
+            {
+                //insertar en la table de errores
+                HttpContext.Current.Response.Redirect("Error.aspx?error=" + numeroError.ToString() + "&men=" + error);
+                return false;
+            }
+            else
+            {
+                sql = "sp_Elimina_Roles_Usuario";
+                ParamStruct[] parametros = new ParamStruct[1];
+                DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@Usuario_id", SqlDbType.VarChar, usuarioID);
+                DAL.DAL.conectar(cnn, ref error, ref numeroError);
+                DAL.DAL.ejecuta_sqlcommand(cnn, sql, true, parametros, ref error, ref numeroError);
+                if (numeroError != 0)
+                {
+                    //insertar en la table de errores
+                    HttpContext.Current.Response.Redirect("Error.aspx?error=" + numeroError.ToString() + "&men=" + error);
+                    DAL.DAL.desconectar(cnn, ref error, ref numeroError);
+                    return false;
+                }
+                else
+                {
+                    DAL.DAL.desconectar(cnn, ref error, ref numeroError);
+                    return true;
+                }
+            }
+        }
+
+        //Elimina
+        public Boolean InsertaRol(int rol, string usuarioID)
+        {
+            cnn = DAL.DAL.trae_conexion("BDConnectionString", ref error, ref numeroError);
+            if (cnn == null)
+            {
+                //insertar en la table de errores
+                HttpContext.Current.Response.Redirect("Error.aspx?error=" + numeroError.ToString() + "&men=" + error);
+                return false;
+            }
+            else
+            {
+                sql = "sp_Inserta_RolUsuario_Usuarios";
+                ParamStruct[] parametros = new ParamStruct[2];
+                DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@RolUsuario_id", SqlDbType.Int, rol);
+                DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 1, "@Usuario_id", SqlDbType.VarChar, usuarioID);
+                DAL.DAL.conectar(cnn, ref error, ref numeroError);
+                DAL.DAL.ejecuta_sqlcommand(cnn, sql, true, parametros, ref error, ref numeroError);
+                if (numeroError != 0)
+                {
+                    //insertar en la table de errores
+                    HttpContext.Current.Response.Redirect("Error.aspx?error=" + numeroError.ToString() + "&men=" + error);
+                    DAL.DAL.desconectar(cnn, ref error, ref numeroError);
+                    return false;
+                }
+                else
+                {
+                    DAL.DAL.desconectar(cnn, ref error, ref numeroError);
+                    return true;
+                }
+            }
+        }
+
         #endregion
 
     }

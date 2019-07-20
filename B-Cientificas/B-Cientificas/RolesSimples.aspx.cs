@@ -16,7 +16,11 @@ namespace B_Cientificas
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            CargarUsuarios();
+            if (!IsPostBack)
+            {
+                CargarUsuarios();
+            }
+            
         }
 
         private void CargarUsuarios()
@@ -31,11 +35,16 @@ namespace B_Cientificas
 
         protected void lbxUsuarios_SelectedIndexChanged(object sender, EventArgs e)
         {
-            CargarRoles();
+            this.CargarRoles();
         }
 
         private void CargarRoles()
         {
+            cbx1.Checked = false;
+            cbx2.Checked = false;
+            cbx3.Checked = false;
+            cbx4.Checked = false;
+            cbx5.Checked = false;
             DataSet ds = new DataSet();
             ds = roles.CargarRoles(lbxUsuarios.SelectedValue);
             List<RolUsuarioLogica> usuarioRoles = new List<RolUsuarioLogica>();
@@ -46,9 +55,25 @@ namespace B_Cientificas
 
             for (int i = 0; i < usuarioRoles.Count; i++)
             {
-                if (usuarioRoles[i].RolUsuarioID == 1)
+                switch (usuarioRoles[i].RolUsuarioID)
                 {
-                    cbx1.Checked = true;
+                    case 1:
+                        cbx1.Checked = true;
+                        break;
+                    case 2:
+                        cbx2.Checked = true;
+                        break;
+                    case 3:
+                        cbx3.Checked = true;
+                        break;
+                    case 4:
+                        cbx4.Checked = true;
+                        break;
+                    case 5:
+                        cbx5.Checked = true;
+                        break;
+                    default:
+                        break;
                 }
             }
 
@@ -71,6 +96,32 @@ namespace B_Cientificas
                 }
             }*/
 
+        }
+
+        protected void btnActualizar_Click(object sender, EventArgs e)
+        {
+            roles.EliminarRoles(lbxUsuarios.SelectedValue.ToString());
+
+            if (cbx1.Checked == true)
+            {
+                roles.InsertaRol(1, lbxUsuarios.SelectedValue.ToString());
+            }
+            if (cbx2.Checked == true)
+            {
+                roles.InsertaRol(2, lbxUsuarios.SelectedValue.ToString());
+            }
+            if (cbx3.Checked == true)
+            {
+                roles.InsertaRol(3, lbxUsuarios.SelectedValue.ToString());
+            }
+            if (cbx4.Checked == true)
+            {
+                roles.InsertaRol(4, lbxUsuarios.SelectedValue.ToString());
+            }
+            if (cbx5.Checked == true)
+            {
+                roles.InsertaRol(5, lbxUsuarios.SelectedValue.ToString());
+            }
         }
     }
 }
