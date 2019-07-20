@@ -13,6 +13,7 @@
                 <label class="col-md-4 control-label" for="usuario"></label>
                 <br>
                 <br>
+                <br>
                 <br></br>
                 <div>
                     <table runat="server" align="center">
@@ -59,14 +60,20 @@
                                     <asp:Button ID="btnCancelar" runat="server" class="btn btn-default" name="cancelar" OnClick="Button2_Click" Text="Cancelar" />
                                     <br />
                                     <br />
-                                    <asp:Label ID="lblMensaje" runat="server" Text="Label"></asp:Label>
+                                    <asp:Label ID="lblMensaje" runat="server"></asp:Label>
                                 </div>
                             </td>
                         </tr>
                     </table>
                 </div>
                 <br>
+                <br>
                 <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                </br>
+                </br>
                 </br>
                 </br>
                 </br>   

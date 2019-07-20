@@ -1,11 +1,18 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Menu.Master" AutoEventWireup="true" CodeBehind="Puestos.aspx.cs" Inherits="B_Cientificas.Puestos" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Menu.Master" CodeBehind="CrearPuesto.aspx.cs" Inherits="B_Cientificas.CrearPuesto" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-     <div class="container">
-            <fieldset>
-                <legend>Puestos</legend>
-                <label class="col-md-4 control-label" for="usuario">Administracion de puestos</label>
+    <div class="container">
+
+
+        <asp:Panel class="card"  ID="Panel2" runat="server">
+            <fieldset runat="server">
+                <hr class="sidebar-divider" />
+                <legend>Crear Puesto</legend>
+                <label class="col-md-4 control-label" for="usuario"></label>
+                <br>
+                <br>
+                <br>
                 <br></br>
                 <div>
                     <table align="center">
@@ -45,7 +52,7 @@
                             <td></td>
                             <td>
                                 <div class="form-group">
-                                    <asp:Button class="btn btn-primary" ID="btnActualizar" runat="server" Text="Actualizar Puesto" OnClick="btnActualizar_Click" />
+                                    <asp:Button class="btn btn-primary" ID="btnActualizar" runat="server" Text="Crear" OnClick="btnActualizar_Click" />
                                 </div>
                             </td>
                             
@@ -54,53 +61,37 @@
                                     <asp:Button class="btn btn-primary" ID="btnLimpiar" runat="server" Text="Limpiar" OnClick="btnLimpiar_Click" />
                                 </div>
                             </td>
+
                         </tr>
-                        <tr>
+                       <tr>
                             <td></td>
                             <td>
-                                <div class="form-group">
-                                    <asp:Button class="btn btn-primary" ID="btnEliminar" runat="server" Text="Eliminar Puesto" />
+                                <br />
+                             <div class="form-group">
+                                   <asp:Label ID="lblMensaje" runat="server" Text=""></asp:Label>
                                 </div>
                             </td>
-                        </tr>
-                        <tr>
-                            <td></td>
+                            
                             <td>
                                 
                             </td>
-                            <asp:Label ID="lblMensaje" runat="server" Text=""></asp:Label>
+
                         </tr>
-                    </table>
-                    
-                     <br /><br />
-                     <asp:GridView class="table" ID="gvPuestos" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" OnRowCommand="gvPuestos_RowCommand">
-                    <AlternatingRowStyle BackColor="White" />
-                    <Columns>
-                        <asp:ButtonField Text="Editar" />
-                    </Columns>
-                    <EditRowStyle BackColor="#7C6F57" />
-                    <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
-                    <HeaderStyle BackColor="#0067c6" Font-Bold="True" ForeColor="White" />
-                    <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
-                    <RowStyle BackColor="#E3EAEB" />
-                    <SelectedRowStyle BackColor="#C5BBAF" Font-Bold="True" ForeColor="#333333" />
-                    <SortedAscendingCellStyle BackColor="#F8FAFA" />
-                    <SortedAscendingHeaderStyle BackColor="#24526b" />
-                    <SortedDescendingCellStyle BackColor="#D4DFE1" />
-                    <SortedDescendingHeaderStyle BackColor="#15524A" />
-                </asp:GridView>
-                      <div class="form-group">
-                    <label class="col-md-4 control-label" for="nuevo"></label>
-                    <div class="col-md-4">
                         
-                        <asp:Button ID="btnNuevo" runat="server" class="btn btn-primary" name="nuevo"  Text="Nuevo" OnClick="btnNuevo_Click" />
-                    </div>
+                    </table>
                 </div>
-
-
-                </div>
+                <br>
+                <br>
+                <br></br>
+                <br></br>
+                <br></br>
+        
+     
             </fieldset>
+        </asp:Panel>
 
-        </div>
+
+    </div>
 
 </asp:Content>
+

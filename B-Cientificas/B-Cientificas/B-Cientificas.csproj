@@ -70,6 +70,8 @@
     <Content Include="Bitacora.aspx" />
     <Content Include="BitacoraExperimental.aspx" />
     <Content Include="Consecutivos.aspx" />
+    <Content Include="CrearNivelAcademico.aspx" />
+    <Content Include="CrearPuesto.aspx" />
     <Content Include="CrearRolLaboratorio.aspx" />
     <Content Include="CrearTipoConsecutivo.aspx" />
     <Content Include="CrearUsuarios.aspx" />
@@ -87,6 +89,7 @@
     <Content Include="js\sb-admin-2.min.js" />
     <Content Include="Login.aspx" />
     <Content Include="NivelAcademico.aspx" />
+    <Content Include="NuevoUsuario.aspx" />
     <Content Include="Proyectos.aspx" />
     <Content Include="Puestos.aspx" />
     <Content Include="RamasCientificas.aspx" />
@@ -95,6 +98,8 @@
     <Content Include="styles\sb-admin-2.css" />
     <Content Include="styles\sb-admin-2.min.css" />
     <Content Include="TipoConsecutivos.aspx" />
+    <Content Include="usuarios\firmas\1.jpg" />
+    <Content Include="usuarios\fotos\1.jpg" />
     <Content Include="vendor\bootstrap\js\bootstrap.bundle.js" />
     <Content Include="vendor\bootstrap\js\bootstrap.bundle.min.js" />
     <Content Include="vendor\bootstrap\js\bootstrap.js" />
@@ -1676,6 +1681,20 @@
     <Compile Include="Consecutivos.aspx.designer.cs">
       <DependentUpon>Consecutivos.aspx</DependentUpon>
     </Compile>
+    <Compile Include="CrearNivelAcademico.aspx.cs">
+      <DependentUpon>CrearNivelAcademico.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CrearNivelAcademico.aspx.designer.cs">
+      <DependentUpon>CrearNivelAcademico.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CrearPuesto.aspx.cs">
+      <DependentUpon>CrearPuesto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CrearPuesto.aspx.designer.cs">
+      <DependentUpon>CrearPuesto.aspx</DependentUpon>
+    </Compile>
     <Compile Include="CrearRolLaboratorio.aspx.cs">
       <DependentUpon>CrearRolLaboratorio.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1745,6 +1764,13 @@
     </Compile>
     <Compile Include="NivelAcademico.aspx.designer.cs">
       <DependentUpon>NivelAcademico.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NuevoUsuario.aspx.cs">
+      <DependentUpon>NuevoUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NuevoUsuario.aspx.designer.cs">
+      <DependentUpon>NuevoUsuario.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Proyectos.aspx.cs">
@@ -1951,10 +1977,7 @@
       <Name>BLL</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="usuarios\firmas\" />
-    <Folder Include="usuarios\fotos\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

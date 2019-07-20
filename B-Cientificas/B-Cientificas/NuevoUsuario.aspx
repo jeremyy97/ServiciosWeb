@@ -1,16 +1,22 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Menu.Master" AutoEventWireup="true" CodeBehind="CrearUsuarios.aspx.cs" Inherits="B_Cientificas.CrearUsuarios" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Menu.Master" CodeBehind="NuevoUsuario.aspx.cs" Inherits="B_Cientificas.NuevoUsuario" %>
+
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container">
-        <asp:Panel ID="Panel1" class="card" runat="server">
-            <fieldset>
-                <legend>Usuarios</legend>
-                <label class="col-md-4 control-label" for="usuario">Actualizar cuentas </label>
+
+
+        <asp:Panel class="card"  ID="Panel2" runat="server">
+            <fieldset runat="server">
+                <hr class="sidebar-divider" />
+                <legend>Crear Usuario</legend>
+                <label class="col-md-4 control-label" for="usuario"></label>
                 <br>
                 <br>
                 <br>
+                <br>
+                <br></br>
                 <div>
                     <table align="center">
                         <tr>
@@ -86,11 +92,6 @@
                             </td>
                         </tr>
                         <tr>
-                            <td align="left" colspan="2">
-                                <asp:CheckBox ID="chkBoxCambiarContrasenna" runat="server" Text=" Cambiar contraseña" AutoPostBack="True" OnCheckedChanged="chkBoxCambiarContrasenna_CheckedChanged" />
-                            </td>
-                        </tr>
-                        <tr>
                             <td align="left">
                                 <label class="" for="contrasenna">
                                 Contraseña:
@@ -121,10 +122,6 @@
                             <td>
                                 <div class="form-group">
                                     <asp:FileUpload ID="fileupFirma" runat="server" />
-                                    <br />
-                                    <br />
-                                    <asp:Image ID="imgFirma" runat="server" Height="200px" ImageAlign="Middle" Width="200px" />
-                                    <br />
                                 </div>
                             </td>
                         </tr>
@@ -137,11 +134,6 @@
                             <td>
                                 <div class="form-group">
                                     <asp:FileUpload ID="fileupFoto" runat="server" />
-                                    <br />
-                                    <br />
-                                    <asp:Image ID="imgFoto" runat="server" Height="200px" ImageAlign="Middle" Width="200px" />
-                                    <br />
-                                    <br />
                                 </div>
                             </td>
                         </tr>
@@ -174,62 +166,49 @@
                         <tr>
                             <td></td>
                             <td>
-                                
+                                <div class="form-group">
+                                    <asp:Button ID="btnActualizar" runat="server" class="btn btn-primary" OnClick="btnActualizar_Click" Text="Crear" />
+                                </div>
                             </td>
-                            <asp:Label ID="lblMensaje" runat="server" Text=""></asp:Label>
+                            <td>
+                                <div class="form-group">
+                                    <asp:Button ID="btnLimpiar" runat="server" class="btn btn-primary" OnClick="btnLimpiar_Click" Text="Cancelar" />
+                                </div>
+                            </td>
                         </tr>
                         <tr>
-                            <td colspan="2">
+                            <td></td>
+                            <td>
+                                <br />
                                 <div class="form-group">
-                                    <asp:Button ID="btnActualizar" runat="server" class="btn btn-primary" OnClick="btnActualizar_Click" Text="Actualizar Usuario" />
-                                    <br />
-                                    <br />
-                                </div>
-                                <div class="form-group">
-                                    <asp:Button ID="btnLimpiar" runat="server" class="btn btn-primary" OnClick="btnLimpiar_Click" Text="Limpiar" />
-                                    <br />
-                                    <br />
+                                    <asp:Label ID="lblMensaje" runat="server" Text=""></asp:Label>
                                 </div>
                             </td>
+                            <td></td>
                         </tr>
                     </table>
-                    <asp:GridView  ID="gvUsuarios" runat="server" CellPadding="4" class="table" ForeColor="#333333" GridLines="None" OnRowCommand="gvUsuarios_RowCommand">
-                        <AlternatingRowStyle BackColor="White" />
-                        <Columns>
-                            <asp:ButtonField Text="Editar" />
-                        </Columns>
-                        <EditRowStyle BackColor="#7C6F57" />
-                        <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
-                        <HeaderStyle BackColor="#0067c6" Font-Bold="True" ForeColor="White" />
-                        <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
-                        <RowStyle BackColor="#E3EAEB" />
-                        <SelectedRowStyle BackColor="#C5BBAF" Font-Bold="True" ForeColor="#333333" />
-                        <SortedAscendingCellStyle BackColor="#F8FAFA" />
-                        <SortedAscendingHeaderStyle BackColor="#24526b" />
-                        <SortedDescendingCellStyle BackColor="#D4DFE1" />
-                        <SortedDescendingHeaderStyle BackColor="#15524A" />
-                    </asp:GridView>
-                    <div class="form-group">
-                        <label class="col-md-4 control-label" for="nuevo">
-                        </label>
-                        <div class="col-md-4">
-                            <asp:Button ID="btnNuevo" runat="server" class="btn btn-primary" name="nuevo" OnClick="btnNuevo_Click" Text="Nuevo" />
-                        </div>
-                    </div>
                 </div>
                 <br>
                 <br>
+                <br>
                 <br></br>
                 <br>
                 <br></br>
+                <br>
                 <br></br>
                 </br>
                 </br>
                 </br>
-                      
+                </br>
+                </br>
+                </br>
+                        
+     
             </fieldset>
-       </asp:Panel>
+        </asp:Panel>
+
 
     </div>
 
 </asp:Content>
+

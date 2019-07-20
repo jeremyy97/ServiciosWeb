@@ -13,7 +13,7 @@ namespace B_Cientificas
         UsuarioLogica logica = new UsuarioLogica();
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            txtPassword.Attributes["type"] = "password";
         }
 
         protected void btnLogin_Click(object sender, EventArgs e)
