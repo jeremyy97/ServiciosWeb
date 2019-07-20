@@ -51,6 +51,7 @@
     <Compile Include="NivelAcademicoLogica.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PuestoLogica.cs" />
+    <Compile Include="RamasCientificasLogica.cs" />
     <Compile Include="RolLaboratorioLogica.cs" />
     <Compile Include="RolUsuarioLogica.cs" />
     <Compile Include="TipoConsecutivoLogica.cs" />

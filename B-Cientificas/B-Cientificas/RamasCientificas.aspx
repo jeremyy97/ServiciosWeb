@@ -16,12 +16,8 @@
                             </td>
                             <td>
                                 <div class="form-group">
-                                    <input
-                                        type="text"
-                                        placeholder=""
-                                        class="form-control"
-                                        name="id" disabled/>
-                                </div>
+                                    <asp:TextBox  class="form-control" ID="txtCodigo" runat="server"></asp:TextBox>
+                                 </div>
                             </td>
                         </tr>
 
@@ -31,11 +27,7 @@
                             </td>
                             <td>
                                 <div class="form-group">
-                                    <input
-                                        type="text"
-                                        placeholder=""
-                                        class="form-control"
-                                        name="usuario1"/>
+                                    <asp:TextBox  class="form-control" ID="txtNombre" runat="server"></asp:TextBox>
                                 </div>
                             </td>
                         </tr>
@@ -43,13 +35,14 @@
                             <td></td>
                             <td>
                                 <div class="form-group">
-                                    <button id="crearUsuario"  name="crearUsuario" class="btn btn-primary">Guardar Registro</button>
+                                    <asp:Button class="btn btn-primary" ID="btnGuardar" runat="server" Text="Guardar Registro" OnClick="btnGuardar_Click" />
                                 </div>
                             </td>
                             
                             <td>
                                 <div class="form-group">
-                                    <button id="limpiar" name="limpiar" class="btn btn-primary">Limpiar</button>
+                                    <asp:Button class="btn btn-primary" ID="btnLimpiar" runat="server" Text="Limpiar" OnClick="btnLimpiar_Click" />
+                                    
                                 </div>
                             </td>
                         </tr>
@@ -57,29 +50,31 @@
                             <td></td>
                             <td>
                                 <div class="form-group">
-                                    <button id="eliminarRegistro" name="eliminarRegistro" class="btn btn-primary">Eliminar Registro</button>
+                                    <asp:Button ID="btnEliminarRegistro" class="btn btn-primary" runat="server" Text="Eliminar Registro" OnClick="btnEliminarRegistro_Click" />
+                                    <br />
+                                    <asp:Label ID="lblMensaje" runat="server" Text=""></asp:Label>
                                 </div>
                             </td>
                         </tr>
                     </table>
                     <div class="card">
                         <div class="form-group">
-                            <button id="ActualizarTabla" name="ActualizarTabla" class="btn btn-primary">Actualizar Tabla</button>
-                        </div>
-                        <table class="table">
-                            <thead class="thead-dark">
-                                <tr>
-                                    <th>Codigo</th>
-                                    <th>Nombre</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Rama de Prueba</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                            <asp:Button  class="btn btn-primary" ID="btnActualizarTabla" runat="server" Text="Actualizar Tabla" OnClick="btnActualizarTabla_Click" />
+                       </div>
+                        <asp:GridView class="table" ID="gvRamasCientificas" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None">
+                            <AlternatingRowStyle BackColor="White" />
+                            <EditRowStyle BackColor="#7C6F57" />
+                            <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
+                            <HeaderStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
+                            <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
+                            <RowStyle BackColor="#E3EAEB" />
+                            <SelectedRowStyle BackColor="#C5BBAF" Font-Bold="True" ForeColor="#333333" />
+                            <SortedAscendingCellStyle BackColor="#F8FAFA" />
+                            <SortedAscendingHeaderStyle BackColor="#246B61" />
+                            <SortedDescendingCellStyle BackColor="#D4DFE1" />
+                            <SortedDescendingHeaderStyle BackColor="#15524A" />
+                        </asp:GridView>
+                        
                     </div>
                 </div>
             </fieldset>
