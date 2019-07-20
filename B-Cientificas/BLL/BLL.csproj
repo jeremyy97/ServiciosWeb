@@ -50,6 +50,7 @@
     <Compile Include="ErroresLogica.cs" />
     <Compile Include="NivelAcademicoLogica.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ProyectosLogica.cs" />
     <Compile Include="PuestoLogica.cs" />
     <Compile Include="RamasCientificasLogica.cs" />
     <Compile Include="RolLaboratorioLogica.cs" />
