@@ -8,6 +8,7 @@
                 <legend>Bitacora Experimental</legend>
                 <label class="col-md-4 control-label" for="usuario">Administracion de experimentos</label>
                 <br>
+                <br>
                 <br></br>
                 <div>
                     <table align="center">
@@ -19,7 +20,8 @@
                             </td>
                             <td>
                                 <div class="form-group">
-                                    <asp:DropDownList ID="ddlProyectos" runat="server" class="form-control">
+                                    <asp:DropDownList ID="ddlProyectos" runat="server" AutoPostBack="True" class="form-control" OnSelectedIndexChanged="ddlProyectos_SelectedIndexChanged">
+                                        <asp:ListItem Value="-8">Seleccione un proyecto</asp:ListItem>
                                     </asp:DropDownList>
                                 </div>
                             </td>
@@ -80,7 +82,7 @@
                             </td>
                             <td>
                                 <div class="form-group">
-                                    <asp:TextBox ID="txtNombre" class="form-control" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="txtNombre" runat="server" class="form-control"></asp:TextBox>
                                 </div>
                             </td>
                         </tr>
@@ -259,6 +261,8 @@
                         </table>
                     </div>
                 </div>
+                <br></br>
+                </br>
                 </br>
             </fieldset>
         </asp:Panel>

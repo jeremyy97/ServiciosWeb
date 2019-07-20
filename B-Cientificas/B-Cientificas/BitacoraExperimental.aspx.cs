@@ -18,14 +18,31 @@ namespace B_Cientificas
             gvExperimentos.DataSource = logica.CargarBitacora();
             gvExperimentos.DataBind();
 
-            foreach(DataRow dr in proyectos.CargarProyectos().Rows)
+            if (!IsPostBack)
             {
-                ListItem item = new ListItem();
-                item.Value = dr[0].ToString();
-                item.Text = dr[1].ToString();
-                ddlProyectos.Items.Add(item);
+                foreach (DataRow dr in proyectos.CargarProyectos().Rows)
+                {
+                    ListItem item = new ListItem();
+                    item.Value = dr[0].ToString();
+                    item.Text = dr[1].ToString();
+                    ddlProyectos.Items.Add(item);
+                }
             }
             
+            
+        }
+
+        protected void ddlProyectos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(ddlProyectos.SelectedValue != "-8")
+            {
+                txtCodProyecto.Text = ddlProyectos.SelectedValue;
+                ConsecutivoLogica consecutivo = logica.GenerarID();
+                if (consecutivo != null)
+                {
+                    txtCodExperimento.Text = consecutivo.Consecutivo;
+                }
+            }        
         }
     }
 }

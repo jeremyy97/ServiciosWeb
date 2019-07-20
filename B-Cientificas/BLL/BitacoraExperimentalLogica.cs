@@ -69,6 +69,34 @@ namespace BLL
                 }
             }
         }
+
+        public ConsecutivoLogica GenerarID()
+        {
+            ConsecutivoLogica consecutivoLogica = new ConsecutivoLogica();
+            ConsecutivoLogica consecutivo = new ConsecutivoLogica();
+            consecutivo = consecutivoLogica.BuscarConsecutivo(2);
+            int codigo = Convert.ToInt32(consecutivo.Consecutivo) + 1;
+            int inicio = Convert.ToInt32(consecutivo.Inicio);
+            int fin = Convert.ToInt32(consecutivo.Fin);
+            if (codigo > inicio && codigo <= fin)
+            {
+                if (Convert.ToBoolean(consecutivo.PoseePrefijo))
+                {
+                    consecutivo.Consecutivo = codigo.ToString();
+                    return consecutivo;
+                }
+                else
+                {
+                    consecutivo.Consecutivo = codigo.ToString();
+                    return consecutivo;
+                }
+
+            }
+            else
+            {
+                return null;
+            }
+        }
         #endregion
     }
 }
