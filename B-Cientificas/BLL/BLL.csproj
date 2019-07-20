@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="BitacoraLogica.cs" />
     <Compile Include="ConsecutivoLogica.cs" />
+    <Compile Include="DescargasLogica.cs" />
     <Compile Include="ErroresLogica.cs" />
     <Compile Include="NivelAcademicoLogica.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
