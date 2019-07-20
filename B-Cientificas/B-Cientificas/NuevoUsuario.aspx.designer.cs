@@ -10,16 +10,16 @@
 namespace B_Cientificas {
     
     
-    public partial class CrearUsuarios {
+    public partial class NuevoUsuario {
         
         /// <summary>
-        /// Control Panel1.
+        /// Control Panel2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel Panel1;
+        protected global::System.Web.UI.WebControls.Panel Panel2;
         
         /// <summary>
         /// Control txtCodigo.
@@ -76,15 +76,6 @@ namespace B_Cientificas {
         protected global::System.Web.UI.WebControls.TextBox txtNombreUsuario;
         
         /// <summary>
-        /// Control chkBoxCambiarContrasenna.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkBoxCambiarContrasenna;
-        
-        /// <summary>
         /// Control txtPassword.
         /// </summary>
         /// <remarks>
@@ -112,15 +103,6 @@ namespace B_Cientificas {
         protected global::System.Web.UI.WebControls.FileUpload fileupFirma;
         
         /// <summary>
-        /// Control imgFirma.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Image imgFirma;
-        
-        /// <summary>
         /// Control fileupFoto.
         /// </summary>
         /// <remarks>
@@ -128,15 +110,6 @@ namespace B_Cientificas {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.FileUpload fileupFoto;
-        
-        /// <summary>
-        /// Control imgFoto.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Image imgFoto;
         
         /// <summary>
         /// Control ddlNivelesAcademicos.
@@ -157,15 +130,6 @@ namespace B_Cientificas {
         protected global::System.Web.UI.WebControls.DropDownList ddlPuestos;
         
         /// <summary>
-        /// Control lblMensaje.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMensaje;
-        
-        /// <summary>
         /// Control btnActualizar.
         /// </summary>
         /// <remarks>
@@ -184,21 +148,12 @@ namespace B_Cientificas {
         protected global::System.Web.UI.WebControls.Button btnLimpiar;
         
         /// <summary>
-        /// Control gvUsuarios.
+        /// Control lblMensaje.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvUsuarios;
-        
-        /// <summary>
-        /// Control btnNuevo.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnNuevo;
+        protected global::System.Web.UI.WebControls.Label lblMensaje;
     }
 }

@@ -8,27 +8,27 @@ using System.Web.UI.WebControls;
 
 namespace B_Cientificas
 {
-    public partial class CrearRolLaboratorio : System.Web.UI.Page
+    public partial class CrearNivelAcademico : System.Web.UI.Page
     {
-        RolLaboratorioLogica logica = new RolLaboratorioLogica();
+        NivelAcademicoLogica logica = new NivelAcademicoLogica();
         ConsecutivoLogica consecutivoLogica = new ConsecutivoLogica();
         ConsecutivoLogica consecutivo = new ConsecutivoLogica();
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            txtID.Text = GenerarID();
-            if(txtID.Text == "")
+            txtCodigo.Text = GenerarID();
+            if (txtCodigo.Text == "")
             {
-                
-               Response.Redirect("Default.aspx");
-               
+
+                Response.Redirect("Default.aspx");
+
             }
         }
 
         private string GenerarID()
         {
-            consecutivo = consecutivoLogica.BuscarConsecutivo(3);
-            int codigo = Convert.ToInt32(consecutivo.Consecutivo)+1;
+            consecutivo = consecutivoLogica.BuscarConsecutivo(6);
+            int codigo = Convert.ToInt32(consecutivo.Consecutivo) + 1;
             int inicio = Convert.ToInt32(consecutivo.Inicio);
             int fin = Convert.ToInt32(consecutivo.Fin);
             if (codigo > inicio && codigo <= fin)
@@ -41,7 +41,7 @@ namespace B_Cientificas
                 else
                 {
                     consecutivo.Consecutivo = codigo.ToString();
-                    return consecutivo.Prefijo + "-" + codigo.ToString();
+                    return "NIV-" + codigo.ToString();
                 }
 
             }
@@ -55,21 +55,30 @@ namespace B_Cientificas
         {
             if (Page.IsValid)
             {
-                RolLaboratorioLogica rol = new RolLaboratorioLogica();
-                rol.RolLaboratorio_id = txtID.Text;
-                rol.Nombre = txtNombre.Text;
-                rol.Detalle = txtDetalle.Text;
-                if (logica.InsertarRolLaboratorio(rol))
+                NivelAcademicoLogica nivel = new NivelAcademicoLogica();
+                nivel.NivelAcademico_id = txtCodigo.Text;
+                nivel.Nombre = ddlNiveles.SelectedValue;
+                nivel.Detalle = txtDetalle.Text;
+                if (chkBoxCompleto.Checked)
                 {
-                    lblMensaje.Text = "Rol Laboratorio " + txtNombre.Text + " creado correctamente";
+                    nivel.Completo = "true";
+                }
+                else
+                {
+                    nivel.Completo = "false";
+                }
+                if (logica.InsertarNivel(nivel))
+                {
+                    lblMensaje.Text = "Nivel " + nivel.Nombre + " creado correctamente";
                     consecutivoLogica.ActualizarConsecutivo(consecutivo);
+                    Response.Redirect("NivelAcademico.aspx");
                 }
             }
         }
 
-        protected void Button2_Click(object sender, EventArgs e)
+        protected void btnLimpiar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("RolesLaboratorio.aspx");
+            Response.Redirect("NivelAcademico.aspx");
         }
     }
 }

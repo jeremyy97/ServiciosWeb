@@ -1,6 +1,7 @@
 ﻿using BLL;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -30,7 +31,8 @@ namespace B_Cientificas
         {
             int index = Convert.ToInt32(e.CommandArgument);
             GridViewRow row = gvRolLaboratorio.Rows[index];
-            string id = row.Cells[index+1].Text;
+            string id = row.Cells[1].Text;
+
 
             RolLaboratorioLogica rol = new RolLaboratorioLogica();
             rol = logica.BuscarRolLaboratorio(id);

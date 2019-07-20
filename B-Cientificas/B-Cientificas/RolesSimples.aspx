@@ -7,7 +7,7 @@
         <table>
             <tr>
                 <td>
-                    <asp:ListBox ID="lbxUsuarios" runat="server" Height="252px" Width="163px" OnSelectedIndexChanged="lbxUsuarios_SelectedIndexChanged"></asp:ListBox>
+                    <asp:ListBox ID="lbxUsuarios" runat="server" Height="252px" Width="163px" OnSelectedIndexChanged="lbxUsuarios_SelectedIndexChanged" AutoPostBack="True"></asp:ListBox>
                 </td>
                 <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
                 <td class="form-group">
@@ -22,6 +22,7 @@
                                <asp:ListItem Value="4">Mantenimiento</asp:ListItem>
                                <asp:ListItem Value="5">Consultas</asp:ListItem>
                             </asp:CheckBoxList>
+                            <asp:CheckBox ID="cbx1" runat="server" Text="Prueba" />
                         </div>
 
                         <div class="form-group">
