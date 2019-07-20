@@ -70,6 +70,7 @@
     <Content Include="Bitacora.aspx" />
     <Content Include="BitacoraExperimental.aspx" />
     <Content Include="Consecutivos.aspx" />
+    <Content Include="CrearRolLaboratorio.aspx" />
     <Content Include="CrearTipoConsecutivo.aspx" />
     <Content Include="CrearUsuarios.aspx" />
     <Content Include="Default.aspx" />
@@ -1674,6 +1675,13 @@
     </Compile>
     <Compile Include="Consecutivos.aspx.designer.cs">
       <DependentUpon>Consecutivos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CrearRolLaboratorio.aspx.cs">
+      <DependentUpon>CrearRolLaboratorio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CrearRolLaboratorio.aspx.designer.cs">
+      <DependentUpon>CrearRolLaboratorio.aspx</DependentUpon>
     </Compile>
     <Compile Include="CrearTipoConsecutivo.aspx.cs">
       <DependentUpon>CrearTipoConsecutivo.aspx</DependentUpon>

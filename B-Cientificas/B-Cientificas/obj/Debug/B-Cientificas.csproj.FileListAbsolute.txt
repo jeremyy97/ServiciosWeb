@@ -230,3 +230,7 @@ C:\Users\Josue\Desktop\ServiciosWeb\B-Cientificas\B-Cientificas\obj\Debug\B-Cien
 C:\Users\Josue\Desktop\ServiciosWeb\B-Cientificas\B-Cientificas\obj\Debug\B-Cientificas.csproj.CopyComplete
 C:\Users\Josue\Desktop\ServiciosWeb\B-Cientificas\B-Cientificas\obj\Debug\B-Cientificas.dll
 C:\Users\Josue\Desktop\ServiciosWeb\B-Cientificas\B-Cientificas\obj\Debug\B-Cientificas.pdb
+D:\GitHub\ServiciosWeb\B-Cientificas\B-Cientificas\bin\BLL.dll
+D:\GitHub\ServiciosWeb\B-Cientificas\B-Cientificas\bin\DAL.dll
+D:\GitHub\ServiciosWeb\B-Cientificas\B-Cientificas\bin\BLL.pdb
+D:\GitHub\ServiciosWeb\B-Cientificas\B-Cientificas\bin\DAL.pdb

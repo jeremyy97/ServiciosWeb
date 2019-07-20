@@ -10,13 +10,13 @@ using System.Web;
 
 namespace BLL
 {
-    public class RolLaboratorioLogica
+    public class PuestoLogica
     {
         #region Props
 
-        public string RolLaboratorio_id { get; set; }
+        public string Puesto_Id { get; set; }
         public string Nombre { get; set; }
-        public string Detalle { get; set; }
+        public string RolLaboratorio_ID { get; set; }
 
         #endregion
 
@@ -29,7 +29,7 @@ namespace BLL
         #region Methods
 
         //LISTA
-        public DataSet CargasRolesLaboratorio()
+        public DataSet CargarPuestos()
         {
             cnn = DAL.DAL.trae_conexion("BDConnectionString", ref error, ref numeroError);
             if (cnn == null)
@@ -40,7 +40,7 @@ namespace BLL
             }
             else
             {
-                sql = "sp_Lista_RolLaboratorio";
+                sql = "sp_Lista_Puesto";
                 ParamStruct[] parametros = new ParamStruct[1];
                 DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@Password", SqlDbType.VarChar, "password");
                 ds = DAL.DAL.ejecuta_dataset(cnn, sql, true, parametros, ref error, ref numeroError);
@@ -54,14 +54,14 @@ namespace BLL
                 {
                     ds.Tables[0].Columns[0].ColumnName = "ID";
                     ds.Tables[0].Columns[1].ColumnName = "Nombre";
-                    ds.Tables[0].Columns[2].ColumnName = "Detalle";
+                    ds.Tables[0].Columns[2].ColumnName = "RolLaboratorio ID";
                     return ds;
                 }
             }
         }
 
         //CARGA
-        public RolLaboratorioLogica BuscarRolLaboratorio(string rolID)
+        public PuestoLogica BuscarPuesto(string puestoID)
         {
             cnn = DAL.DAL.trae_conexion("BDConnectionString", ref error, ref numeroError);
             if (cnn == null)
@@ -72,9 +72,9 @@ namespace BLL
             }
             else
             {
-                sql = "sp_Carga_RolLaboratorio";
+                sql = "sp_Carga_Puesto";
                 ParamStruct[] parametros = new ParamStruct[2];
-                DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@RolLaboratorio_id", SqlDbType.VarChar, rolID);
+                DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@Puesto_id", SqlDbType.VarChar, puestoID);
                 DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 1, "@Password", SqlDbType.VarChar, "password");
                 ds = DAL.DAL.ejecuta_dataset(cnn, sql, true, parametros, ref error, ref numeroError);
                 if (numeroError != 0)
@@ -85,17 +85,17 @@ namespace BLL
                 }
                 else
                 {
-                    RolLaboratorioLogica rol = new RolLaboratorioLogica();
-                    rol.RolLaboratorio_id = ds.Tables[0].Rows[0][0].ToString();
-                    rol.Nombre = ds.Tables[0].Rows[0][1].ToString();
-                    rol.Detalle = ds.Tables[0].Rows[0][2].ToString();
-                    return rol;
+                    PuestoLogica puesto = new PuestoLogica();
+                    puesto.Puesto_Id = ds.Tables[0].Rows[0][0].ToString();
+                    puesto.Nombre = ds.Tables[0].Rows[0][1].ToString();
+                    puesto.RolLaboratorio_ID = ds.Tables[0].Rows[0][2].ToString();
+                    return puesto;
                 }
             }
         }
 
         //ACTUALIZA
-        public Boolean ActualizarRolLaboratorio(RolLaboratorioLogica rol)
+        public Boolean ActualizarPuesto(PuestoLogica puesto)
         {
             cnn = DAL.DAL.trae_conexion("BDConnectionString", ref error, ref numeroError);
             if (cnn == null)
@@ -106,11 +106,11 @@ namespace BLL
             }
             else
             {
-                sql = "sp_Actualiza_RolLaboratorio";
+                sql = "sp_Actualiza_Puesto";
                 ParamStruct[] parametros = new ParamStruct[4];
-                DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@RolLaboratorio_id", SqlDbType.VarChar, rol.RolLaboratorio_id);
-                DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 1, "@nombre", SqlDbType.VarChar, rol.Nombre);
-                DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 2, "@detalle", SqlDbType.VarChar, rol.Detalle);
+                DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@Puesto_id", SqlDbType.VarChar, puesto.Puesto_Id);
+                DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 1, "@Nombre", SqlDbType.VarChar, puesto.Nombre);
+                DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 2, "@RolLaboratorio_id", SqlDbType.VarChar, puesto.RolLaboratorio_ID);
                 DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 3, "@Password", SqlDbType.VarChar, "password");
                 DAL.DAL.conectar(cnn, ref error, ref numeroError);
                 DAL.DAL.ejecuta_sqlcommand(cnn, sql, true, parametros, ref error, ref numeroError);
@@ -129,8 +129,8 @@ namespace BLL
             }
         }
 
-        //INSERTA
-        public Boolean InsertarRolLaboratorio(RolLaboratorioLogica rol)
+        //INSERTAR
+        public Boolean InsertarPuesto(PuestoLogica puesto)
         {
             cnn = DAL.DAL.trae_conexion("BDConnectionString", ref error, ref numeroError);
             if (cnn == null)
@@ -141,11 +141,11 @@ namespace BLL
             }
             else
             {
-                sql = "sp_Inserta_RolLaboratorio";
+                sql = "sp_Inserta_Puesto";
                 ParamStruct[] parametros = new ParamStruct[4];
-                DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@RolLaboratorio_id", SqlDbType.VarChar, rol.RolLaboratorio_id);
-                DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 1, "@nombre", SqlDbType.VarChar, rol.Nombre);
-                DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 2, "@detalle", SqlDbType.VarChar, rol.Detalle);
+                DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@Puesto_id", SqlDbType.VarChar, puesto.Puesto_Id);
+                DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 1, "@Nombre", SqlDbType.VarChar, puesto.Nombre);
+                DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 2, "@RolLaboratorio_id", SqlDbType.VarChar, puesto.RolLaboratorio_ID);
                 DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 3, "@Password", SqlDbType.VarChar, "password");
                 DAL.DAL.conectar(cnn, ref error, ref numeroError);
                 DAL.DAL.ejecuta_sqlcommand(cnn, sql, true, parametros, ref error, ref numeroError);
@@ -165,5 +165,6 @@ namespace BLL
         }
 
         #endregion
+
     }
 }

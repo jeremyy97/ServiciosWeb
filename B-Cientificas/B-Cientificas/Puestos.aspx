@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <form class="card">
+     <div class="container">
             <fieldset>
                 <legend>Puestos</legend>
                 <label class="col-md-4 control-label" for="usuario">Administracion de puestos</label>
@@ -15,7 +15,7 @@
                             </td>
                             <td>
                                 <div class="form-group">
-                                    <asp:TextBox class="form-control" ID="txtCodigo" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="txtID" runat="server" class="form-control input-md" ReadOnly="true"></asp:TextBox>
                                 </div>
                             </td>
                         </tr>
@@ -26,7 +26,7 @@
                             </td>
                             <td>
                                 <div class="form-group">
-                                    <asp:TextBox class="form-control" ID="txtNombre" runat="server"></asp:TextBox>
+                                     <asp:TextBox ID="txtNombre" runat="server" class="form-control input-md"></asp:TextBox>
                                 </div>
                             </td>
                         </tr>
@@ -37,8 +37,6 @@
                             <td>
                                 <div class="form-group">
                                     <asp:DropDownList  CssClass="form-control" ID="ddlRoles" runat="server">
-                                        <asp:ListItem Value="0">Seleccione un rol</asp:ListItem>
-                                        <asp:ListItem>Rol de prueba</asp:ListItem>
                                     </asp:DropDownList>
                                 </div>
                             </td>
@@ -47,7 +45,7 @@
                             <td></td>
                             <td>
                                 <div class="form-group">
-                                    <asp:Button class="btn btn-primary" ID="btnCrearUsuario" runat="server" Text="Crear Usuario" />
+                                    <asp:Button class="btn btn-primary" ID="btnActualizar" runat="server" Text="Actualizar Puesto" />
                                 </div>
                             </td>
                             
@@ -61,45 +59,41 @@
                             <td></td>
                             <td>
                                 <div class="form-group">
-                                    <asp:Button class="btn btn-primary" ID="btnEliminarRegistro" runat="server" Text="Eliminar Registro" />
+                                    <asp:Button class="btn btn-primary" ID="btnEliminar" runat="server" Text="Eliminar Puesto" />
                                 </div>
                             </td>
                         </tr>
                     </table>
-                    <div class="card">
-                        <div class="form-group">
-                            <asp:Button class="btn btn-primary" ID="btnActualizar" runat="server" Text="Actualizar Tabla" />
-                        </div>
-                        <asp:GridView ID="gvPuestos" runat="server"></asp:GridView>
-                        <table class="table">
-                            <thead class="thead-dark">
-                                <tr>
-                                    <th>Codigo</th>
-                                    <th>Nombre</th>
-                                    <th>Rol</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Puesto 1</td>
-                                    <td>Algun rol</td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>Puesto 2</td>
-                                    <td>Otro rol</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                    
+                     <br /><br />
+                     <asp:GridView class="table" ID="gvPuestos" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" OnRowCommand="gvPuestos_RowCommand">
+                    <AlternatingRowStyle BackColor="White" />
+                    <Columns>
+                        <asp:ButtonField Text="Editar" />
+                    </Columns>
+                    <EditRowStyle BackColor="#7C6F57" />
+                    <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
+                    <HeaderStyle BackColor="#0067c6" Font-Bold="True" ForeColor="White" />
+                    <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
+                    <RowStyle BackColor="#E3EAEB" />
+                    <SelectedRowStyle BackColor="#C5BBAF" Font-Bold="True" ForeColor="#333333" />
+                    <SortedAscendingCellStyle BackColor="#F8FAFA" />
+                    <SortedAscendingHeaderStyle BackColor="#24526b" />
+                    <SortedDescendingCellStyle BackColor="#D4DFE1" />
+                    <SortedDescendingHeaderStyle BackColor="#15524A" />
+                </asp:GridView>
+                      <div class="form-group">
+                    <label class="col-md-4 control-label" for="nuevo"></label>
+                    <div class="col-md-4">
+                        
+                        <asp:Button ID="btnNuevo" runat="server" class="btn btn-primary" name="nuevo"  Text="Nuevo" OnClick="btnNuevo_Click" />
                     </div>
                 </div>
+
+
+                </div>
             </fieldset>
-        </form>
-        <script src="vendor/jquery/jquery.min.js"></script>
-        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-        <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+        </div>
 
-        <script src="js/sb-admin-2.min.js"></script>
 </asp:Content>

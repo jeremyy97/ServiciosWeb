@@ -21,6 +21,9 @@ namespace B_Cientificas
         {
             gvRolLaboratorio.DataSource = logica.CargasRolesLaboratorio().Tables[0];
             gvRolLaboratorio.DataBind();
+            btnActualizar.Visible = false;
+            btnLimpiar.Visible = false;
+            btnEliminar.Visible = false;
         }
 
         protected void gvRolLaboratorio_RowCommand(object sender, GridViewCommandEventArgs e)
@@ -35,13 +38,15 @@ namespace B_Cientificas
             txtID.Text = rol.RolLaboratorio_id;
             txtNombre.Text = rol.Nombre;
             txtDetalle.Text = rol.Detalle;
+
+            btnActualizar.Visible = true;
+            btnLimpiar.Visible = true;
+            btnEliminar.Visible = true;
         }
 
         protected void btnLimpiar_Click(object sender, EventArgs e)
         {
-            txtID.Text = "";
-            txtNombre.Text = "";
-            txtDetalle.Text = "";
+            Limpiar();
         }
 
         protected void btnActualizar_Click(object sender, EventArgs e)
@@ -57,8 +62,21 @@ namespace B_Cientificas
                 {
                     lblMensaje.Text = "Rol Laboratorio  " + txtNombre.Text + " actualizado correctamente";
                     this.CargarRoles();
+                    Limpiar();
                 }
             }
+        }
+
+        protected void btnNuevo_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("CrearRolLaboratorio.aspx");
+        }
+
+        private void Limpiar()
+        {
+            txtID.Text = "";
+            txtNombre.Text = "";
+            txtDetalle.Text = "";
         }
     }
 }
