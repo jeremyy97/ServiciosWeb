@@ -20,8 +20,6 @@
                             <td>
                                 <div class="form-group">
                                     <asp:DropDownList ID="ddlProyectos" runat="server" class="form-control">
-                                        <asp:ListItem Value="0">Seleccione un Proyecto</asp:ListItem>
-                                        <asp:ListItem>Prueba</asp:ListItem>
                                     </asp:DropDownList>
                                 </div>
                             </td>
