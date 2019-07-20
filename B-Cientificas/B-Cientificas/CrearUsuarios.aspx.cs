@@ -35,7 +35,7 @@ namespace B_Cientificas
         private void CargarUsuarios()
         {
            
-            gvUsuarios.DataSource = logica.CargarUsuarios().Tables[0];
+            gvUsuarios.DataSource = logica.CargarUsuariosResu();
             
             gvUsuarios.DataBind();
             btnActualizar.Visible = false;

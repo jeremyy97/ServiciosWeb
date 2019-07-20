@@ -15,20 +15,19 @@
                         <fieldset>
                         <legend>Lista de Roles</legend>
                         <div class="form-group">
-                           <asp:CheckBoxList ID="cbxList" runat="server">
-                               <asp:ListItem Value="1">Administrador</asp:ListItem>
-                               <asp:ListItem Value="2">Seguridad</asp:ListItem>
-                               <asp:ListItem Value="3">Consecutivos</asp:ListItem>
-                               <asp:ListItem Value="4">Mantenimiento</asp:ListItem>
-                               <asp:ListItem Value="5">Consultas</asp:ListItem>
-                            </asp:CheckBoxList>
-                            <asp:CheckBox ID="cbx1" runat="server" Text="Prueba" />
+                          
+                            <asp:CheckBox ID="cbx1" runat="server" Text="Administrador"  /><br />
+                            <asp:CheckBox ID="cbx2" runat="server" Text="Seguridad" /><br />
+                            <asp:CheckBox ID="cbx3" runat="server" Text="Consecutivos" /><br />
+                            <asp:CheckBox ID="cbx4" runat="server" Text="Mantenimiento" /><br />
+                            <asp:CheckBox ID="cbx5" runat="server" Text="Consultas" />
+                       
                         </div>
 
                         <div class="form-group">
                           <label class="col-md-4 control-label" for=""></label>
                           <div class="col-md-4">
-                              <asp:Button ID="btnActualizar" class="btn btn-primary" runat="server" Text="Actualizar Roles" />
+                              <asp:Button ID="btnActualizar" class="btn btn-primary" runat="server" Text="Actualizar Roles" OnClick="btnActualizar_Click" />
                           </div>
                         </div>
 
