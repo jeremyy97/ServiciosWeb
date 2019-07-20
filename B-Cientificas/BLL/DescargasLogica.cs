@@ -38,7 +38,7 @@ namespace BLL
             }
             else
             {
-                sql = "sp_Lista_Error";
+                sql = "sp_Lista_Descarga";
                 ParamStruct[] parametros = new ParamStruct[1];
                 DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@Password", SqlDbType.VarChar, "password");
                 ds = DAL.DAL.ejecuta_dataset(cnn, sql, true, parametros, ref error, ref numeroError);
@@ -56,6 +56,7 @@ namespace BLL
                     resultados.Columns.Add("Codigo");
                     resultados.Columns.Add("Fecha y hora");
                     resultados.Columns.Add("Descripcion");
+                    resultados.Columns.Add("Usuario_Id");
                     foreach (DataRow row in dt.Rows)
                     {
                         if (fechaInicio != "" && fechaFinal != "")

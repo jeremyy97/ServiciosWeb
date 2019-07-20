@@ -174,6 +174,43 @@ namespace BLL
                 }
             }
         }
+
+        public Boolean InsertarRegistroBitacora(BitacoraLogica bitacora)
+        {
+            cnn = DAL.DAL.trae_conexion("BDConnectionString", ref error, ref numeroError);
+            if (cnn == null)
+            {
+                //insertar en la table de errores
+                HttpContext.Current.Response.Redirect("Error.aspx?error=" + numeroError.ToString() + "&men=" + error);
+                return false;
+            }
+            else
+            {
+                sql = "sp_Inserta_Bitacora";
+                ParamStruct[] parametros = new ParamStruct[7];
+                DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@Bitacora_id", SqlDbType.VarChar, bitacora.Bitacora_id);
+                DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 1, "@Fecha", SqlDbType.DateTime, bitacora.Fecha);
+                DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 2, "@Tipo", SqlDbType.VarChar, bitacora.Tipo);
+                DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 3, "@Descripcion", SqlDbType.VarChar, bitacora.Descripcion);
+                DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 4, "@RegistroDetallado", SqlDbType.VarChar, bitacora.RegistroDetallado);
+                DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 5, "@Usuario_Id", SqlDbType.VarChar, bitacora.Usuario_Id);
+                DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 6, "@Password", SqlDbType.VarChar, "password");
+                DAL.DAL.conectar(cnn, ref error, ref numeroError);
+                DAL.DAL.ejecuta_sqlcommand(cnn, sql, true, parametros, ref error, ref numeroError);
+                if (numeroError != 0)
+                {
+                    //insertar en la table de errores
+                    HttpContext.Current.Response.Redirect("Error.aspx?error=" + numeroError.ToString() + "&men=" + error);
+                    DAL.DAL.desconectar(cnn, ref error, ref numeroError);
+                    return false;
+                }
+                else
+                {
+                    DAL.DAL.desconectar(cnn, ref error, ref numeroError);
+                    return true;
+                }
+            }
+        }
         #endregion
     }
 }

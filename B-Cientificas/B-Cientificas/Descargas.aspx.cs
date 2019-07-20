@@ -20,6 +20,7 @@ namespace B_Cientificas
         {
             gvDescargas.DataSource = logica.CargarDescargas(txtFechaInicio.Text, txtFechaFinal.Text);
             gvDescargas.DataBind();
+            panelResultados.Visible = true;
         }
     }
 }
