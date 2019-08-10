@@ -97,6 +97,52 @@ namespace BLL
                 return null;
             }
         }
+
+
+        public Boolean CrearExperimento(BitacoraExperimentalLogica bitacora)
+        {
+            cnn = DAL.DAL.trae_conexion("BDConnectionString", ref error, ref numeroError);
+            if (cnn == null)
+            {
+                //insertar en la table de errores
+                HttpContext.Current.Response.Redirect("Error.aspx?error=" + numeroError.ToString() + "&men=" + error);
+                return false;
+            }
+            else
+            {
+                sql = "sp_Inserta_BitacoraExperimental";
+                ParamStruct[] parametros = new ParamStruct[15];
+                DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@Proyecto_id", SqlDbType.VarChar, bitacora.Experimento_id);
+                DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 1, "@Proyecto_id", SqlDbType.VarChar, bitacora.Experimento_id);
+                DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 2, "@Proyecto_id", SqlDbType.VarChar, bitacora.Experimento_id);
+                DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 3, "@Proyecto_id", SqlDbType.VarChar, bitacora.Experimento_id);
+                DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 4, "@Proyecto_id", SqlDbType.VarChar, bitacora.Experimento_id);
+                DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 5, "@Proyecto_id", SqlDbType.VarChar, bitacora.Experimento_id);
+                DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 6, "@Proyecto_id", SqlDbType.VarChar, bitacora.Experimento_id);
+                DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 7, "@Proyecto_id", SqlDbType.VarChar, bitacora.Experimento_id);
+                DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 8, "@Proyecto_id", SqlDbType.VarChar, bitacora.Experimento_id);
+                DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 9, "@Proyecto_id", SqlDbType.VarChar, bitacora.Experimento_id);
+                DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 10, "@Proyecto_id", SqlDbType.VarChar, bitacora.Experimento_id);
+                DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 11, "@Proyecto_id", SqlDbType.VarChar, bitacora.Experimento_id);
+                DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 12, "@Proyecto_id", SqlDbType.VarChar, bitacora.Experimento_id);
+                DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 13, "@Proyecto_id", SqlDbType.VarChar, bitacora.Experimento_id);
+                DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 14, "@Password", SqlDbType.VarChar, "password");
+                DAL.DAL.conectar(cnn, ref error, ref numeroError);
+                DAL.DAL.ejecuta_sqlcommand(cnn, sql, true, parametros, ref error, ref numeroError);
+                if (numeroError != 0)
+                {
+                    //insertar en la table de errores
+                    HttpContext.Current.Response.Redirect("Error.aspx?error=" + numeroError.ToString() + "&men=" + error);
+                    DAL.DAL.desconectar(cnn, ref error, ref numeroError);
+                    return false;
+                }
+                else
+                {
+                    DAL.DAL.desconectar(cnn, ref error, ref numeroError);
+                    return true;
+                }
+            }
+        }
         #endregion
     }
 }

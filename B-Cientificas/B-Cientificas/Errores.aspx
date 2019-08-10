@@ -60,27 +60,7 @@
                 <SortedDescendingCellStyle BackColor="#D4DFE1" />
                 <SortedDescendingHeaderStyle BackColor="#15524A" />
             </asp:GridView>
-                <table class="table ">
-                    <thead class="thead-dark">
-                        <tr>
-                            <th># Error</th>
-                            <th>Fecha y hora</th>
-                            <th>Mensaje</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>1/1/2019 11:59</td>
-                            <td>Ocurrió un error...</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>2/1/2019 11:59</td>
-                            <td>Ocurrió otro error...</td>
-                        </tr>
-                    </tbody>
-                </table>
+                
         </asp:Panel>
     </div>
 

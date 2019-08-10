@@ -85,8 +85,8 @@ namespace BLL
                         }
                         else if(fechaInicio != "" && fechaFinal != "")
                         {
-                            if (Convert.ToInt32(row[1].ToString()) >= Convert.ToInt32(fechaInicio) &&
-                                Convert.ToInt32(row[1].ToString()) <= Convert.ToInt32(fechaFinal))
+                            if (Convert.ToDateTime(row[1].ToString()) >= Convert.ToDateTime(fechaInicio) &&
+                                Convert.ToDateTime(row[1].ToString()) <= Convert.ToDateTime(fechaFinal))
                             {
                                 if (tipo == "Todas")
                                 {

@@ -88,36 +88,7 @@
                 <SortedDescendingCellStyle BackColor="#D4DFE1" />
                 <SortedDescendingHeaderStyle BackColor="#15524A" />
             </asp:GridView>
-                <table class="table ">
-                    <thead class="thead-dark">
-                        <tr>
-                            <th>Codigo</th>
-                            <th>Fecha y hora</th>
-                            <th>Descripcion</th>
-                            <th>Detalle Registro</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th>1</th>
-                            <td>1/1/2019 11:59</td>
-                            <td>Se modificó...</td>
-                            <td><a href="#">Ver Detalle</a></td>
-                        </tr>
-                        <tr>
-                            <th>1</th>
-                            <td>2/1/2019 11:59</td>
-                            <td>Se eliminó...</td>
-                            <td><a href="#">Ver Detalle</a></td>
-                        </tr>
-                        <tr>
-                            <th>1</th>
-                            <td>3/1/2019 11:59</td>
-                            <td>Se agregó...</td>
-                            <td><a href="#">Ver Detalle</a></td>
-                        </tr>
-                    </tbody>
-                </table>
+                
         </asp:Panel>
     </div>
 
