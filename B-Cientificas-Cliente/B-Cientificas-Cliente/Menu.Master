@@ -38,53 +38,42 @@
 
             <li class="nav-item">
               <a class="nav-link" href="Default.aspx">
-                <i class="fas fa-fw fa-circle"></i>
+                <i class="fas fa-fw fa-home"></i>
                 <span>Inicio</span></a>
             </li>
 
             <hr class="sidebar-divider"/>
 
             <div class="sidebar-heading">
-              Seguridad
+              Compras   
             </div>
 
-            <li class="nav-item">
-              <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                <i class="fas fa-fw fa-cog"></i>
-                <span>Usuarios</span>
-              </a>
-              <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                <div class="bg-white py-2 collapse-inner rounded">
-                
-                  <a class="collapse-item" href="CrearUsuarios.aspx">Usuarios</a>
-                  <a class="collapse-item" href="RolesSimples.aspx">Roles simples</a>
-                  <a class="collapse-item" href="RolesLaboratorio.aspx">Roles Laboratorio</a>
-                  <a class="collapse-item" href="Puestos.aspx">Puestos</a>
-                </div>
-              </div>
-            </li>
+            
 
             <li class="nav-item">
-              <a class="nav-link collapsed" href="TipoConsecutivos.aspx" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
-                <i class="fas fa-fw fa-list-ul"></i>
-                <span>Tipos de Consecutivo</span>
+              <a class="nav-link collapsed" href="Proyectos.aspx" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+                <i class="fas fa-fw fa-file-alt"></i>
+                <span>Proyectos</span>
               </a>
               
             </li>
              <li class="nav-item">
-              <a class="nav-link collapsed" href="Consecutivos.aspx"  data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
-                <i class="fas fa-fw fa-list-alt"></i>
-                <span>Consecutivos</span>
+              <a class="nav-link collapsed" href="Carrito.aspx"  data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+                <i class="fas fa-fw fa-cart-arrow-down"></i>
+                <span>Carrito</span>
               </a>
               
             </li>
+
+             </li>
              <li class="nav-item">
-              <a class="nav-link collapsed" href="NivelAcademico.aspx" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
-                <i class="fas fa-fw fa-list-alt"></i>
-                <span>Nivel Académico</span>
+              <a class="nav-link collapsed" href="VerCompras.aspx"  data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+                <i class="fas fa-fw fa-store"></i>
+                <span>Ver compras</span>
               </a>
               
             </li>
+            
 
             <hr class="sidebar-divider"/>
 
@@ -93,48 +82,15 @@
             </div>
 
             <li class="nav-item ">
-              <a class="nav-link collapsed" href="RamasCientificas.aspx" data-target="#collapseGeneral" aria-expanded="true" aria-controls="collapseUtilities">
-                <i class="fas fa-fw fa-list-ul"></i>
-                <span>Ramas Científicas</span>
+              <a class="nav-link collapsed" href="Tarjetas.aspx" data-target="#collapseGeneral" aria-expanded="true" aria-controls="collapseUtilities">
+                <i class="fas fa-fw fa-credit-card"></i>
+                <span>Tarjetas</span>
               </a>
             </li>
-            <li class="nav-item ">
-              <a class="nav-link collapsed" href="Proyectos.aspx"  data-target="#collapseGeneral" aria-expanded="true" aria-controls="collapseUtilities">
-                <i class="fas fa-fw fa-list-alt"></i>
-                <span>Proyectos</span>
-              </a>
-            </li>
-            <li class="nav-item ">
-              <a class="nav-link collapsed" href="BitacoraExperimental.aspx" data-target="#collapseGeneral" aria-expanded="true" aria-controls="collapseUtilities">
-                <i class="fas fa-fw fa-list-alt"></i>
-                <span>Bitácora Experimental</span>
-              </a>
-            </li>
-            <hr class="sidebar-divider"/>
-
-            <div class="sidebar-heading">
-              Consultas
-            </div>
+                        <hr class="sidebar-divider"/>
 
 
-            <li class="nav-item ">
-              <a class="nav-link" href="Bitacora.aspx"  data-target="#collapseConsulta" aria-expanded="true" aria-controls="collapsePages">
-                <i class="fas fa-fw fa-book-open"></i>
-                <span>Bitácora</span>
-              </a>
-            </li>
-            <li class="nav-item ">
-              <a class="nav-link" href="Errores.aspx"  data-target="#collapseConsulta" aria-expanded="true" aria-controls="collapsePages">
-                <i class="fas fa-fw fa-exclamation-triangle"></i>
-                <span>Errores</span>
-              </a>
-            </li>
-            <li class="nav-item ">
-              <a class="nav-link" href="Descargas.aspx"  data-target="#collapseConsulta" aria-expanded="true" aria-controls="collapsePages">
-                <i class="fas fa-fw fa-download"></i>
-                <span>Descargas</span>
-              </a>
-            </li>
+            
           </ul>
 
         <div id="content-wrapper" class="d-flex flex-column">
