@@ -1,0 +1,528 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="BCientificasClienteModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="EasyPay">
+          <Key>
+            <PropertyRef Name="EasyPay_Id" />
+          </Key>
+          <Property Name="EasyPay_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Num_Cuenta" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="Codigo_Seguridad" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="Contrasena" Type="varchar" MaxLength="400" Nullable="false" />
+          <Property Name="Saldo" Type="varchar" MaxLength="400" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TarjetaCredito">
+          <Key>
+            <PropertyRef Name="TarjetaCredito_id" />
+          </Key>
+          <Property Name="TarjetaCredito_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NumeroTarjeta" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="NombreTarjeta" Type="varchar" MaxLength="800" Nullable="false" />
+          <Property Name="MesVencimiento" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="AnnoVencimiento" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="CVV" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="TipoTarjeta_Id" Type="int" Nullable="false" />
+          <Property Name="DebitoCredito" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="Saldo" Type="varchar" MaxLength="400" Nullable="false" />
+          <Property Name="Limite" Type="varchar" MaxLength="400" />
+        </EntityType>
+        <EntityType Name="TransaccionEasyPay">
+          <Key>
+            <PropertyRef Name="Transaccion_Id" />
+          </Key>
+          <Property Name="Transaccion_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Fecha" Type="datetime" Nullable="false" />
+          <Property Name="Motivo" Type="varchar" MaxLength="400" Nullable="false" />
+          <Property Name="Resultado" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="EasyPay_Id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TransaccionTarjeta">
+          <Key>
+            <PropertyRef Name="Transaccion_Id" />
+          </Key>
+          <Property Name="Transaccion_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Fecha" Type="datetime" Nullable="false" />
+          <Property Name="Motivo" Type="varchar" MaxLength="400" Nullable="false" />
+          <Property Name="Resultado" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="Tarjeta_Id" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="transaccioneasypay_easypay_fk">
+          <End Role="EasyPay" Type="Self.EasyPay" Multiplicity="1" />
+          <End Role="TransaccionEasyPay" Type="Self.TransaccionEasyPay" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EasyPay">
+              <PropertyRef Name="EasyPay_Id" />
+            </Principal>
+            <Dependent Role="TransaccionEasyPay">
+              <PropertyRef Name="EasyPay_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="transacciontarjeta_tarjeta_fk">
+          <End Role="TarjetaCredito" Type="Self.TarjetaCredito" Multiplicity="1" />
+          <End Role="TransaccionTarjeta" Type="Self.TransaccionTarjeta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TarjetaCredito">
+              <PropertyRef Name="TarjetaCredito_id" />
+            </Principal>
+            <Dependent Role="TransaccionTarjeta">
+              <PropertyRef Name="Tarjeta_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="sp_Actualiza_EasyPay" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="EasyPay_Id" Type="int" Mode="In" />
+          <Parameter Name="Num_Cuenta" Type="varchar" Mode="In" />
+          <Parameter Name="Codigo_Seguridad" Type="varchar" Mode="In" />
+          <Parameter Name="Contrasena" Type="varchar" Mode="In" />
+          <Parameter Name="Saldo" Type="varchar" Mode="In" />
+          <Parameter Name="Password" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_Actualiza_EasyPay_Saldo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="EasyPay_id" Type="int" Mode="In" />
+          <Parameter Name="Saldo" Type="varchar" Mode="In" />
+          <Parameter Name="Password" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_Actualiza_TarjetaCredito" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="TarjetaCredito_id" Type="int" Mode="In" />
+          <Parameter Name="NumeroTarjeta" Type="varchar" Mode="In" />
+          <Parameter Name="NombreTarjeta" Type="varchar" Mode="In" />
+          <Parameter Name="MesVencimiento" Type="varchar" Mode="In" />
+          <Parameter Name="AnnoVencimiento" Type="varchar" Mode="In" />
+          <Parameter Name="CVV" Type="varchar" Mode="In" />
+          <Parameter Name="TipoTarjeta_Id" Type="int" Mode="In" />
+          <Parameter Name="DebitoCredito" Type="varchar" Mode="In" />
+          <Parameter Name="Saldo" Type="varchar" Mode="In" />
+          <Parameter Name="Limite" Type="varchar" Mode="In" />
+          <Parameter Name="Password" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_Actualiza_TarjetaCredito_Saldo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="TarjetaCredito_id" Type="int" Mode="In" />
+          <Parameter Name="Saldo" Type="varchar" Mode="In" />
+          <Parameter Name="Password" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_Carga_EasyPay" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Password" Type="varchar" Mode="In" />
+          <Parameter Name="EasyPay_Id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_Carga_TarjetaCredito" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Password" Type="varchar" Mode="In" />
+          <Parameter Name="TarjetaCredito_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_Carga_TransaccionEasyPay" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Password" Type="varchar" Mode="In" />
+          <Parameter Name="Transaccion_Id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_Carga_TransaccionTarjeta" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Password" Type="varchar" Mode="In" />
+          <Parameter Name="Transaccion_Id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_Inserta_TransaccionEasyPay" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Fecha" Type="datetime" Mode="In" />
+          <Parameter Name="Motivo" Type="varchar" Mode="In" />
+          <Parameter Name="Resultado" Type="varchar" Mode="In" />
+          <Parameter Name="EasyPay_Id" Type="int" Mode="In" />
+          <Parameter Name="Password" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_Inserta_TransaccionTarjeta" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Fecha" Type="datetime" Mode="In" />
+          <Parameter Name="Motivo" Type="varchar" Mode="In" />
+          <Parameter Name="Resultado" Type="varchar" Mode="In" />
+          <Parameter Name="Tarjeta_id" Type="int" Mode="In" />
+          <Parameter Name="Password" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_Lista_EasyPay" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Password" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_Lista_TarjetaCredito" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Password" Type="varchar" Mode="In" />
+        </Function>
+        <EntityContainer Name="BCientificasClienteModelStoreContainer">
+          <EntitySet Name="EasyPay" EntityType="Self.EasyPay" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TarjetaCredito" EntityType="Self.TarjetaCredito" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TransaccionEasyPay" EntityType="Self.TransaccionEasyPay" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TransaccionTarjeta" EntityType="Self.TransaccionTarjeta" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="transaccioneasypay_easypay_fk" Association="Self.transaccioneasypay_easypay_fk">
+            <End Role="EasyPay" EntitySet="EasyPay" />
+            <End Role="TransaccionEasyPay" EntitySet="TransaccionEasyPay" />
+          </AssociationSet>
+          <AssociationSet Name="transacciontarjeta_tarjeta_fk" Association="Self.transacciontarjeta_tarjeta_fk">
+            <End Role="TarjetaCredito" EntitySet="TarjetaCredito" />
+            <End Role="TransaccionTarjeta" EntitySet="TransaccionTarjeta" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BCientificasClienteModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="EasyPay">
+          <Key>
+            <PropertyRef Name="EasyPay_Id" />
+          </Key>
+          <Property Name="EasyPay_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Num_Cuenta" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Codigo_Seguridad" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Contrasena" Type="String" MaxLength="400" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Saldo" Type="String" MaxLength="400" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="TransaccionEasyPay" Relationship="Self.transaccioneasypay_easypay_fk" FromRole="EasyPay" ToRole="TransaccionEasyPay" />
+        </EntityType>
+        <EntityType Name="TarjetaCredito">
+          <Key>
+            <PropertyRef Name="TarjetaCredito_id" />
+          </Key>
+          <Property Name="TarjetaCredito_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NumeroTarjeta" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NombreTarjeta" Type="String" MaxLength="800" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MesVencimiento" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="AnnoVencimiento" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CVV" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TipoTarjeta_Id" Type="Int32" Nullable="false" />
+          <Property Name="DebitoCredito" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Saldo" Type="String" MaxLength="400" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Limite" Type="String" MaxLength="400" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="TransaccionTarjeta" Relationship="Self.transacciontarjeta_tarjeta_fk" FromRole="TarjetaCredito" ToRole="TransaccionTarjeta" />
+        </EntityType>
+        <EntityType Name="TransaccionEasyPay">
+          <Key>
+            <PropertyRef Name="Transaccion_Id" />
+          </Key>
+          <Property Name="Transaccion_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Motivo" Type="String" MaxLength="400" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Resultado" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EasyPay_Id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="EasyPay" Relationship="Self.transaccioneasypay_easypay_fk" FromRole="TransaccionEasyPay" ToRole="EasyPay" />
+        </EntityType>
+        <EntityType Name="TransaccionTarjeta">
+          <Key>
+            <PropertyRef Name="Transaccion_Id" />
+          </Key>
+          <Property Name="Transaccion_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Motivo" Type="String" MaxLength="400" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Resultado" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Tarjeta_Id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="TarjetaCredito" Relationship="Self.transacciontarjeta_tarjeta_fk" FromRole="TransaccionTarjeta" ToRole="TarjetaCredito" />
+        </EntityType>
+        <Association Name="transaccioneasypay_easypay_fk">
+          <End Role="EasyPay" Type="Self.EasyPay" Multiplicity="1" />
+          <End Role="TransaccionEasyPay" Type="Self.TransaccionEasyPay" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EasyPay">
+              <PropertyRef Name="EasyPay_Id" />
+            </Principal>
+            <Dependent Role="TransaccionEasyPay">
+              <PropertyRef Name="EasyPay_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="transacciontarjeta_tarjeta_fk">
+          <End Role="TarjetaCredito" Type="Self.TarjetaCredito" Multiplicity="1" />
+          <End Role="TransaccionTarjeta" Type="Self.TransaccionTarjeta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TarjetaCredito">
+              <PropertyRef Name="TarjetaCredito_id" />
+            </Principal>
+            <Dependent Role="TransaccionTarjeta">
+              <PropertyRef Name="Tarjeta_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="BCientificasClienteEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="EasyPay" EntityType="Self.EasyPay" />
+          <EntitySet Name="TarjetaCredito" EntityType="Self.TarjetaCredito" />
+          <EntitySet Name="TransaccionEasyPay" EntityType="Self.TransaccionEasyPay" />
+          <EntitySet Name="TransaccionTarjeta" EntityType="Self.TransaccionTarjeta" />
+          <AssociationSet Name="transaccioneasypay_easypay_fk" Association="Self.transaccioneasypay_easypay_fk">
+            <End Role="EasyPay" EntitySet="EasyPay" />
+            <End Role="TransaccionEasyPay" EntitySet="TransaccionEasyPay" />
+          </AssociationSet>
+          <AssociationSet Name="transacciontarjeta_tarjeta_fk" Association="Self.transacciontarjeta_tarjeta_fk">
+            <End Role="TarjetaCredito" EntitySet="TarjetaCredito" />
+            <End Role="TransaccionTarjeta" EntitySet="TransaccionTarjeta" />
+          </AssociationSet>
+          <FunctionImport Name="sp_Carga_EasyPay" ReturnType="Collection(BCientificasClienteModel.sp_Carga_EasyPay_Result)">
+            <Parameter Name="Password" Mode="In" Type="String" />
+            <Parameter Name="EasyPay_Id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_Carga_TarjetaCredito" ReturnType="Collection(BCientificasClienteModel.sp_Carga_TarjetaCredito_Result)">
+            <Parameter Name="Password" Mode="In" Type="String" />
+            <Parameter Name="TarjetaCredito_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_Carga_TransaccionEasyPay" ReturnType="Collection(BCientificasClienteModel.sp_Carga_TransaccionEasyPay_Result)">
+            <Parameter Name="Password" Mode="In" Type="String" />
+            <Parameter Name="Transaccion_Id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_Carga_TransaccionTarjeta" ReturnType="Collection(BCientificasClienteModel.sp_Carga_TransaccionTarjeta_Result)">
+            <Parameter Name="Password" Mode="In" Type="String" />
+            <Parameter Name="Transaccion_Id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_Inserta_TransaccionEasyPay">
+            <Parameter Name="Fecha" Mode="In" Type="DateTime" />
+            <Parameter Name="Motivo" Mode="In" Type="String" />
+            <Parameter Name="Resultado" Mode="In" Type="String" />
+            <Parameter Name="EasyPay_Id" Mode="In" Type="Int32" />
+            <Parameter Name="Password" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_Inserta_TransaccionTarjeta">
+            <Parameter Name="Fecha" Mode="In" Type="DateTime" />
+            <Parameter Name="Motivo" Mode="In" Type="String" />
+            <Parameter Name="Resultado" Mode="In" Type="String" />
+            <Parameter Name="Tarjeta_id" Mode="In" Type="Int32" />
+            <Parameter Name="Password" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_Lista_EasyPay" ReturnType="Collection(BCientificasClienteModel.sp_Lista_EasyPay_Result)">
+          <Parameter Name="Password" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_Lista_TarjetaCredito" ReturnType="Collection(BCientificasClienteModel.sp_Lista_TarjetaCredito_Result)">
+          <Parameter Name="Password" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_Actualiza_EasyPay">
+            <Parameter Name="EasyPay_Id" Mode="In" Type="Int32" />
+            <Parameter Name="Num_Cuenta" Mode="In" Type="String" />
+            <Parameter Name="Codigo_Seguridad" Mode="In" Type="String" />
+            <Parameter Name="Contrasena" Mode="In" Type="String" />
+            <Parameter Name="Saldo" Mode="In" Type="String" />
+            <Parameter Name="Password" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_Actualiza_TarjetaCredito">
+            <Parameter Name="TarjetaCredito_id" Mode="In" Type="Int32" />
+            <Parameter Name="NumeroTarjeta" Mode="In" Type="String" />
+            <Parameter Name="NombreTarjeta" Mode="In" Type="String" />
+            <Parameter Name="MesVencimiento" Mode="In" Type="String" />
+            <Parameter Name="AnnoVencimiento" Mode="In" Type="String" />
+            <Parameter Name="CVV" Mode="In" Type="String" />
+            <Parameter Name="TipoTarjeta_Id" Mode="In" Type="Int32" />
+            <Parameter Name="DebitoCredito" Mode="In" Type="String" />
+            <Parameter Name="Saldo" Mode="In" Type="String" />
+            <Parameter Name="Limite" Mode="In" Type="String" />
+            <Parameter Name="Password" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_Actualiza_TarjetaCredito_Saldo">
+            <Parameter Name="TarjetaCredito_id" Mode="In" Type="Int32" />
+            <Parameter Name="Saldo" Mode="In" Type="String" />
+            <Parameter Name="Password" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_Actualiza_EasyPay_Saldo">
+            <Parameter Name="EasyPay_id" Mode="In" Type="Int32" />
+            <Parameter Name="Saldo" Mode="In" Type="String" />
+            <Parameter Name="Password" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="sp_Carga_EasyPay_Result">
+          <Property Type="Int32" Name="EasyPay_Id" Nullable="false" />
+          <Property Type="String" Name="Num_Cuenta" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="Codigo_Seguridad" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="Contrasena" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="Saldo" Nullable="true" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="sp_Carga_TarjetaCredito_Result">
+          <Property Type="Int32" Name="TarjetaCredito_id" Nullable="false" />
+          <Property Type="String" Name="NumeroTarjeta" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="NombreTarjeta" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="MesVencimiento" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="AnnoVencimiento" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="CVV" Nullable="true" MaxLength="30" />
+          <Property Type="Int32" Name="TipoTarjeta_Id" Nullable="false" />
+          <Property Type="String" Name="DebitoCredito" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="Saldo" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="Limite" Nullable="true" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="sp_Carga_TransaccionEasyPay_Result">
+          <Property Type="Int32" Name="Transaccion_Id" Nullable="false" />
+          <Property Type="DateTime" Name="Fecha" Nullable="false" Precision="23" />
+          <Property Type="String" Name="Motivo" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="Resultado" Nullable="true" MaxLength="30" />
+          <Property Type="Int32" Name="EasyPay_Id" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="sp_Carga_TransaccionTarjeta_Result">
+          <Property Type="Int32" Name="Transaccion_Id" Nullable="false" />
+          <Property Type="DateTime" Name="Fecha" Nullable="false" Precision="23" />
+          <Property Type="String" Name="Motivo" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="Resultado" Nullable="true" MaxLength="30" />
+          <Property Type="Int32" Name="Tarjeta_Id" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="sp_Lista_EasyPay_Result">
+          <Property Type="Int32" Name="EasyPay_Id" Nullable="false" />
+          <Property Type="String" Name="Num_Cuenta" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="Codigo_Seguridad" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="Contrasena" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="Saldo" Nullable="true" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="sp_Lista_TarjetaCredito_Result">
+          <Property Type="Int32" Name="TarjetaCredito_id" Nullable="false" />
+          <Property Type="String" Name="NumeroTarjeta" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="NombreTarjeta" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="MesVencimiento" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="AnnoVencimiento" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="CVV" Nullable="true" MaxLength="30" />
+          <Property Type="Int32" Name="TipoTarjeta_Id" Nullable="false" />
+          <Property Type="String" Name="DebitoCredito" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="Saldo" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="Limite" Nullable="true" MaxLength="30" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BCientificasClienteModelStoreContainer" CdmEntityContainer="BCientificasClienteEntities">
+          <EntitySetMapping Name="EasyPay">
+            <EntityTypeMapping TypeName="BCientificasClienteModel.EasyPay">
+              <MappingFragment StoreEntitySet="EasyPay">
+                <ScalarProperty Name="EasyPay_Id" ColumnName="EasyPay_Id" />
+                <ScalarProperty Name="Num_Cuenta" ColumnName="Num_Cuenta" />
+                <ScalarProperty Name="Codigo_Seguridad" ColumnName="Codigo_Seguridad" />
+                <ScalarProperty Name="Contrasena" ColumnName="Contrasena" />
+                <ScalarProperty Name="Saldo" ColumnName="Saldo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TarjetaCredito">
+            <EntityTypeMapping TypeName="BCientificasClienteModel.TarjetaCredito">
+              <MappingFragment StoreEntitySet="TarjetaCredito">
+                <ScalarProperty Name="TarjetaCredito_id" ColumnName="TarjetaCredito_id" />
+                <ScalarProperty Name="NumeroTarjeta" ColumnName="NumeroTarjeta" />
+                <ScalarProperty Name="NombreTarjeta" ColumnName="NombreTarjeta" />
+                <ScalarProperty Name="MesVencimiento" ColumnName="MesVencimiento" />
+                <ScalarProperty Name="AnnoVencimiento" ColumnName="AnnoVencimiento" />
+                <ScalarProperty Name="CVV" ColumnName="CVV" />
+                <ScalarProperty Name="TipoTarjeta_Id" ColumnName="TipoTarjeta_Id" />
+                <ScalarProperty Name="DebitoCredito" ColumnName="DebitoCredito" />
+                <ScalarProperty Name="Saldo" ColumnName="Saldo" />
+                <ScalarProperty Name="Limite" ColumnName="Limite" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TransaccionEasyPay">
+            <EntityTypeMapping TypeName="BCientificasClienteModel.TransaccionEasyPay">
+              <MappingFragment StoreEntitySet="TransaccionEasyPay">
+                <ScalarProperty Name="Transaccion_Id" ColumnName="Transaccion_Id" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="Motivo" ColumnName="Motivo" />
+                <ScalarProperty Name="Resultado" ColumnName="Resultado" />
+                <ScalarProperty Name="EasyPay_Id" ColumnName="EasyPay_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TransaccionTarjeta">
+            <EntityTypeMapping TypeName="BCientificasClienteModel.TransaccionTarjeta">
+              <MappingFragment StoreEntitySet="TransaccionTarjeta">
+                <ScalarProperty Name="Transaccion_Id" ColumnName="Transaccion_Id" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="Motivo" ColumnName="Motivo" />
+                <ScalarProperty Name="Resultado" ColumnName="Resultado" />
+                <ScalarProperty Name="Tarjeta_Id" ColumnName="Tarjeta_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="sp_Carga_EasyPay" FunctionName="BCientificasClienteModel.Store.sp_Carga_EasyPay">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BCientificasClienteModel.sp_Carga_EasyPay_Result">
+                <ScalarProperty Name="EasyPay_Id" ColumnName="EasyPay_Id" />
+                <ScalarProperty Name="Num_Cuenta" ColumnName="Num_Cuenta" />
+                <ScalarProperty Name="Codigo_Seguridad" ColumnName="Codigo_Seguridad" />
+                <ScalarProperty Name="Contrasena" ColumnName="Contrasena" />
+                <ScalarProperty Name="Saldo" ColumnName="Saldo" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_Carga_TarjetaCredito" FunctionName="BCientificasClienteModel.Store.sp_Carga_TarjetaCredito">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BCientificasClienteModel.sp_Carga_TarjetaCredito_Result">
+                <ScalarProperty Name="TarjetaCredito_id" ColumnName="TarjetaCredito_id" />
+                <ScalarProperty Name="NumeroTarjeta" ColumnName="NumeroTarjeta" />
+                <ScalarProperty Name="NombreTarjeta" ColumnName="NombreTarjeta" />
+                <ScalarProperty Name="MesVencimiento" ColumnName="MesVencimiento" />
+                <ScalarProperty Name="AnnoVencimiento" ColumnName="AnnoVencimiento" />
+                <ScalarProperty Name="CVV" ColumnName="CVV" />
+                <ScalarProperty Name="TipoTarjeta_Id" ColumnName="TipoTarjeta_Id" />
+                <ScalarProperty Name="DebitoCredito" ColumnName="DebitoCredito" />
+                <ScalarProperty Name="Saldo" ColumnName="Saldo" />
+                <ScalarProperty Name="Limite" ColumnName="Limite" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_Carga_TransaccionEasyPay" FunctionName="BCientificasClienteModel.Store.sp_Carga_TransaccionEasyPay">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BCientificasClienteModel.sp_Carga_TransaccionEasyPay_Result">
+                <ScalarProperty Name="Transaccion_Id" ColumnName="Transaccion_Id" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="Motivo" ColumnName="Motivo" />
+                <ScalarProperty Name="Resultado" ColumnName="Resultado" />
+                <ScalarProperty Name="EasyPay_Id" ColumnName="EasyPay_Id" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_Carga_TransaccionTarjeta" FunctionName="BCientificasClienteModel.Store.sp_Carga_TransaccionTarjeta">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BCientificasClienteModel.sp_Carga_TransaccionTarjeta_Result">
+                <ScalarProperty Name="Transaccion_Id" ColumnName="Transaccion_Id" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="Motivo" ColumnName="Motivo" />
+                <ScalarProperty Name="Resultado" ColumnName="Resultado" />
+                <ScalarProperty Name="Tarjeta_Id" ColumnName="Tarjeta_Id" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_Inserta_TransaccionEasyPay" FunctionName="BCientificasClienteModel.Store.sp_Inserta_TransaccionEasyPay" />
+          <FunctionImportMapping FunctionImportName="sp_Inserta_TransaccionTarjeta" FunctionName="BCientificasClienteModel.Store.sp_Inserta_TransaccionTarjeta" />
+          <FunctionImportMapping FunctionImportName="sp_Lista_EasyPay" FunctionName="BCientificasClienteModel.Store.sp_Lista_EasyPay">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BCientificasClienteModel.sp_Lista_EasyPay_Result">
+                <ScalarProperty Name="EasyPay_Id" ColumnName="EasyPay_Id" />
+                <ScalarProperty Name="Num_Cuenta" ColumnName="Num_Cuenta" />
+                <ScalarProperty Name="Codigo_Seguridad" ColumnName="Codigo_Seguridad" />
+                <ScalarProperty Name="Contrasena" ColumnName="Contrasena" />
+                <ScalarProperty Name="Saldo" ColumnName="Saldo" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_Lista_TarjetaCredito" FunctionName="BCientificasClienteModel.Store.sp_Lista_TarjetaCredito">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BCientificasClienteModel.sp_Lista_TarjetaCredito_Result">
+                <ScalarProperty Name="TarjetaCredito_id" ColumnName="TarjetaCredito_id" />
+                <ScalarProperty Name="NumeroTarjeta" ColumnName="NumeroTarjeta" />
+                <ScalarProperty Name="NombreTarjeta" ColumnName="NombreTarjeta" />
+                <ScalarProperty Name="MesVencimiento" ColumnName="MesVencimiento" />
+                <ScalarProperty Name="AnnoVencimiento" ColumnName="AnnoVencimiento" />
+                <ScalarProperty Name="CVV" ColumnName="CVV" />
+                <ScalarProperty Name="TipoTarjeta_Id" ColumnName="TipoTarjeta_Id" />
+                <ScalarProperty Name="DebitoCredito" ColumnName="DebitoCredito" />
+                <ScalarProperty Name="Saldo" ColumnName="Saldo" />
+                <ScalarProperty Name="Limite" ColumnName="Limite" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_Actualiza_EasyPay" FunctionName="BCientificasClienteModel.Store.sp_Actualiza_EasyPay" />
+          <FunctionImportMapping FunctionImportName="sp_Actualiza_TarjetaCredito" FunctionName="BCientificasClienteModel.Store.sp_Actualiza_TarjetaCredito" />
+          <FunctionImportMapping FunctionImportName="sp_Actualiza_TarjetaCredito_Saldo" FunctionName="BCientificasClienteModel.Store.sp_Actualiza_TarjetaCredito_Saldo" />
+          <FunctionImportMapping FunctionImportName="sp_Actualiza_EasyPay_Saldo" FunctionName="BCientificasClienteModel.Store.sp_Actualiza_EasyPay_Saldo" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

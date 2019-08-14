@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2042
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "B-Cientificas-WS", "B-Cientificas-WS\B-Cientificas-WS.csproj", "{DD86A950-F7A8-498D-B0F0-74A9AF7CDB4F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConexionBD", "ConexionBD\ConexionBD.csproj", "{00D19E90-510B-442C-85AA-49F8B6E8BF07}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DD86A950-F7A8-498D-B0F0-74A9AF7CDB4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD86A950-F7A8-498D-B0F0-74A9AF7CDB4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD86A950-F7A8-498D-B0F0-74A9AF7CDB4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD86A950-F7A8-498D-B0F0-74A9AF7CDB4F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00D19E90-510B-442C-85AA-49F8B6E8BF07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00D19E90-510B-442C-85AA-49F8B6E8BF07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00D19E90-510B-442C-85AA-49F8B6E8BF07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00D19E90-510B-442C-85AA-49F8B6E8BF07}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6A55DE4B-BB56-44FE-BD64-2DEAD40D97A1}
+	EndGlobalSection
+EndGlobal
