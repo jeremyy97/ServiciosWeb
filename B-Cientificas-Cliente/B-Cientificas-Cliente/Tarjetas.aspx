@@ -3,36 +3,25 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container">
-        <asp:Panel ID="Panel2" runat="server">
-            <fieldset>
-                <legend>Administrar Tarjetas</legend>
-                <asp:GridView ID="GridView1" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None">
-                    <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
-                    <EditRowStyle BackColor="#999999" />
-                    <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
-                    <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
-                    <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
-                    <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
-                    <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
-                    <SortedAscendingCellStyle BackColor="#E9E7E2" />
-                    <SortedAscendingHeaderStyle BackColor="#506C8C" />
-                    <SortedDescendingCellStyle BackColor="#FFFDF8" />
-                    <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
-                </asp:GridView>
-                <!-- Button -->
-                <div class="form-group">
-                    <label class="col-md-4 control-label" for="buscar"></label>
-                    <div class="col-md-4">
-                        <asp:Button ID="btnNuevaTarjeta" class="btn btn-primary" runat="server" Text="Agregar una nueva tarjeta" />
-                    </div>
-                </div>
-            </fieldset>
-        </asp:Panel>
+       
         <asp:Panel ID="Panel1" class="card" runat="server">
             <fieldset>
                 <!-- Form Name -->
-                <legend>Administrar Tarjetas</legend>
+                <legend>Actualizar Tarjetas</legend>
                     <table>
+                        <tr>
+                            <td>
+                                <label>ID: </label>
+                            </td>
+                            <td colspan="2">
+                                <div class="form-group">
+                                    <div class="col-md-12">
+                                        <asp:TextBox ID="txtId" runat="server" class="form-control" ReadOnly="True"></asp:TextBox>
+                                    </div>
+                                </div>
+                            </td>
+                        
+                        </tr>
                         <tr>
                             <td>
                                 <label>Numero de tarjeta: </label>
@@ -53,7 +42,7 @@
                             <td>
                                 <div class="form-group">
                                     <div class="col-md-6">
-                                        <asp:TextBox ID="txtAutor" runat="server" class="form-control input-md-6"></asp:TextBox>
+                                        <asp:TextBox ID="txtMes" runat="server" class="form-control input-md-6"></asp:TextBox>
                                     </div>
                                 </div>
                             </td>
@@ -63,7 +52,7 @@
                             <td>
                                 <div class="form-group">
                                     <div class="col-md-6">
-                                        <asp:TextBox ID="txtNivelEducativo" runat="server" class="form-control input-md-6"></asp:TextBox>
+                                        <asp:TextBox ID="txtAnno" runat="server" class="form-control input-md-6"></asp:TextBox>
                                     </div>
                                 </div>
                             </td>
@@ -75,7 +64,7 @@
                             <td colspan="2">
                                 <div class="form-group">
                                     <div class="col-md-12">
-                                        <asp:TextBox ID="fechaInicio" runat="server" class="form-control input-md-12"></asp:TextBox>
+                                        <asp:TextBox ID="txtNombre" runat="server" class="form-control input-md-12"></asp:TextBox>
                                     </div>
                                 </div>
                             </td>
@@ -87,7 +76,7 @@
                             <td>
                                 <div class="form-group">
                                     <div class="col-md-6">
-                                        <asp:TextBox ID="txtNombreProyecto" runat="server" class="form-control input-md-6"></asp:TextBox>
+                                        <asp:TextBox ID="txtCVV" runat="server" class="form-control input-md-6"></asp:TextBox>
                                     </div>
                                 </div>
                             </td>
@@ -98,12 +87,48 @@
                     <div class="form-group">
                         <label class="col-md-4 control-label" for="buscar"></label>
                         <div class="col-md-4">
-                            <asp:Button ID="btnRegistrarTarjeta" class="btn btn-primary" runat="server" Text="GuardarTarjeta" />
+                            <asp:Button ID="btnActualizar" class="btn btn-primary" runat="server" Text="Actualizar Tarjeta" OnClick="btnActualizar_Click" />
+                            <asp:Button ID="btnEliminar" class="btn btn-primary" runat="server" Text="Eliminar Tarjeta" />
                         </div>
                     </div>
 
             </fieldset>
 
+        </asp:Panel>
+
+         <asp:Panel ID="Panel2" runat="server">
+            <fieldset>
+                <legend>Listado Tarjetas</legend>
+                <asp:GridView class="table" ID="gvTarjetas" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" AutoGenerateColumns="false" OnRowCommand="gvTarjetas_RowCommand">
+                    <AlternatingRowStyle BackColor="White" />
+                    <Columns>
+                        <asp:ButtonField Text="Editar" />
+                        <asp:BoundField DataField="TarjetaCredito_Id" HeaderText="ID" SortExpression="TarjetaCredito_Id" />
+                        <asp:BoundField DataField="NumeroTarjeta" HeaderText="Numero Tarjeta" SortExpression="NumeroTarjeta" />
+                        <asp:BoundField DataField="NombreTarjeta" HeaderText="Nombre Tarjeta" SortExpression="NombreTarjeta" />
+                        <asp:BoundField DataField="MesVencimiento" HeaderText="Mes Vencimiento" SortExpression="MesVencimiento" />
+                        <asp:BoundField DataField="AnnoVencimiento" HeaderText="Año Vencimiento" SortExpression="AnnoVencimiento" />
+
+                    </Columns>
+                    <EditRowStyle BackColor="#7C6F57" />
+                    <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
+                    <HeaderStyle BackColor="#0067c6" Font-Bold="True" ForeColor="White" />
+                    <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
+                    <RowStyle BackColor="#E3EAEB"  />
+                    <SelectedRowStyle BackColor="#C5BBAF" Font-Bold="True" ForeColor="#333333" />
+                    <SortedAscendingCellStyle BackColor="#F8FAFA" />
+                    <SortedAscendingHeaderStyle BackColor="#24526b" />
+                    <SortedDescendingCellStyle BackColor="#D4DFE1" />
+                    <SortedDescendingHeaderStyle BackColor="#15524A" />
+                </asp:GridView>
+                <!-- Button -->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="buscar"></label>
+                    <div class="col-md-4">
+                        <asp:Button ID="btnNuevaTarjeta" class="btn btn-primary" runat="server" Text="Agregar una nueva tarjeta" OnClick="btnNuevaTarjeta_Click" />
+                    </div>
+                </div>
+            </fieldset>
         </asp:Panel>
     
     </div>

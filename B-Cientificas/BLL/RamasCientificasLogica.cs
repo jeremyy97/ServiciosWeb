@@ -15,6 +15,8 @@ namespace BLL
         #region propiedades
         public string RamaCientifica_Id { set; get; }
         public string Nombre { set; get; }
+        
+
         #endregion
 
         SqlConnection cnn;

@@ -1,0 +1,9 @@
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\BLL\obj\Debug\BLL.csprojAssemblyReference.cache
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\BLL\bin\Debug\BLL.dll
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\BLL\bin\Debug\BLL.pdb
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\BLL\bin\Debug\DAL.dll
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\BLL\bin\Debug\DAL.pdb
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\BLL\obj\Debug\BLL.csproj.CopyComplete
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\BLL\obj\Debug\BLL.dll
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\BLL\obj\Debug\BLL.pdb

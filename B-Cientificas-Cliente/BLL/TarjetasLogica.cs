@@ -24,6 +24,7 @@ namespace BLL
         public string DebitoCredito { get; set; }
         public string Saldo { get; set; }
         public string Limite { get; set; }
+        
         #endregion
 
         #region Var
@@ -37,15 +38,18 @@ namespace BLL
 
         #region Methods
 
+
+
+
         //LISTAR
-        public DataTable CargarTarjetas()
+        public int BuscarIDTarjeta(string numTarjeta)
         {
             cnn = DAL.DAL.trae_conexion("BDClienteConnectionString", ref error, ref numeroError);
             if (cnn == null)
             {
                 //insertar en la table de errores
                 HttpContext.Current.Response.Redirect("Error.aspx?error=" + numeroError.ToString() + "&men=" + error);
-                return null;
+                return 0;
             }
             else
             {
@@ -57,28 +61,26 @@ namespace BLL
                 {
                     //insertar en la table de errores
                     HttpContext.Current.Response.Redirect("Error.aspx?error=" + numeroError.ToString() + "&men=" + error);
-                    return null;
+                    return 0;
                 }
                 else
                 {
-                    DataTable dt = new DataTable();
-                    dt = ds.Tables[0];
-                    dt.Columns[0].ColumnName = "TarjetaCredito_id";
-                    dt.Columns[1].ColumnName = "NumeroTarjeta";
-                    dt.Columns[2].ColumnName = "NombreTarjeta";
-                    dt.Columns[3].ColumnName = "MesVencimiento";
-                    dt.Columns[4].ColumnName = "AnnoVencimiento";
-                    dt.Columns[5].ColumnName = "CVV";
-                    dt.Columns[6].ColumnName = "TipoTarjeta_id";
-                    dt.Columns[7].ColumnName = "DebitoCredito";
-                    dt.Columns[8].ColumnName = "Saldo";
-                    dt.Columns[9].ColumnName = "Limite";
-                    return dt;
+                    List<TarjetasLogica> lista = ds.Tables[0].ToList<TarjetasLogica>();
+
+                    foreach (var tarjeta in lista)
+                    {
+                        if (numTarjeta.Equals(tarjeta.NumeroTarjeta))
+                        {
+                            return tarjeta.TarjetaCredito_id;
+                        } 
+                    }
+
+                    return 0;
                 }
             }
         }
 
-        public DataTable CargarTarjetasXCliente(string clienteid)
+        public List<TarjetasLogica> CargarTarjetasXCliente(string clienteid)
         {
             cnn = DAL.DAL.trae_conexion("BDClienteConnectionString", ref error, ref numeroError);
             if (cnn == null)
@@ -102,7 +104,7 @@ namespace BLL
                 }
                 else
                 {
-                    DataTable dt = new DataTable();
+                   /* DataTable dt = new DataTable();
                     dt = ds.Tables[0];
                     dt.Columns[0].ColumnName = "TarjetaCredito_id";
                     dt.Columns[1].ColumnName = "NumeroTarjeta";
@@ -114,7 +116,30 @@ namespace BLL
                     dt.Columns[7].ColumnName = "DebitoCredito";
                     dt.Columns[8].ColumnName = "Saldo";
                     dt.Columns[9].ColumnName = "Limite";
-                    return dt;
+                    */
+
+                    List<TarjetasLogica> lista = ds.Tables[0].ToList<TarjetasLogica>();                  
+
+                    foreach (var t in lista)
+                    {
+                        StringBuilder duplicado = new StringBuilder(t.NumeroTarjeta);
+                        int tam = duplicado.Length;
+                        if (tam == 15)
+                        {
+                            duplicado.Remove(0, 11);
+                            duplicado.Insert(0, "XXXXXXXXXXX");
+                        }
+                        if (tam == 16)
+                        {
+                            duplicado.Remove(0, 12);
+                            duplicado.Insert(0, "XXXXXXXXXXXX");
+                        }
+                        t.NumeroTarjeta = duplicado.ToString();
+
+
+                    }
+
+                    return lista;
                 }
             }
         }
@@ -206,7 +231,7 @@ namespace BLL
             {
                 sql = "sp_Actualiza_TarjetaCredito";
                 ParamStruct[] parametros = new ParamStruct[11];
-                DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@NumeroTarjeta", SqlDbType.Int, tarjeta.TarjetaCredito_id);
+                DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@TarjetaCredito_Id", SqlDbType.Int, tarjeta.TarjetaCredito_id);
                 DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 1, "@NumeroTarjeta", SqlDbType.VarChar, tarjeta.NumeroTarjeta);
                 DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 2, "@NombreTarjeta", SqlDbType.VarChar, tarjeta.NombreTarjeta);
                 DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 3, "@MesVencimiento", SqlDbType.VarChar, tarjeta.MesVencimiento);

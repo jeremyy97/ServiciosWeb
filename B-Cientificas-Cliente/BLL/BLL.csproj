@@ -41,7 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Extensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TarjetaClienteLogica.cs" />
     <Compile Include="TarjetasLogica.cs" />
   </ItemGroup>
   <ItemGroup>
