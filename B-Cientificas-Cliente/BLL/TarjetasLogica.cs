@@ -197,7 +197,7 @@ namespace BLL
             }
             else
             {
-                sql = "sp_Elimina_TarjetaCredio";
+                sql = "sp_Elimina_TarjetaCredito";
                 ParamStruct[] parametros = new ParamStruct[1];
                 DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@TarjetaCredito_id", SqlDbType.Int, tarjeta_id);
                 DAL.DAL.conectar(cnn, ref error, ref numeroError);

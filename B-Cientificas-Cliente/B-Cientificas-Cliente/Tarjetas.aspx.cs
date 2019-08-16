@@ -35,6 +35,8 @@ namespace B_Cientificas_Cliente
             txtMes.Text = "";
             txtNombre.Text = "";
             txtNumeroTarjeta.Text = "";
+            btnActualizar.Visible = false;
+            btnEliminar.Visible = false;
         }
 
         private void Actualizar()
@@ -106,6 +108,17 @@ namespace B_Cientificas_Cliente
         {
             Response.Redirect("NuevaTarjeta.aspx");
         }
+
+        protected void btnEliminar_Click(object sender, EventArgs e)
+        {
+            TarjetaClienteLogica c = new TarjetaClienteLogica();
+            c.EliminarTarjetaCliente(Convert.ToInt32(txtId.Text), "1"); //AGREGAR AQUI EL ID DEL USUARIO
+            logica.EliminarTarjeta(Convert.ToInt32(txtId.Text));
+            Page.ClientScript.RegisterStartupScript(this.GetType(), "Scripts", "<script>alert('Tarjeta Elimanada correctamente');</script>");
+            Limpiar();
+            this.CargarTarjetas();
+        }
+
 
         #endregion
 

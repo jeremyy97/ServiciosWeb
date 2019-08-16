@@ -114,3 +114,5 @@ D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\BLL.dll
 D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\DAL.dll
 D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\BLL.pdb
 D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\DAL.pdb
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\Newtonsoft.Json.dll
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\Newtonsoft.Json.xml

@@ -37,7 +37,11 @@
                         <td>
                             <div class="form-group">
                                 <div class="col-md-12">
-                                    <asp:DropDownList ID="ddlMetodoPago" runat="server"></asp:DropDownList>
+                                    <asp:DropDownList ID="ddlMetodoPago" runat="server">
+                                        <asp:ListItem>Seleccione</asp:ListItem>
+                                        <asp:ListItem>Tarjeta Crédito o Débito</asp:ListItem>
+                                        <asp:ListItem>Easy Pay</asp:ListItem>
+                                    </asp:DropDownList>
                                 </div>
                             </div>
                         </td>
@@ -50,7 +54,7 @@
                 <div class="form-group">
                     <label class="col-md-4 control-label" for="buscar"></label>
                     <div class="col-md-4">
-                        <asp:Button ID="btnRegistrarTarjeta" class="btn btn-primary" runat="server" Text="Proceder con el pago" />
+                        <asp:Button ID="btnProceder" class="btn btn-primary" runat="server" Text="Proceder con el pago" OnClick="btnProceder_Click" />
                     </div>
                 </div>
 

@@ -13,5 +13,19 @@ namespace B_Cientificas_Cliente
         {
 
         }
+
+        protected void btnProceder_Click(object sender, EventArgs e)
+        {
+            string opcion = ddlMetodoPago.SelectedValue;
+            if (opcion.Equals("Easy Pay"))
+            {
+                Response.Redirect("PagarEasyPay.aspx"); //Hay que mandar el monto
+            }
+            else
+            {
+                Response.Redirect("PagarTarjeta.aspx"); //Hay que mandar el monto
+            }
+          
+        }
     }
 }

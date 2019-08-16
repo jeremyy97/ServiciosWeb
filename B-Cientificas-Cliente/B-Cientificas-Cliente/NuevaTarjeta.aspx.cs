@@ -12,23 +12,14 @@ namespace B_Cientificas_Cliente
     public partial class NuevaTarjeta : System.Web.UI.Page
     {
 
+        #region Var
+
         TarjetasLogica logica = new TarjetasLogica();
         Random r = new Random();
 
-        protected void Page_Load(object sender, EventArgs e)
-        {
-          
-        }
+        #endregion
 
-        protected void btnCancelar_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("Tarjetas.aspx");
-        }
-
-        protected void btnActualizar_Click(object sender, EventArgs e)
-        {
-            CrearTarjeta();
-        }
+        #region Methods
 
         private void CrearTarjeta()
         {
@@ -64,7 +55,7 @@ namespace B_Cientificas_Cliente
 
                         if (logica.CrearTarjeta(tarjeta))
                         {
-                            AsignarTarjeta("1",logica.BuscarIDTarjeta(tarjeta.NumeroTarjeta));
+                            AsignarTarjeta("1",logica.BuscarIDTarjeta(tarjeta.NumeroTarjeta)); //AGREGAR AQUI EL ID DEL USUARIO
                             Page.ClientScript.RegisterStartupScript(this.GetType(), "Scripts", "<script>alert('Tarjeta Actualizada correctamente');</script>");
                             Response.Redirect("Tarjetas.aspx");
                         }
@@ -124,9 +115,30 @@ namespace B_Cientificas_Cliente
             
         }
 
+        #endregion
+
+        #region Events
+
         protected void txtNumeroTarjeta_TextChanged(object sender, EventArgs e)
         {
             var x = ActualizarTipoTarjeta();
         }
+
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Tarjetas.aspx");
+        }
+
+        protected void btnActualizar_Click(object sender, EventArgs e)
+        {
+            CrearTarjeta();
+        }
+
+        #endregion
     }
 }

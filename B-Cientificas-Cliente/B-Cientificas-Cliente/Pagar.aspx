@@ -23,7 +23,11 @@
                         <td>
                             <div class="form-group">
                                 <div class="col-md-12">
-                                    <asp:DropDownList ID="ddlTarjetas" runat="server"></asp:DropDownList>
+                                    <asp:DropDownList ID="ddlTarjetas" runat="server">
+                                        <asp:ListItem>Tarjeta Crédito o Débito</asp:ListItem>
+                                        <asp:ListItem>Easy Pay</asp:ListItem>
+
+                                    </asp:DropDownList>
                                 </div>
                             </div>
                         </td>
@@ -31,76 +35,7 @@
                 </table>
             </fieldset>
         </asp:Panel>
-    <asp:Panel ID="nuevaTarjeta" class="card" runat="server">
-            <fieldset>
-                <!-- Form Name -->
-                <legend>Pagar con tarjeta crédito/débito nueva</legend>
-                <table>
-                    <tr>
-                        <td>
-                            <label>Numero de tarjeta: </label>
-                        </td>
-                        <td colspan="2">
-                            <div class="form-group">
-                                <div class="col-md-12">
-                                    <asp:TextBox ID="txtNumeroTarjeta" runat="server" class="form-control"></asp:TextBox>
-                                </div>
-                            </div>
-                        </td>
-                        
-                    </tr>
-                    <tr>
-                        <td>
-                            <label>Mes vencimiento:</label>
-                        </td>
-                        <td>
-                            <div class="form-group">
-                                <div class="col-md-6">
-                                    <asp:TextBox ID="txtAutor" runat="server" class="form-control input-md-6"></asp:TextBox>
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <label>Año vencimiento:</label>
-                        </td>
-                        <td>
-                            <div class="form-group">
-                                <div class="col-md-6">
-                                    <asp:TextBox ID="txtNivelEducativo" runat="server" class="form-control input-md-6"></asp:TextBox>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label>Nombre en la tarjeta:</label>
-                        </td>
-                        <td colspan="2">
-                            <div class="form-group">
-                                <div class="col-md-12">
-                                    <asp:TextBox ID="fechaInicio" runat="server" class="form-control input-md-12"></asp:TextBox>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label>CVV:</label>
-                        </td>
-                        <td>
-                            <div class="form-group">
-                                <div class="col-md-6">
-                                    <asp:TextBox ID="txtNombreProyecto" runat="server" class="form-control input-md-6"></asp:TextBox>
-                                </div>
-                            </div>
-                        </td>
-                     </tr>
-                </table>
-                <div class="checkbox">
-                    <asp:CheckBox ID="chkboxGuardarTarjetas" Text="Guardar Tarjeta" runat="server" />
-                </div>
-            </fieldset>
-        </asp:Panel>
+    
         <asp:Panel ID="easyPay" class="card" runat="server">
             <fieldset>
                 <!-- Form Name -->

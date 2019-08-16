@@ -44,6 +44,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -82,6 +85,9 @@
     <Content Include="Login.aspx" />
     <Content Include="NuevaTarjeta.aspx" />
     <Content Include="Pagar.aspx" />
+    <Content Include="PagarEasyPay.aspx" />
+    <Content Include="PagarTarjeta.aspx" />
+    <Content Include="PagarTarjetaSeleccionada.aspx" />
     <Content Include="Proyectos.aspx" />
     <Content Include="styles\sb-admin-2.css" />
     <Content Include="styles\sb-admin-2.min.css" />
@@ -1695,6 +1701,27 @@
     </Compile>
     <Compile Include="Pagar.aspx.designer.cs">
       <DependentUpon>Pagar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagarEasyPay.aspx.cs">
+      <DependentUpon>PagarEasyPay.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagarEasyPay.aspx.designer.cs">
+      <DependentUpon>PagarEasyPay.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagarTarjeta.aspx.cs">
+      <DependentUpon>PagarTarjeta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagarTarjeta.aspx.designer.cs">
+      <DependentUpon>PagarTarjeta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagarTarjetaSeleccionada.aspx.cs">
+      <DependentUpon>PagarTarjetaSeleccionada.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagarTarjetaSeleccionada.aspx.designer.cs">
+      <DependentUpon>PagarTarjetaSeleccionada.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Proyectos.aspx.cs">

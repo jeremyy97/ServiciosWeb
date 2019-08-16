@@ -43,11 +43,13 @@ namespace B_Cientificas_WS.Controllers
                                             resultado = "0";
                                             ActualizarTarjeta(tarjeta.TarjetaCredito_id,monto,tarjeta.Saldo,tarjeta.DebitoCredito);
                                             GuardarTransaccion(tarjeta.TarjetaCredito_id, resultado);
+                                            break;
                                         }
                                         else
                                         {
                                             resultado = "-4";
                                             GuardarTransaccion(tarjeta.TarjetaCredito_id, resultado);
+                                            break;
                                         }
                                     }
 
@@ -60,11 +62,13 @@ namespace B_Cientificas_WS.Controllers
                                             resultado = "0";
                                             ActualizarTarjeta(tarjeta.TarjetaCredito_id, monto, tarjeta.Saldo, tarjeta.DebitoCredito);
                                             GuardarTransaccion(tarjeta.TarjetaCredito_id, resultado);
+                                            break;
                                         }
                                         else
                                         {
                                             resultado = "-4";
                                             GuardarTransaccion(tarjeta.TarjetaCredito_id, resultado);
+                                            break;
                                         }
                                     }
 
@@ -73,24 +77,27 @@ namespace B_Cientificas_WS.Controllers
                                 {
                                     resultado = "-3";
                                     GuardarTransaccion(tarjeta.TarjetaCredito_id, resultado);
+                                    break;
                                 }
                             }
                             else
                             {
                                 resultado = "-2";
                                 GuardarTransaccion(tarjeta.TarjetaCredito_id, resultado);
+                                break;
                             }
                         }
                         else
                         {
                             resultado = "-2";
                             GuardarTransaccion(tarjeta.TarjetaCredito_id, resultado);
+                            break;
                         }
                     }
                     else
                     {
                         resultado = "-1";
-                        GuardarTransaccion(tarjeta.TarjetaCredito_id, resultado);
+                       
                     }
                 }
 

@@ -88,7 +88,7 @@
                         <label class="col-md-4 control-label" for="buscar"></label>
                         <div class="col-md-4">
                             <asp:Button ID="btnActualizar" class="btn btn-primary" runat="server" Text="Actualizar Tarjeta" OnClick="btnActualizar_Click" />
-                            <asp:Button ID="btnEliminar" class="btn btn-primary" runat="server" Text="Eliminar Tarjeta" />
+                            <asp:Button ID="btnEliminar" class="btn btn-primary" runat="server" Text="Eliminar Tarjeta" OnClick="btnEliminar_Click" />
                         </div>
                     </div>
 

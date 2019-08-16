@@ -10,6 +10,8 @@ namespace B_Cientificas_WS.Controllers
 {
     public class EasyPayController : ApiController
     {
+
+
         [HttpGet]
         public string GetResult(int Num_Cuenta, int Codigo_Seguridad, string Contrasena, decimal monto)
         {
@@ -37,30 +39,34 @@ namespace B_Cientificas_WS.Controllers
                                     resultado = "0";
                                     ActualizarEasyPay(cuenta.EasyPay_Id, monto, cuenta.Saldo);
                                     GuardarTransaccion(cuenta.EasyPay_Id, resultado);
+                                    break;
                                 }
                                 else
                                 {
                                     resultado = "-4";
                                     GuardarTransaccion(cuenta.EasyPay_Id, resultado);
+                                    break;
                                 }
-  
+
                             }
                             else
                             {
                                 resultado = "-3";
                                 GuardarTransaccion(cuenta.EasyPay_Id, resultado);
+                                break;
                             }
                         }
                         else
                         {
                             resultado = "-2";
                             GuardarTransaccion(cuenta.EasyPay_Id, resultado);
+                            break;
                         }
                     }
                     else
                     {
                         resultado = "-1";
-                        GuardarTransaccion(cuenta.EasyPay_Id, resultado);
+                        
                     }
                 }
 
@@ -68,6 +74,7 @@ namespace B_Cientificas_WS.Controllers
 
             }
         }
+
 
         private void GuardarTransaccion(int cuenta, string resultado)
         {
