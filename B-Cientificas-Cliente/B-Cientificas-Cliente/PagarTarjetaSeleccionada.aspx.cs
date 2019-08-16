@@ -44,7 +44,7 @@ namespace B_Cientificas_Cliente
             btnDescargar.Visible = false;
             if (tarjeta != null)
             {
-                txtNumeroTarjeta.Text = tarjeta.NumeroTarjeta;
+                txtNumeroTarjeta.Text = EncriptarTarjeta(tarjeta.NumeroTarjeta);
                 txtNombre.Text = tarjeta.NombreTarjeta;
                 if (tarjeta.TipoTarjeta_Id == 1)
                 {
@@ -64,11 +64,12 @@ namespace B_Cientificas_Cliente
                         }
                     }
                 }
+                if (tarjeta.DebitoCredito.Equals("Debito"))
+                {
+                    chkBoxDebito.Checked = true;
+                }
             }
-            else
-            {
-
-            }
+            
 
         }
 
@@ -90,13 +91,13 @@ namespace B_Cientificas_Cliente
                 switch (resultado)
                 {
                     case -1:
-                        lblResultado.Text = "Número de Cuenta Inválido";
+                        lblResultado.Text = "Número de Tarjeta Inválido";
                         break;
                     case -2:
-                        lblResultado.Text = "Código Seguridad Inválido";
+                        lblResultado.Text = "Fecha de expiración inválida o la tarjeta expiro";
                         break;
                     case -3:
-                        lblResultado.Text = "Contraseña Inválida";
+                        lblResultado.Text = "CVV incorrecto";
                         break;
                     case -4:
                         lblResultado.Text = "Fondos insuficientes";
@@ -130,6 +131,7 @@ namespace B_Cientificas_Cliente
         protected void Page_Load(object sender, EventArgs e)
         {
             CargarTarjeta();
+            lblMonto.Text = "20000";
 
         }
 

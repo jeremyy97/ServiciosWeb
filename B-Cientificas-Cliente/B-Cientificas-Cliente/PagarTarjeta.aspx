@@ -54,14 +54,6 @@
                 <asp:Button ID="btnNueva" class="btn btn-primary" runat="server" Text="Nueva Tarjeta" OnClick="btnPagar_Click" />
             </div>
         </div>
-        <div class="form-group">
-            <label class="col-md-4 control-label" for="buscar"></label>
-            <div class="col-md-4">
-                <asp:Label ID="lblResultado" runat="server" Font-Bold="True" Font-Size="X-Large" ForeColor="Red"></asp:Label>
-            </div>
-            <div class="col-md-4">
-                <asp:Button ID="btnDescargar" class="btn btn-primary" runat="server" Text="Descargar" OnClick="btnPagar_Click" />
-            </div>
-        </div>
+      
     </div>
 </asp:Content>

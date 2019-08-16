@@ -17,7 +17,6 @@ namespace B_Cientificas_Cliente
         protected void Page_Load(object sender, EventArgs e)
         {
             CargarTarjetas();
-            btnDescargar.Visible = false;
             lblMonto.Text = "20000"; //Insertar el monto final
         }
 
@@ -29,7 +28,7 @@ namespace B_Cientificas_Cliente
 
         protected void btnPagar_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("PagarTarjetaNueva.aspx");
         }
 
         protected void gvTarjetas_RowCommand(object sender, GridViewCommandEventArgs e)

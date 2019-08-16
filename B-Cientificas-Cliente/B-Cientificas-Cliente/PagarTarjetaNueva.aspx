@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Menu.Master" AutoEventWireup="true" CodeBehind="PagarTarjetaSeleccionada.aspx.cs" Inherits="B_Cientificas_Cliente.PagarTarjetaSeleccionada" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Menu.Master" AutoEventWireup="true" CodeBehind="PagarTarjetaNueva.aspx.cs" Inherits="B_Cientificas_Cliente.PagarTarjetaNueva" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -21,14 +21,15 @@
                 </legend>
                     <table>
     
-                        <tr>
+                       
+                         <tr>
                             <td>
                                 <label>Numero de tarjeta: </label>
                             </td>
                             <td colspan="2">
                                 <div class="form-group">
                                     <div class="col-md-12">
-                                        <asp:TextBox ID="txtNumeroTarjeta" runat="server" class="form-control" MaxLength="16"  ReadOnly="True"></asp:TextBox>
+                                        <asp:TextBox ID="txtNum" runat="server" class="form-control" MaxLength="16" AutoPostBack="True" OnTextChanged="txtNum_TextChanged"></asp:TextBox>
                                     </div>
                                 </div>
                             </td>
@@ -63,7 +64,7 @@
                             <td colspan="2">
                                 <div class="form-group">
                                     <div class="col-md-12">
-                                        <asp:TextBox ID="txtNombre" runat="server" class="form-control input-md-12" ReadOnly="True"></asp:TextBox>
+                                        <asp:TextBox ID="txtNombre" runat="server" class="form-control input-md-12"></asp:TextBox>
                                     </div>
                                 </div>
                             </td>
@@ -99,7 +100,7 @@
                             <td>
                                 <div class="form-group">
                                     <div class="col-md-6">
-                                        <asp:CheckBox ID="chkBoxDebito" runat="server" AutoPostBack="True" class="checkbox-inline" Text="Sí" Enabled="False" />
+                                        <asp:CheckBox ID="chkBoxDebito" runat="server" class="checkbox-inline" Text="Sí" />
                                     </div>
                                 </div>
                             </td>
@@ -110,8 +111,11 @@
                      <div class="form-group">
             <label class="col-md-4 control-label" for="buscar"></label>
             <div class="col-md-4">
-                <asp:Button ID="btnPagar" class="btn btn-primary" runat="server" Text="Pagar" OnClick="btnPagar_Click" />
+                <asp:Button ID="btnSoloPagar" class="btn btn-primary" runat="server" Text="Solo Pagar" OnClick="btnSoloPagar_Click" />
+                <asp:Button ID="btnPagarGuardar" class="btn btn-primary" runat="server" Text="Pagar y Guardar Tarjeta" OnClick="btnPagarGuardar_Click" />
             </div>
+                         
+   
         </div>
         <div class="form-group">
             <label class="col-md-4 control-label" for="buscar"></label>

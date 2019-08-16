@@ -87,6 +87,7 @@
     <Content Include="Pagar.aspx" />
     <Content Include="PagarEasyPay.aspx" />
     <Content Include="PagarTarjeta.aspx" />
+    <Content Include="PagarTarjetaNueva.aspx" />
     <Content Include="PagarTarjetaSeleccionada.aspx" />
     <Content Include="Proyectos.aspx" />
     <Content Include="styles\sb-admin-2.css" />
@@ -1715,6 +1716,13 @@
     </Compile>
     <Compile Include="PagarTarjeta.aspx.designer.cs">
       <DependentUpon>PagarTarjeta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagarTarjetaNueva.aspx.cs">
+      <DependentUpon>PagarTarjetaNueva.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagarTarjetaNueva.aspx.designer.cs">
+      <DependentUpon>PagarTarjetaNueva.aspx</DependentUpon>
     </Compile>
     <Compile Include="PagarTarjetaSeleccionada.aspx.cs">
       <DependentUpon>PagarTarjetaSeleccionada.aspx</DependentUpon>
