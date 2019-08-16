@@ -22,3 +22,15 @@ D:\GitHub\ServiciosWeb\B-Cientificas-WS\ConexionBD\obj\Debug\ConexionBD.csproj.C
 D:\GitHub\ServiciosWeb\B-Cientificas-WS\ConexionBD\obj\Debug\ConexionBD.csproj.CopyComplete
 D:\GitHub\ServiciosWeb\B-Cientificas-WS\ConexionBD\obj\Debug\ConexionBD.dll
 D:\GitHub\ServiciosWeb\B-Cientificas-WS\ConexionBD\obj\Debug\ConexionBD.pdb
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-WS\ConexionBD\bin\Debug\ConexionBD.dll.config
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-WS\ConexionBD\bin\Debug\ConexionBD.dll
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-WS\ConexionBD\bin\Debug\ConexionBD.pdb
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-WS\ConexionBD\bin\Debug\EntityFramework.dll
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-WS\ConexionBD\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-WS\ConexionBD\bin\Debug\EntityFramework.xml
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-WS\ConexionBD\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-WS\ConexionBD\obj\Debug\ConexionBD.csprojAssemblyReference.cache
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-WS\ConexionBD\obj\Debug\ConexionBD.csproj.CoreCompileInputs.cache
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-WS\ConexionBD\obj\Debug\ConexionBD.csproj.CopyComplete
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-WS\ConexionBD\obj\Debug\ConexionBD.dll
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-WS\ConexionBD\obj\Debug\ConexionBD.pdb

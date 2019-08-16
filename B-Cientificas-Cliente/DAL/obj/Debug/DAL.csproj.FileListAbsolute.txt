@@ -4,3 +4,9 @@ D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\DAL\obj\Debug\DAL.csprojAssemblyRef
 D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
 D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\DAL\obj\Debug\DAL.dll
 D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\DAL\obj\Debug\DAL.pdb
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\DAL\bin\Debug\DAL.dll
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\DAL\bin\Debug\DAL.pdb
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\DAL\obj\Debug\DAL.dll
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\DAL\obj\Debug\DAL.pdb

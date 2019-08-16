@@ -18,7 +18,9 @@
                         <td>
                             <div class="form-group">
                                 <div class="col-md-12">
-                                    <asp:DropDownList ID="ddlRamas" runat="server" class="form-control"></asp:DropDownList>
+                                    <asp:DropDownList ID="ddlRamas" runat="server" class="form-control">
+                                        <asp:ListItem Value="0">Seleccione una rama</asp:ListItem>
+                                    </asp:DropDownList>
                                 </div>
                             </div>
                         </td>
@@ -105,7 +107,7 @@
                 <div class="form-group">
                     <label class="col-md-4 control-label" for="buscar"></label>
                     <div class="col-md-4">
-                        <asp:Button ID="btnBuscar" class="btn btn-primary" runat="server" Text="Buscar Proyectos" />
+                        <asp:Button ID="btnBuscar" class="btn btn-primary" runat="server" Text="Buscar Proyectos" OnClick="btnBuscar_Click" />
                     </div>
                 </div>
 
@@ -114,7 +116,7 @@
         </asp:Panel>
         <asp:Panel ID="Panel2" class="card" runat="server">
             
-            <asp:GridView ID="GridView1" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None">
+            <asp:GridView ID="gvProyectos" class="table" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" OnRowCommand="gvProyectos_RowCommand">
                 <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                 <Columns>
                     <asp:ButtonField Text="Agregar al carrito" />

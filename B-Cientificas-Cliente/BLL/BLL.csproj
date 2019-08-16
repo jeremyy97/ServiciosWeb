@@ -41,8 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Carrito.cs" />
     <Compile Include="Extensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ProyectosLogica.cs" />
+    <Compile Include="RamasCientificasLogica.cs" />
     <Compile Include="TarjetaClienteLogica.cs" />
     <Compile Include="TarjetasLogica.cs" />
   </ItemGroup>

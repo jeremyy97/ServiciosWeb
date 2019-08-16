@@ -6,7 +6,7 @@
         <asp:Panel ID="Panel2" runat="server">
             <fieldset>
                 <legend>Carrito</legend>
-                <asp:GridView ID="GridView1" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None">
+                <asp:GridView ID="gvCarrito" class="table" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None">
                     <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                     <EditRowStyle BackColor="#999999" />
                     <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
@@ -37,7 +37,7 @@
                         <td>
                             <div class="form-group">
                                 <div class="col-md-12">
-                                    <asp:DropDownList ID="ddlMetodoPago" runat="server">
+                                    <asp:DropDownList class="form-control" ID="ddlMetodoPago" runat="server">
                                         <asp:ListItem>Seleccione</asp:ListItem>
                                         <asp:ListItem>Tarjeta Crédito o Débito</asp:ListItem>
                                         <asp:ListItem>Easy Pay</asp:ListItem>

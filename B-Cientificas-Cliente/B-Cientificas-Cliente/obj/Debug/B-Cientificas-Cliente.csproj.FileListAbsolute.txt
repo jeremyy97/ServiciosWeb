@@ -116,3 +116,9 @@ D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\BLL.pdb
 D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\DAL.pdb
 D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\Newtonsoft.Json.dll
 D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\Newtonsoft.Json.xml
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\BLL.dll
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\Newtonsoft.Json.dll
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\DAL.dll
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\BLL.pdb
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\Newtonsoft.Json.xml
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\DAL.pdb
