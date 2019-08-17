@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Net;
 using Newtonsoft.Json;
+using System.Data;
 
 namespace B_Cientificas_Cliente
 {
@@ -15,9 +16,14 @@ namespace B_Cientificas_Cliente
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            int pagar = 0;
             txtCodSeguridad.Attributes["type"] = "password";
             txtContrasenna.Attributes["type"] = "password";
-            lblMonto.Text = "20000"; //AGREGAR MONTO
+            foreach (BLL.Carrito row in BLL.Carrito.carritoLista)
+            {
+                pagar += Convert.ToInt16(row.precio);
+            }
+            lblMonto.Text = pagar.ToString(); //AGREGAR MONTO 
             btnDescargar.Visible = false;
         }
 

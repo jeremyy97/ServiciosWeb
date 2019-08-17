@@ -6,8 +6,11 @@
         <asp:Panel ID="Panel2" runat="server">
             <fieldset>
                 <legend>Carrito</legend>
-                <asp:GridView ID="gvCarrito" class="table" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None">
+                <asp:GridView ID="gvCarrito" class="table" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" OnRowCommand="gvCarrito_RowCommand" OnRowDeleting="gvCarrito_RowDeleting">
                     <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
+                    <Columns>
+                        <asp:ButtonField Text="Quitar del carrito" />
+                    </Columns>
                     <EditRowStyle BackColor="#999999" />
                     <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
                     <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />

@@ -21,6 +21,20 @@ namespace B_Cientificas_Cliente
             dt.Columns.Add(column);
             column = new DataColumn("Precio", Type.GetType("System.String"));
             dt.Columns.Add(column);
+            cargarCarrito();
+            if (gvCarrito.Rows.Count <= 0)
+            {
+                Label2.Text = "No hay productos en el carrito";
+                btnProceder.Enabled = false;
+            }
+            else
+            {
+                btnProceder.Enabled = true;
+            }
+        }
+
+        public void cargarCarrito()
+        {
             foreach (var item in BLL.Carrito.carritoLista)
             {
                 string[] items = { item.proyecto_id, item.nombre, item.precio };
@@ -29,7 +43,6 @@ namespace B_Cientificas_Cliente
             gvCarrito.DataSource = dt;
             gvCarrito.DataBind();
         }
-
         protected void btnProceder_Click(object sender, EventArgs e)
         {
             string opcion = ddlMetodoPago.SelectedValue;
@@ -44,35 +57,28 @@ namespace B_Cientificas_Cliente
           
         }
 
-        public DataTable ConvertListToDataTable(List<Carrito[]> list)
+        
+        protected void gvCarrito_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            // New table.
-            DataTable table = new DataTable();
-
-            // Get max columns.
-            int columns = 0;
-            foreach (var array in list)
+            int index = Convert.ToInt32(e.CommandArgument);
+            try
             {
-                if (array.Length > columns)
-                {
-                    columns = array.Length;
-                }
+                GridViewRow row = gvCarrito.Rows[index];
+                BLL.Carrito.carritoLista.RemoveAt(index);
+                Response.Write("<script>alert('Proyecto eliminado del carrito');</script>");
             }
-
-            // Add columns.
-            for (int i = 0; i < columns; i++)
+            catch (Exception v)
             {
-                table.Columns.Add();
+                Response.Write("<script>alert('Error al remover proyecto del carrito');</script>");
             }
-
-            // Add rows.
-            foreach (var array in list)
-            {
-                table.Rows.Add(array);
-            }
-
-            return table;
+            Response.Clear();
+            gvCarrito.DeleteRow(index);
+            Response.Redirect("Carrito.aspx");
         }
 
+        protected void gvCarrito_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+
+        }
     }
 }
