@@ -50,6 +50,19 @@
                         </td>
                         
                     </tr>
+                    <tr>
+                        <td>
+                            <asp:Label ID="lblCaptcha" runat="server" Text=""></asp:Label>
+                        </td>
+                        <td>
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <asp:TextBox ID="txtCaptcha" runat="server" class="form-control input-md-12"></asp:TextBox>
+                                </div>
+                            </div>
+                        </td>
+                        
+                    </tr>
                     
                 </table>
              

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Linq;
+using System.Text;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -15,6 +16,10 @@ namespace B_Cientificas_Cliente
         DataTable dt = new DataTable();
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                GenerarCaptcha();
+            }
             DataColumn column;
             column = new DataColumn("Codigo", Type.GetType("System.String"));
             dt.Columns.Add(column);
@@ -34,6 +39,23 @@ namespace B_Cientificas_Cliente
             }
         }
 
+        private void GenerarCaptcha()
+        {
+            int longitud = 7;
+            const string alfabeto = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            StringBuilder token = new StringBuilder();
+            Random rnd = new Random();
+
+            for (int i = 0; i < longitud; i++)
+            {
+                int indice = rnd.Next(alfabeto.Length);
+                token.Append(alfabeto[indice]);
+            }
+
+            lblCaptcha.Text = token.ToString();
+        }
+
+
         public void cargarCarrito()
         {
             decimal monto = 0;
@@ -51,14 +73,27 @@ namespace B_Cientificas_Cliente
         protected void btnProceder_Click(object sender, EventArgs e)
         {
             string opcion = ddlMetodoPago.SelectedValue;
-            if (opcion.Equals("Easy Pay"))
+
+            if (lblCaptcha.Text.Equals(txtCaptcha.Text))
             {
-                Response.Redirect("PagarEasyPay.aspx"); //Hay que mandar el monto
+                if (opcion.Equals("Easy Pay"))
+                {
+                    Response.Redirect("PagarEasyPay.aspx"); //Hay que mandar el monto
+                }
+                else
+                {
+                    Response.Redirect("PagarTarjeta.aspx"); //Hay que mandar el monto
+                }
+
             }
             else
             {
-                Response.Redirect("PagarTarjeta.aspx"); //Hay que mandar el monto
+                Response.Write("<script>alert('Captcha Incorrecto');</script>");
+                GenerarCaptcha();
             }
+
+
+            
         }
 
         
