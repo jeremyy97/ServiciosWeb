@@ -29,11 +29,10 @@
                                             <h1 class="h4 text-gray-900 mb-4">Ingresar</h1>
                                         </div>
                                         <form class="user">
-                                            <a href="https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=78ujsjyyhjwfo9&redirect_uri=http://localhost:56928/Default.aspx/SaveLinkedinUser&state=987654321&scope=r_emailaddress%20r_basicprofile">
+                                            <a class="btn btn-primary btn-user btn-block" href="https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=78ujsjyyhjwfo9&redirect_uri=http://localhost:56928&state=987654321&scope=r_emailaddress%20r_basicprofile">
                                           Log in
                                           </a> 
-                                          <asp:Button class="btn btn-primary btn-user btn-block" href="" ID="btnLogin" runat="server" Text="Iniciar Sesión con LinkedIn" OnClick="btnLogin_Click" />
-                                          <asp:Button class="btn btn-default btn-user btn-block" ID="btnCrearCuenta" runat="server" Text="Crear una cuenta" Font-Overline="False" Font-Underline="True" ForeColor="#000099" />
+                                          <asp:Button class="btn btn-default btn-user btn-block" ID="btnCrearCuenta" runat="server" Text="Crear una cuenta" Font-Overline="False" Font-Underline="True" ForeColor="#000099" OnClick="btnCrearCuenta_Click" />
                                             <div>
                                                 <br></br>
                                                 <div class="container" align="center">

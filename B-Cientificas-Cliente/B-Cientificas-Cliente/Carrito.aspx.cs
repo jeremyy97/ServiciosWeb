@@ -59,7 +59,6 @@ namespace B_Cientificas_Cliente
             {
                 Response.Redirect("PagarTarjeta.aspx"); //Hay que mandar el monto
             }
-          
         }
 
         

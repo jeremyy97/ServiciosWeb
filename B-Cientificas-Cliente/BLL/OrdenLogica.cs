@@ -64,7 +64,7 @@ namespace BLL
 
                     foreach (var orden in lista)
                     {
-                        if (monto.Equals(orden.Montofinal) && fecha == orden.Fecha && tarjetaid == orden.TarjetaCredito_id)
+                        if (monto.Equals(orden.Montofinal) && fecha.ToShortDateString() == orden.Fecha.ToShortDateString() && tarjetaid == orden.TarjetaCredito_id)
                         {
                             return orden.Orden_id;
                         }

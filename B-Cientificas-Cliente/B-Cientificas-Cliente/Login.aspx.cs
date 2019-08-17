@@ -18,5 +18,10 @@ namespace B_Cientificas_Cliente
         {
             
         }
+
+        protected void btnCrearCuenta_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("https://www.linkedin.com/start/join");
+        }
     }
 }

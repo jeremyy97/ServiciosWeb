@@ -40,42 +40,6 @@ namespace B_Cientificas_Cliente {
         protected global::System.Web.UI.WebControls.TextBox txtPrecio;
         
         /// <summary>
-        /// txtAutor control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtAutor;
-        
-        /// <summary>
-        /// txtNivelEducativo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNivelEducativo;
-        
-        /// <summary>
-        /// fechaInicio control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox fechaInicio;
-        
-        /// <summary>
-        /// fechaFinal control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox fechaFinal;
-        
-        /// <summary>
         /// txtNombreProyecto control.
         /// </summary>
         /// <remarks>

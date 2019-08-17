@@ -34,51 +34,7 @@
                                 </div>
                             </div>
                         </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label>Autor:</label>
-                        </td>
-                        <td>
-                            <div class="form-group">
-                                <div class="col-md-12">
-                                    <asp:TextBox ID="txtAutor" runat="server" class="form-control input-md-12"></asp:TextBox>
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <label>Nivel Educativo:</label>
-                        </td>
-                        <td>
-                            <div class="form-group">
-                                <div class="col-md-12">
-                                    <asp:TextBox ID="txtNivelEducativo" runat="server" class="form-control input-md-12"></asp:TextBox>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label>Fecha Inicio Creación:</label>
-                        </td>
-                        <td>
-                            <div class="form-group">
-                                <div class="col-md-12">
-                                    <asp:TextBox ID="fechaInicio" runat="server" class="form-control input-md-12"></asp:TextBox>
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <label>Fecha Final Creación:</label>
-                        </td>
-                        <td>
-                            <div class="form-group">
-                                <div class="col-md-12">
-                                    <asp:TextBox ID="fechaFinal" runat="server" class="form-control input-md-12"></asp:TextBox>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
+                    </tr>                   
                     <tr>
                         <td>
                             <label>Nombre del proyecto:</label>
