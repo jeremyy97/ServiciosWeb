@@ -146,3 +146,27 @@ C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cienti
 C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\System.Web.WebPages.xml
 C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\System.Web.WebPages.Deployment.xml
 C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\System.Web.WebPages.Razor.xml
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\Antlr3.Runtime.dll
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\Microsoft.Web.Infrastructure.dll
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\System.Net.Http.Formatting.dll
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\System.Web.Helpers.dll
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\System.Web.Http.dll
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\System.Web.Http.WebHost.dll
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\System.Web.Mvc.dll
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\System.Web.Optimization.dll
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\System.Web.Razor.dll
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\System.Web.WebPages.Deployment.dll
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\System.Web.WebPages.dll
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\System.Web.WebPages.Razor.dll
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\WebGrease.dll
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\Antlr3.Runtime.pdb
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\System.Net.Http.Formatting.xml
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\System.Web.Helpers.xml
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\System.Web.Http.xml
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\System.Web.Http.WebHost.xml
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\System.Web.Mvc.xml
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\System.Web.Optimization.xml
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\System.Web.Razor.xml
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\System.Web.WebPages.xml
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\System.Web.WebPages.Deployment.xml
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\System.Web.WebPages.Razor.xml

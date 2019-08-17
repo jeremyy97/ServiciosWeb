@@ -17,7 +17,8 @@ namespace B_Cientificas_Cliente
         protected void Page_Load(object sender, EventArgs e)
         {
             CargarTarjetas();
-            lblMonto.Text = "20000"; //Insertar el monto final
+            decimal monto = (decimal)Session["montoFinal"];
+            lblMonto.Text = monto.ToString(); //Insertar el monto final
         }
 
         private void CargarTarjetas()

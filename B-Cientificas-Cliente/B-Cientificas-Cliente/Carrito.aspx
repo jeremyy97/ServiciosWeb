@@ -25,7 +25,7 @@
                 <!-- Button -->
                 <br />
                 <asp:Label ID="Label1" runat="server" Text="Total por pagar: "></asp:Label>
-                <asp:Label ID="Label2" runat="server" Text="0"></asp:Label>
+                <asp:Label ID="lblmonto" runat="server" Text="0"></asp:Label>
             </fieldset>
         </asp:Panel>
         <asp:Panel ID="Panel1" class="card" runat="server">

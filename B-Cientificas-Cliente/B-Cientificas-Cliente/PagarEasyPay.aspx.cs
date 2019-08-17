@@ -36,6 +36,12 @@ namespace B_Cientificas_Cliente
 
         #region Methods
 
+        private void CrearOrden()
+        {
+
+        }
+
+
         private void Limpiar()
         {
             txtCodSeguridad.Text = "";

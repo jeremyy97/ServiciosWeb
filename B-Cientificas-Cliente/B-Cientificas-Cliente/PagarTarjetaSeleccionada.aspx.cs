@@ -21,6 +21,25 @@ namespace B_Cientificas_Cliente
 
         #region Methods
 
+        private void CrearOrden(decimal monto, string cliente, int tarjetacredito)
+        {
+            OrdenLogica logica = new OrdenLogica();
+            OrdenLogica nuevaOrden = new OrdenLogica()
+            {
+                Montofinal = monto.ToString(),
+                Cliente_id = cliente,
+                Fecha = DateTime.Now,
+                TarjetaCredito_id = tarjetacredito
+            };
+            logica.CrearOrden(nuevaOrden);
+            int ordenCreada = logica.BuscarIDOrden(tarjetacredito, monto.ToString(), nuevaOrden.Fecha);
+            OrdenProyectoLogica carritoLogica = new OrdenProyectoLogica();
+            foreach (var item in BLL.Carrito.carritoLista)
+            {
+                carritoLogica.CrearOrdenProyecto(ordenCreada, item.proyecto_id);
+            }
+        }
+
         private string EncriptarTarjeta(string tarjeta)
         {
             StringBuilder duplicado = new StringBuilder(tarjeta);
@@ -107,6 +126,7 @@ namespace B_Cientificas_Cliente
                         btnPagar.Visible = false;
                         //ASIGNAR LA DESCARGA A DESCARGAR
                         btnDescargar.Visible = true;
+                        CrearOrden(monto, "1", tarjeta.TarjetaCredito_id);
                         break;
                     default:
                         lblResultado.Text = "Error";
@@ -131,7 +151,8 @@ namespace B_Cientificas_Cliente
         protected void Page_Load(object sender, EventArgs e)
         {
             CargarTarjeta();
-            lblMonto.Text = "20000";
+            decimal monto = (decimal)Session["montoFinal"];
+            lblMonto.Text = monto.ToString(); //Insertar el monto final
 
         }
 

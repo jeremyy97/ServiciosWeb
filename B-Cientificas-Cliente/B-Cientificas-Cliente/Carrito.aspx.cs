@@ -11,6 +11,7 @@ namespace B_Cientificas_Cliente
 {
     public partial class Carrito : System.Web.UI.Page
     {
+        
         DataTable dt = new DataTable();
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -24,7 +25,7 @@ namespace B_Cientificas_Cliente
             cargarCarrito();
             if (gvCarrito.Rows.Count <= 0)
             {
-                Label2.Text = "No hay productos en el carrito";
+                lblmonto.Text = "No hay productos en el carrito";
                 btnProceder.Enabled = false;
             }
             else
@@ -35,13 +36,17 @@ namespace B_Cientificas_Cliente
 
         public void cargarCarrito()
         {
+            decimal monto = 0;
             foreach (var item in BLL.Carrito.carritoLista)
             {
                 string[] items = { item.proyecto_id, item.nombre, item.precio };
+                monto = monto + Convert.ToDecimal(item.precio);
                 dt.Rows.Add(items);
             }
             gvCarrito.DataSource = dt;
             gvCarrito.DataBind();
+            Session["montoFinal"] = monto;
+            lblmonto.Text = monto.ToString();
         }
         protected void btnProceder_Click(object sender, EventArgs e)
         {
