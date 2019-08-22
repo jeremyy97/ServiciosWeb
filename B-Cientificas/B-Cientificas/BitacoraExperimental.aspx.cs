@@ -28,8 +28,20 @@ namespace B_Cientificas
                     ddlProyectos.Items.Add(item);
                 }
             }
-            
-            
+
+            UsuarioLogica usuarioactual = (UsuarioLogica)Session["usuario"];
+            RolUsuarioLogica roles = new RolUsuarioLogica();
+            if (roles.RolAdministrador(usuarioactual.Usuario_id) || roles.RolMantenimiento(usuarioactual.Usuario_id))
+            {
+
+            }
+            else
+            {
+                Response.Write("<script>alert('No cuenta con los permisos necesarios');</script>");
+                Response.Redirect("Default.aspx");
+            }
+
+
         }
 
         protected void ddlProyectos_SelectedIndexChanged(object sender, EventArgs e)

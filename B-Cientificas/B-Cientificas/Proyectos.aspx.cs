@@ -25,6 +25,18 @@ namespace B_Cientificas
             }
             gvProyectos.DataSource = logica.CargarProyectos();
             gvProyectos.DataBind();
+
+            UsuarioLogica usuarioactual = (UsuarioLogica)Session["usuario"];
+            RolUsuarioLogica roles = new RolUsuarioLogica();
+            if (roles.RolAdministrador(usuarioactual.Usuario_id) || roles.RolMantenimiento(usuarioactual.Usuario_id))
+            {
+
+            }
+            else
+            {
+                Response.Write("<script>alert('No cuenta con los permisos necesarios');</script>");
+                Response.Redirect("Default.aspx");
+            }
         }
 
         protected void btnLimpiar_Click(object sender, EventArgs e)

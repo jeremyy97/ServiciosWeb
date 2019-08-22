@@ -21,7 +21,9 @@ namespace B_Cientificas
             if (logica.Login(txtUsuario.Text, txtPassword.Text))
             {
                 Menu.usuario = txtUsuario.Text;
-                Response.Redirect("Default.aspx?usuario= "+txtUsuario.Text);
+                UsuarioLogica usuarioActual = logica.BuscarUsuarioXUserName(txtUsuario.Text);
+                Session["usuario"] = usuarioActual;
+                Response.Redirect("Default.aspx");
             }
         }
     }
