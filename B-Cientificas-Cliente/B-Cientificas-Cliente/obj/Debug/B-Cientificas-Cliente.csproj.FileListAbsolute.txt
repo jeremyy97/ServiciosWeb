@@ -173,3 +173,4 @@ D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\System.We
 C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\Recaptcha.dll
 C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\Recaptcha.pdb
 D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\Recaptcha.pdb
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\itextsharp.dll

@@ -72,7 +72,7 @@
                 <asp:Label ID="lblResultado" runat="server" Font-Bold="True" Font-Size="X-Large" ForeColor="Red"></asp:Label>
             </div>
             <div class="col-md-4">
-                <asp:Button ID="btnDescargar" class="btn btn-primary" runat="server" Text="Descargar" OnClick="btnPagar_Click" />
+                <asp:Button ID="btnDescargar" class="btn btn-primary" runat="server" Text="Descargar" OnClick="btnDescargar_Click" />
             </div>
         </div>
     </div>

@@ -8,6 +8,12 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
+//PDF
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using System.IO;
+using System.Text;
+
 namespace B_Cientificas_Cliente
 {
     public partial class PagarTarjetaNueva : System.Web.UI.Page
@@ -17,6 +23,7 @@ namespace B_Cientificas_Cliente
 
         TarjetasLogica logica = new TarjetasLogica();
         Random r = new Random();
+        string contenido = String.Empty;
 
         #endregion
 
@@ -26,6 +33,7 @@ namespace B_Cientificas_Cliente
         private void CrearOrden(decimal monto, string cliente, int tarjetacredito)
         {
             OrdenLogica logica = new OrdenLogica();
+            BitacoraExperimentalLogica logicaBit = new BitacoraExperimentalLogica();
             OrdenLogica nuevaOrden = new OrdenLogica()
             {
                 Montofinal = monto.ToString(),
@@ -36,10 +44,19 @@ namespace B_Cientificas_Cliente
             logica.CrearOrden(nuevaOrden);
             int ordenCreada = logica.BuscarIDOrden(tarjetacredito, monto.ToString(), nuevaOrden.Fecha);
             OrdenProyectoLogica carritoLogica = new OrdenProyectoLogica();
+            StringBuilder c = new StringBuilder();
             foreach (var item in BLL.Carrito.carritoLista)
             {
                 carritoLogica.CrearOrdenProyecto(ordenCreada, item.proyecto_id);
+                c.Append(item.nombre);
+                c.Append("\n\n");
+                BitacoraExperimentalLogica bitacora = logicaBit.CargarBitacora(item.proyecto_id);
+                c.Append(bitacora.Detalle1);
+                c.Append("\n");
+                c.Append(bitacora.Detalle2);
+                c.Append("\n\n");
             }
+            contenido = c.ToString();
         }
 
         private TarjetasLogica CrearTarjeta()
@@ -288,5 +305,79 @@ namespace B_Cientificas_Cliente
         }
 
         #endregion
+
+        private void GenerarPDF(string contenido)
+        {
+            Document oDoc = new Document(PageSize.LETTER, 0, 0, 0, 0);
+            iTextSharp.text.pdf.PdfWriter pdfw;
+            PdfContentByte cb;
+            String sNombreArchivo = @"C:\Users\Josue\Desktop\iTextSharpDemo \pruebaColumnas.pdf"; //CAMBIAR UBICACION
+            ColumnText ct;
+            stColumna[] arrColumnas = new stColumna[2];
+            for (int i = 0; i < arrColumnas.Length; i++)
+            {
+                arrColumnas[i] = new stColumna();
+            }
+            int iEstado = 0;
+            int iColumna = 0;
+
+            int INTERLINEADO = 20;
+            int MARGEN_INFERIOR = 80;
+
+            try
+            {
+                pdfw = PdfWriter.GetInstance(oDoc, new FileStream(sNombreArchivo, FileMode.Create, FileAccess.Write, FileShare.None));
+                oDoc.Open();
+                oDoc.NewPage();
+                cb = pdfw.DirectContent;
+                ct = new ColumnText(cb);
+
+                arrColumnas[0].MargenIzquierdo = 60;
+                arrColumnas[0].MargenDerecho = 280;
+                arrColumnas[1].MargenIzquierdo = 320;
+                arrColumnas[1].MargenDerecho = 530;
+
+                ct.AddText(new Phrase("Proyecto B-Cientificas" + "\n\n", FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 18)));
+                ct.AddText(new Phrase(contenido, FontFactory.GetFont(FontFactory.HELVETICA, 12)));
+
+                while (iEstado != ColumnText.NO_MORE_TEXT)
+                {
+                    ct.SetSimpleColumn(arrColumnas[iColumna].MargenDerecho, MARGEN_INFERIOR, arrColumnas[iColumna].MargenIzquierdo, oDoc.PageSize.Height, INTERLINEADO, Element.ALIGN_JUSTIFIED);
+                    iEstado = ct.Go();
+                    if (iEstado == ColumnText.NO_MORE_COLUMN)
+                    {
+                        iColumna = iColumna + 1;
+
+                        if (iColumna > (arrColumnas.Length - 1))
+                        {
+                            oDoc.NewPage();
+                            iColumna = 0;
+                        }
+                    }
+                }
+
+                oDoc.Close();
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "Scripts", "<script>alert('Archivo Generado Exitosamente');</script>");
+
+            }
+            catch (Exception exj)
+            {
+                if (oDoc.IsOpen())
+                {
+                    oDoc.Close();
+                }
+            }
+            finally
+            {
+                cb = null;
+                pdfw = null;
+                oDoc = null;
+            }
+        }
+
+        protected void btnDescargar_Click(object sender, EventArgs e)
+        {
+            GenerarPDF(contenido);
+        }
     }
 }

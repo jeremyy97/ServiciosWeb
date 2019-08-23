@@ -21,6 +21,7 @@ namespace B_Cientificas_Cliente
         #region Var
 
         TarjetasLogica tarjeta = new TarjetasLogica();
+        string contenido = String.Empty;
 
         #endregion
 
@@ -29,6 +30,7 @@ namespace B_Cientificas_Cliente
         private void CrearOrden(decimal monto, string cliente, int tarjetacredito)
         {
             OrdenLogica logica = new OrdenLogica();
+            BitacoraExperimentalLogica logicaBit = new BitacoraExperimentalLogica();
             OrdenLogica nuevaOrden = new OrdenLogica()
             {
                 Montofinal = monto.ToString(),
@@ -39,10 +41,19 @@ namespace B_Cientificas_Cliente
             logica.CrearOrden(nuevaOrden);
             int ordenCreada = logica.BuscarIDOrden(tarjetacredito, monto.ToString(), nuevaOrden.Fecha);
             OrdenProyectoLogica carritoLogica = new OrdenProyectoLogica();
+            StringBuilder c = new StringBuilder();
             foreach (var item in BLL.Carrito.carritoLista)
             {
                 carritoLogica.CrearOrdenProyecto(ordenCreada, item.proyecto_id);
+                c.Append(item.nombre);
+                c.Append("\n\n");
+                BitacoraExperimentalLogica bitacora = logicaBit.CargarBitacora(item.proyecto_id);
+                c.Append(bitacora.Detalle1);
+                c.Append("\n");
+                c.Append(bitacora.Detalle2);
+                c.Append("\n\n");
             }
+            contenido = c.ToString();
         }
 
         private string EncriptarTarjeta(string tarjeta)
@@ -149,12 +160,12 @@ namespace B_Cientificas_Cliente
         }
 
 
-        private void GenerarPDF()
+        private void GenerarPDF(string contenido)
         {
             Document oDoc = new Document(PageSize.LETTER, 0, 0, 0, 0);
             iTextSharp.text.pdf.PdfWriter pdfw;
             PdfContentByte cb;
-            String sNombreArchivo = @"C:\Users\Josue\Desktop\iTextSharpDemo \pruebaColumnas.pdf";
+            String sNombreArchivo = @"C:\Users\Josue\Desktop\iTextSharpDemo \pruebaColumnas.pdf"; //CAMBIAR UBICACION
             ColumnText ct;
             stColumna[] arrColumnas = new stColumna[2];
             for (int i = 0; i < arrColumnas.Length; i++)
@@ -180,15 +191,9 @@ namespace B_Cientificas_Cliente
                 arrColumnas[1].MargenIzquierdo = 320;
                 arrColumnas[1].MargenDerecho = 530;
 
-                ct.AddText(new Phrase("TITULO\n\n", FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 18)));
-                ct.AddText(new Phrase("PDF (del inglés Portable Document Format, Formato de Documento Portátil) es un formato de almacenamiento de documentos, desarrollado por la empresa Adobe Systems. Está especialmente ideado para documentos susceptibles de ser impresos, ya que especifica toda la información necesaria para la presentación final del documento, determinando todos los detalles de cómo va a quedar, no requiriéndose procesos anteriores de ajuste ni de maquetación.", FontFactory.GetFont(FontFactory.HELVETICA, 12)));
-                ct.AddText(new Phrase("\n\nObjetivo General\n\n", FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 14)));
-                ct.AddText(new Phrase("PDF (del inglés Portable Document Format, Formato de Documento Portátil) es un formato de almacenamiento de documentos, desarrollado por la empresa Adobe Systems. Está especialmente ideado para documentos susceptibles de ser impresos, ya que especifica toda la información necesaria para la presentación final del documento, determinando todos los detalles de cómo va a quedar, no requiriéndose procesos anteriores de ajuste ni de maquetación.", FontFactory.GetFont(FontFactory.HELVETICA, 12)));
-                ct.AddText(new Phrase("PDF (del inglés Portable Document Format, Formato de Documento Portátil) es un formato de almacenamiento de documentos, desarrollado por la empresa Adobe Systems. Está especialmente ideado para documentos susceptibles de ser impresos, ya que especifica toda la información necesaria para la presentación final del documento, determinando todos los detalles de cómo va a quedar, no requiriéndose procesos anteriores de ajuste ni de maquetación.", FontFactory.GetFont(FontFactory.HELVETICA, 12)));
-                ct.AddText(new Phrase("\n\nObjetivos Especificos\n\n", FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 14)));
-                ct.AddText(new Phrase("PDF (del inglés Portable Document Format, Formato de Documento Portátil) es un formato de almacenamiento de documentos, desarrollado por la empresa Adobe Systems. Está especialmente ideado para documentos susceptibles de ser impresos, ya que especifica toda la información necesaria para la presentación final del documento, determinando todos los detalles de cómo va a quedar, no requiriéndose procesos anteriores de ajuste ni de maquetación.", FontFactory.GetFont(FontFactory.HELVETICA, 12)));
-                ct.AddText(new Phrase("PDF (del inglés Portable Document Format, Formato de Documento Portátil) es un formato de almacenamiento de documentos, desarrollado por la empresa Adobe Systems. Está especialmente ideado para documentos susceptibles de ser impresos, ya que especifica toda la información necesaria para la presentación final del documento, determinando todos los detalles de cómo va a quedar, no requiriéndose procesos anteriores de ajuste ni de maquetación.", FontFactory.GetFont(FontFactory.HELVETICA, 12)));
-
+                ct.AddText(new Phrase("Proyecto B-Cientificas"+"\n\n", FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 18)));
+                ct.AddText(new Phrase(contenido, FontFactory.GetFont(FontFactory.HELVETICA, 12)));
+                
                 while (iEstado != ColumnText.NO_MORE_TEXT)
                 {
                     ct.SetSimpleColumn(arrColumnas[iColumna].MargenDerecho, MARGEN_INFERIOR, arrColumnas[iColumna].MargenIzquierdo, oDoc.PageSize.Height, INTERLINEADO, Element.ALIGN_JUSTIFIED);
@@ -246,7 +251,7 @@ namespace B_Cientificas_Cliente
 
         protected void btnDescargar_Click(object sender, EventArgs e)
         {
-            GenerarPDF();
+            GenerarPDF(contenido);
         }
     }
 }

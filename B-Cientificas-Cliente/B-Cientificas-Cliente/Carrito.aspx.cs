@@ -72,28 +72,29 @@ namespace B_Cientificas_Cliente
         }
         protected void btnProceder_Click(object sender, EventArgs e)
         {
-            string opcion = ddlMetodoPago.SelectedValue;
-
-            if (lblCaptcha.Text.Equals(txtCaptcha.Text))
+            if (IsValid)
             {
-                if (opcion.Equals("Easy Pay"))
+                string opcion = ddlMetodoPago.SelectedValue;
+
+                if (lblCaptcha.Text.Equals(txtCaptcha.Text))
                 {
-                    Response.Redirect("PagarEasyPay.aspx"); //Hay que mandar el monto
+                    if (opcion.Equals("Easy Pay"))
+                    {
+                        Response.Redirect("PagarEasyPay.aspx"); //Hay que mandar el monto
+                    }
+                    else
+                    {
+                        Response.Redirect("PagarTarjeta.aspx"); //Hay que mandar el monto
+                    }
+
                 }
                 else
                 {
-                    Response.Redirect("PagarTarjeta.aspx"); //Hay que mandar el monto
+                    Response.Write("<script>alert('Captcha Incorrecto');</script>");
+                    GenerarCaptcha();
                 }
-
             }
-            else
-            {
-                Response.Write("<script>alert('Captcha Incorrecto');</script>");
-                GenerarCaptcha();
-            }
-
-
-            
+              
         }
 
         

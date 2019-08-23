@@ -97,5 +97,10 @@ namespace B_Cientificas_Cliente
         }
 
         #endregion
+
+        protected void btnDescargar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
