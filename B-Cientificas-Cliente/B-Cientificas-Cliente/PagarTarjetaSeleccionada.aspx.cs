@@ -9,6 +9,11 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
+//PDF
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using System.IO;
+
 namespace B_Cientificas_Cliente
 {
     public partial class PagarTarjetaSeleccionada : System.Web.UI.Page
@@ -144,6 +149,82 @@ namespace B_Cientificas_Cliente
         }
 
 
+        private void GenerarPDF()
+        {
+            Document oDoc = new Document(PageSize.LETTER, 0, 0, 0, 0);
+            iTextSharp.text.pdf.PdfWriter pdfw;
+            PdfContentByte cb;
+            String sNombreArchivo = @"C:\Users\Josue\Desktop\iTextSharpDemo \pruebaColumnas.pdf";
+            ColumnText ct;
+            stColumna[] arrColumnas = new stColumna[2];
+            for (int i = 0; i < arrColumnas.Length; i++)
+            {
+                arrColumnas[i] = new stColumna();
+            }
+            int iEstado = 0;
+            int iColumna = 0;
+
+            int INTERLINEADO = 20;
+            int MARGEN_INFERIOR = 80;
+
+            try
+            {
+                pdfw = PdfWriter.GetInstance(oDoc, new FileStream(sNombreArchivo, FileMode.Create, FileAccess.Write, FileShare.None));
+                oDoc.Open();
+                oDoc.NewPage();
+                cb = pdfw.DirectContent;
+                ct = new ColumnText(cb);
+
+                arrColumnas[0].MargenIzquierdo = 60;
+                arrColumnas[0].MargenDerecho = 280;
+                arrColumnas[1].MargenIzquierdo = 320;
+                arrColumnas[1].MargenDerecho = 530;
+
+                ct.AddText(new Phrase("TITULO\n\n", FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 18)));
+                ct.AddText(new Phrase("PDF (del inglés Portable Document Format, Formato de Documento Portátil) es un formato de almacenamiento de documentos, desarrollado por la empresa Adobe Systems. Está especialmente ideado para documentos susceptibles de ser impresos, ya que especifica toda la información necesaria para la presentación final del documento, determinando todos los detalles de cómo va a quedar, no requiriéndose procesos anteriores de ajuste ni de maquetación.", FontFactory.GetFont(FontFactory.HELVETICA, 12)));
+                ct.AddText(new Phrase("\n\nObjetivo General\n\n", FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 14)));
+                ct.AddText(new Phrase("PDF (del inglés Portable Document Format, Formato de Documento Portátil) es un formato de almacenamiento de documentos, desarrollado por la empresa Adobe Systems. Está especialmente ideado para documentos susceptibles de ser impresos, ya que especifica toda la información necesaria para la presentación final del documento, determinando todos los detalles de cómo va a quedar, no requiriéndose procesos anteriores de ajuste ni de maquetación.", FontFactory.GetFont(FontFactory.HELVETICA, 12)));
+                ct.AddText(new Phrase("PDF (del inglés Portable Document Format, Formato de Documento Portátil) es un formato de almacenamiento de documentos, desarrollado por la empresa Adobe Systems. Está especialmente ideado para documentos susceptibles de ser impresos, ya que especifica toda la información necesaria para la presentación final del documento, determinando todos los detalles de cómo va a quedar, no requiriéndose procesos anteriores de ajuste ni de maquetación.", FontFactory.GetFont(FontFactory.HELVETICA, 12)));
+                ct.AddText(new Phrase("\n\nObjetivos Especificos\n\n", FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 14)));
+                ct.AddText(new Phrase("PDF (del inglés Portable Document Format, Formato de Documento Portátil) es un formato de almacenamiento de documentos, desarrollado por la empresa Adobe Systems. Está especialmente ideado para documentos susceptibles de ser impresos, ya que especifica toda la información necesaria para la presentación final del documento, determinando todos los detalles de cómo va a quedar, no requiriéndose procesos anteriores de ajuste ni de maquetación.", FontFactory.GetFont(FontFactory.HELVETICA, 12)));
+                ct.AddText(new Phrase("PDF (del inglés Portable Document Format, Formato de Documento Portátil) es un formato de almacenamiento de documentos, desarrollado por la empresa Adobe Systems. Está especialmente ideado para documentos susceptibles de ser impresos, ya que especifica toda la información necesaria para la presentación final del documento, determinando todos los detalles de cómo va a quedar, no requiriéndose procesos anteriores de ajuste ni de maquetación.", FontFactory.GetFont(FontFactory.HELVETICA, 12)));
+
+                while (iEstado != ColumnText.NO_MORE_TEXT)
+                {
+                    ct.SetSimpleColumn(arrColumnas[iColumna].MargenDerecho, MARGEN_INFERIOR, arrColumnas[iColumna].MargenIzquierdo, oDoc.PageSize.Height, INTERLINEADO, Element.ALIGN_JUSTIFIED);
+                    iEstado = ct.Go();
+                    if (iEstado == ColumnText.NO_MORE_COLUMN)
+                    {
+                        iColumna = iColumna + 1;
+
+                        if (iColumna > (arrColumnas.Length - 1))
+                        {
+                            oDoc.NewPage();
+                            iColumna = 0;
+                        }
+                    }
+                }
+
+                oDoc.Close();
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "Scripts", "<script>alert('Archivo Generado Exitosamente');</script>");
+
+            }
+            catch (Exception exj)
+            {
+                if (oDoc.IsOpen())
+                {
+                    oDoc.Close();
+                }
+            }
+            finally
+            {
+                cb = null;
+                pdfw = null;
+                oDoc = null;
+            }
+        }
+
+
         #endregion
 
         #region Events
@@ -162,5 +243,10 @@ namespace B_Cientificas_Cliente
         }
 
         #endregion
+
+        protected void btnDescargar_Click(object sender, EventArgs e)
+        {
+            GenerarPDF();
+        }
     }
 }
