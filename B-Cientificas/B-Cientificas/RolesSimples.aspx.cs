@@ -20,7 +20,19 @@ namespace B_Cientificas
             {
                 CargarUsuarios();
             }
-            
+
+            UsuarioLogica usuarioactual = (UsuarioLogica)Session["usuario"];
+            RolUsuarioLogica roles = new RolUsuarioLogica();
+            if (roles.RolAdministrador(usuarioactual.Usuario_id) || roles.RolSeguridad(usuarioactual.Usuario_id))
+            {
+
+            }
+            else
+            {
+                Response.Write("<script>alert('No cuenta con los permisos necesarios');</script>");
+                Response.Redirect("Default.aspx");
+            }
+
         }
 
         private void CargarUsuarios()
@@ -50,12 +62,12 @@ namespace B_Cientificas
             List<RolUsuarioLogica> usuarioRoles = new List<RolUsuarioLogica>();
             foreach (DataRow dr in ds.Tables[0].Rows)
             {
-                usuarioRoles.Add(new RolUsuarioLogica { RolUsuarioID = Convert.ToInt32(dr["RolUsuario_id"]), UsuarioID = Convert.ToString(dr["Usuario_id"]) });
+                usuarioRoles.Add(new RolUsuarioLogica { Rolusuario_id = Convert.ToInt32(dr["RolUsuario_id"]), Usuario_id = Convert.ToString(dr["Usuario_id"]) });
             }
 
             for (int i = 0; i < usuarioRoles.Count; i++)
             {
-                switch (usuarioRoles[i].RolUsuarioID)
+                switch (usuarioRoles[i].Rolusuario_id)
                 {
                     case 1:
                         cbx1.Checked = true;
@@ -79,22 +91,7 @@ namespace B_Cientificas
 
 
 
-            /*string rol1 = String.Empty;
-            string rol2 = String.Empty;
-            string[] lista_roles = Roles.GetRolesForUser(usuario);
-
-            for (int i = 0; i <= lista_roles.Length - 1; i++)
-            {
-                rol1 = lista_roles[i].ToString();
-                for (int j = 0; j <= chkl_roles.Items.Count - 1; j++)
-                {
-                    rol2 = chkl_roles.Items[j].Text;
-                    if (rol1.Equals(rol2))
-                    {
-                        chkl_roles.Items[j].Selected = true;
-                    }
-                }
-            }*/
+  
 
         }
 

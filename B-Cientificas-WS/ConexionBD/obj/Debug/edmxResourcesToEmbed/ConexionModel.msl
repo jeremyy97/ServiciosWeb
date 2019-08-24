@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BCientificasClienteModelStoreContainer" CdmEntityContainer="BCientificasClienteEntities">
+    <EntitySetMapping Name="EasyPay">
+      <EntityTypeMapping TypeName="BCientificasClienteModel.EasyPay">
+        <MappingFragment StoreEntitySet="EasyPay">
+          <ScalarProperty Name="EasyPay_Id" ColumnName="EasyPay_Id" />
+          <ScalarProperty Name="Num_Cuenta" ColumnName="Num_Cuenta" />
+          <ScalarProperty Name="Codigo_Seguridad" ColumnName="Codigo_Seguridad" />
+          <ScalarProperty Name="Contrasena" ColumnName="Contrasena" />
+          <ScalarProperty Name="Saldo" ColumnName="Saldo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TarjetaCredito">
+      <EntityTypeMapping TypeName="BCientificasClienteModel.TarjetaCredito">
+        <MappingFragment StoreEntitySet="TarjetaCredito">
+          <ScalarProperty Name="TarjetaCredito_id" ColumnName="TarjetaCredito_id" />
+          <ScalarProperty Name="NumeroTarjeta" ColumnName="NumeroTarjeta" />
+          <ScalarProperty Name="NombreTarjeta" ColumnName="NombreTarjeta" />
+          <ScalarProperty Name="MesVencimiento" ColumnName="MesVencimiento" />
+          <ScalarProperty Name="AnnoVencimiento" ColumnName="AnnoVencimiento" />
+          <ScalarProperty Name="CVV" ColumnName="CVV" />
+          <ScalarProperty Name="TipoTarjeta_Id" ColumnName="TipoTarjeta_Id" />
+          <ScalarProperty Name="DebitoCredito" ColumnName="DebitoCredito" />
+          <ScalarProperty Name="Saldo" ColumnName="Saldo" />
+          <ScalarProperty Name="Limite" ColumnName="Limite" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TransaccionEasyPay">
+      <EntityTypeMapping TypeName="BCientificasClienteModel.TransaccionEasyPay">
+        <MappingFragment StoreEntitySet="TransaccionEasyPay">
+          <ScalarProperty Name="Transaccion_Id" ColumnName="Transaccion_Id" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="Motivo" ColumnName="Motivo" />
+          <ScalarProperty Name="Resultado" ColumnName="Resultado" />
+          <ScalarProperty Name="EasyPay_Id" ColumnName="EasyPay_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TransaccionTarjeta">
+      <EntityTypeMapping TypeName="BCientificasClienteModel.TransaccionTarjeta">
+        <MappingFragment StoreEntitySet="TransaccionTarjeta">
+          <ScalarProperty Name="Transaccion_Id" ColumnName="Transaccion_Id" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="Motivo" ColumnName="Motivo" />
+          <ScalarProperty Name="Resultado" ColumnName="Resultado" />
+          <ScalarProperty Name="Tarjeta_Id" ColumnName="Tarjeta_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_Carga_EasyPay" FunctionName="BCientificasClienteModel.Store.sp_Carga_EasyPay">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BCientificasClienteModel.sp_Carga_EasyPay_Result">
+          <ScalarProperty Name="EasyPay_Id" ColumnName="EasyPay_Id" />
+          <ScalarProperty Name="Num_Cuenta" ColumnName="Num_Cuenta" />
+          <ScalarProperty Name="Codigo_Seguridad" ColumnName="Codigo_Seguridad" />
+          <ScalarProperty Name="Contrasena" ColumnName="Contrasena" />
+          <ScalarProperty Name="Saldo" ColumnName="Saldo" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_Carga_TarjetaCredito" FunctionName="BCientificasClienteModel.Store.sp_Carga_TarjetaCredito">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BCientificasClienteModel.sp_Carga_TarjetaCredito_Result">
+          <ScalarProperty Name="TarjetaCredito_id" ColumnName="TarjetaCredito_id" />
+          <ScalarProperty Name="NumeroTarjeta" ColumnName="NumeroTarjeta" />
+          <ScalarProperty Name="NombreTarjeta" ColumnName="NombreTarjeta" />
+          <ScalarProperty Name="MesVencimiento" ColumnName="MesVencimiento" />
+          <ScalarProperty Name="AnnoVencimiento" ColumnName="AnnoVencimiento" />
+          <ScalarProperty Name="CVV" ColumnName="CVV" />
+          <ScalarProperty Name="TipoTarjeta_Id" ColumnName="TipoTarjeta_Id" />
+          <ScalarProperty Name="DebitoCredito" ColumnName="DebitoCredito" />
+          <ScalarProperty Name="Saldo" ColumnName="Saldo" />
+          <ScalarProperty Name="Limite" ColumnName="Limite" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_Carga_TransaccionEasyPay" FunctionName="BCientificasClienteModel.Store.sp_Carga_TransaccionEasyPay">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BCientificasClienteModel.sp_Carga_TransaccionEasyPay_Result">
+          <ScalarProperty Name="Transaccion_Id" ColumnName="Transaccion_Id" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="Motivo" ColumnName="Motivo" />
+          <ScalarProperty Name="Resultado" ColumnName="Resultado" />
+          <ScalarProperty Name="EasyPay_Id" ColumnName="EasyPay_Id" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_Carga_TransaccionTarjeta" FunctionName="BCientificasClienteModel.Store.sp_Carga_TransaccionTarjeta">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BCientificasClienteModel.sp_Carga_TransaccionTarjeta_Result">
+          <ScalarProperty Name="Transaccion_Id" ColumnName="Transaccion_Id" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="Motivo" ColumnName="Motivo" />
+          <ScalarProperty Name="Resultado" ColumnName="Resultado" />
+          <ScalarProperty Name="Tarjeta_Id" ColumnName="Tarjeta_Id" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_Inserta_TransaccionEasyPay" FunctionName="BCientificasClienteModel.Store.sp_Inserta_TransaccionEasyPay" />
+    <FunctionImportMapping FunctionImportName="sp_Inserta_TransaccionTarjeta" FunctionName="BCientificasClienteModel.Store.sp_Inserta_TransaccionTarjeta" />
+    <FunctionImportMapping FunctionImportName="sp_Lista_EasyPay" FunctionName="BCientificasClienteModel.Store.sp_Lista_EasyPay">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BCientificasClienteModel.sp_Lista_EasyPay_Result">
+          <ScalarProperty Name="EasyPay_Id" ColumnName="EasyPay_Id" />
+          <ScalarProperty Name="Num_Cuenta" ColumnName="Num_Cuenta" />
+          <ScalarProperty Name="Codigo_Seguridad" ColumnName="Codigo_Seguridad" />
+          <ScalarProperty Name="Contrasena" ColumnName="Contrasena" />
+          <ScalarProperty Name="Saldo" ColumnName="Saldo" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_Lista_TarjetaCredito" FunctionName="BCientificasClienteModel.Store.sp_Lista_TarjetaCredito">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BCientificasClienteModel.sp_Lista_TarjetaCredito_Result">
+          <ScalarProperty Name="TarjetaCredito_id" ColumnName="TarjetaCredito_id" />
+          <ScalarProperty Name="NumeroTarjeta" ColumnName="NumeroTarjeta" />
+          <ScalarProperty Name="NombreTarjeta" ColumnName="NombreTarjeta" />
+          <ScalarProperty Name="MesVencimiento" ColumnName="MesVencimiento" />
+          <ScalarProperty Name="AnnoVencimiento" ColumnName="AnnoVencimiento" />
+          <ScalarProperty Name="CVV" ColumnName="CVV" />
+          <ScalarProperty Name="TipoTarjeta_Id" ColumnName="TipoTarjeta_Id" />
+          <ScalarProperty Name="DebitoCredito" ColumnName="DebitoCredito" />
+          <ScalarProperty Name="Saldo" ColumnName="Saldo" />
+          <ScalarProperty Name="Limite" ColumnName="Limite" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_Actualiza_EasyPay" FunctionName="BCientificasClienteModel.Store.sp_Actualiza_EasyPay" />
+    <FunctionImportMapping FunctionImportName="sp_Actualiza_TarjetaCredito" FunctionName="BCientificasClienteModel.Store.sp_Actualiza_TarjetaCredito" />
+    <FunctionImportMapping FunctionImportName="sp_Actualiza_TarjetaCredito_Saldo" FunctionName="BCientificasClienteModel.Store.sp_Actualiza_TarjetaCredito_Saldo" />
+    <FunctionImportMapping FunctionImportName="sp_Actualiza_EasyPay_Saldo" FunctionName="BCientificasClienteModel.Store.sp_Actualiza_EasyPay_Saldo" />
+  </EntityContainerMapping>
+</Mapping>

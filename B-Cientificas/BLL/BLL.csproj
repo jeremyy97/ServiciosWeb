@@ -44,10 +44,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BitacoraExperimentalLogica.cs" />
+    <Compile Include="BitacoraLogica.cs" />
     <Compile Include="ConsecutivoLogica.cs" />
+    <Compile Include="DescargasLogica.cs" />
+    <Compile Include="ErroresLogica.cs" />
+    <Compile Include="Extensions.cs" />
     <Compile Include="NivelAcademicoLogica.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ProyectosLogica.cs" />
     <Compile Include="PuestoLogica.cs" />
+    <Compile Include="RamasCientificasLogica.cs" />
     <Compile Include="RolLaboratorioLogica.cs" />
     <Compile Include="RolUsuarioLogica.cs" />
     <Compile Include="TipoConsecutivoLogica.cs" />

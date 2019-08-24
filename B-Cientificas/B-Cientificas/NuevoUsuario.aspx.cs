@@ -35,6 +35,18 @@ namespace B_Cientificas
                 Response.Redirect("Default.aspx");
 
             }
+
+            UsuarioLogica usuarioactual = (UsuarioLogica)Session["usuario"];
+            RolUsuarioLogica roles = new RolUsuarioLogica();
+            if (roles.RolAdministrador(usuarioactual.Usuario_id) || roles.RolSeguridad(usuarioactual.Usuario_id))
+            {
+
+            }
+            else
+            {
+                Response.Write("<script>alert('No cuenta con los permisos necesarios');</script>");
+                Response.Redirect("Default.aspx");
+            }
         }
 
         private void CargarNiveles()
@@ -90,7 +102,7 @@ namespace B_Cientificas
                 UsuarioLogica usuario = new UsuarioLogica();
                 if (txtPassword.Text == txtConfirmarPassword.Text)
                 {
-                    usuario.Usuario_ID = txtCodigo.Text;
+                    usuario.Usuario_id = txtCodigo.Text;
                     usuario.Usuario = txtNombreUsuario.Text;
                     usuario.UrlFirma = GuardarImagen(fileupFirma, "usuarios/firmas");
                    
@@ -101,7 +113,7 @@ namespace B_Cientificas
                     usuario.Primer_Apellido = txtPrimerApellido.Text;
                     usuario.Password = txtPassword.Text;
                     usuario.Nombre = txtNombre.Text;
-                    usuario.Nivel_Academico = ddlNivelesAcademicos.SelectedValue;
+                    usuario.NivelAcademico_Id = ddlNivelesAcademicos.SelectedValue;
                     usuario.Celular = txtCelular.Text;
 
                     if (logica.CrearUsuario(usuario))

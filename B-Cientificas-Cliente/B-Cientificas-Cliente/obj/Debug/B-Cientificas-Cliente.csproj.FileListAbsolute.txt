@@ -1,0 +1,176 @@
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\B-Cientificas-Cliente.dll.config
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\B-Cientificas-Cliente.dll
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\B-Cientificas-Cliente.pdb
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\roslyn\csc.exe
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\roslyn\csc.exe.config
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\roslyn\csc.rsp
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\roslyn\csi.exe
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\roslyn\csi.exe.config
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\roslyn\csi.rsp
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\roslyn\System.AppContext.dll
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\roslyn\System.Console.dll
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\roslyn\System.IO.Compression.dll
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\roslyn\System.IO.Pipes.AccessControl.dll
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\roslyn\System.IO.Pipes.dll
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\roslyn\System.Security.Claims.dll
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\roslyn\System.ValueTuple.dll
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\roslyn\System.Xml.XPath.dll
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\roslyn\vbc.exe
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\roslyn\vbc.exe.config
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\roslyn\vbc.rsp
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\roslyn\VBCSCompiler.exe
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\obj\Debug\B-Cientificas-Cliente.csprojAssemblyReference.cache
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\obj\Debug\B-Cientificas-Cliente.csproj.CoreCompileInputs.cache
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\obj\Debug\B-Cientificas-Cliente.csproj.CopyComplete
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\obj\Debug\B-Cientificas-Cliente.dll
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\obj\Debug\B-Cientificas-Cliente.pdb
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\B-Cientificas-Cliente.dll.config
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\B-Cientificas-Cliente.dll
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\B-Cientificas-Cliente.pdb
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\roslyn\csc.exe
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\roslyn\csc.exe.config
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\roslyn\csc.rsp
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\roslyn\csi.exe
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\roslyn\csi.exe.config
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\roslyn\csi.rsp
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\roslyn\Microsoft.Managed.Core.targets
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\roslyn\System.AppContext.dll
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\roslyn\System.Collections.Immutable.dll
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\roslyn\System.Console.dll
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\roslyn\System.IO.Compression.dll
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\roslyn\System.IO.FileSystem.dll
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\roslyn\System.IO.Pipes.AccessControl.dll
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\roslyn\System.IO.Pipes.dll
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\roslyn\System.Reflection.Metadata.dll
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\roslyn\System.Security.AccessControl.dll
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\roslyn\System.Security.Claims.dll
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\roslyn\System.Security.Principal.Windows.dll
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\roslyn\System.ValueTuple.dll
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\roslyn\System.Xml.XmlDocument.dll
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\roslyn\System.Xml.XPath.dll
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\roslyn\vbc.exe
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\roslyn\vbc.exe.config
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\roslyn\vbc.rsp
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\roslyn\VBCSCompiler.exe
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\roslyn\VBCSCompiler.exe.config
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\obj\Debug\B-Cientificas-Cliente.csprojAssemblyReference.cache
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\obj\Debug\B-Cientificas-Cliente.csproj.CoreCompileInputs.cache
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\obj\Debug\B-Cientificas-Cliente.csproj.CopyComplete
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\obj\Debug\B-Cientificas-Cliente.dll
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\obj\Debug\B-Cientificas-Cliente.pdb
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\BLL.dll
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\DAL.dll
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\BLL.pdb
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\DAL.pdb
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\Newtonsoft.Json.dll
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\Newtonsoft.Json.xml
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\BLL.dll
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\Newtonsoft.Json.dll
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\DAL.dll
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\BLL.pdb
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\Newtonsoft.Json.xml
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\DAL.pdb
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\Antlr3.Runtime.dll
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\System.Net.Http.Formatting.dll
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\System.Web.Helpers.dll
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\System.Web.Http.dll
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\System.Web.Http.WebHost.dll
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\System.Web.Mvc.dll
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\System.Web.Optimization.dll
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\System.Web.Razor.dll
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\System.Web.WebPages.dll
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\System.Web.WebPages.Razor.dll
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\WebGrease.dll
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\Antlr3.Runtime.pdb
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\System.Net.Http.Formatting.xml
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\System.Web.Helpers.xml
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\System.Web.Http.xml
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\System.Web.Http.WebHost.xml
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\System.Web.Mvc.xml
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\System.Web.Optimization.xml
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\System.Web.Razor.xml
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\System.Web.WebPages.xml
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\System.Web.WebPages.Razor.xml
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\Antlr3.Runtime.dll
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\Microsoft.Web.Infrastructure.dll
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\System.Net.Http.Formatting.dll
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\System.Web.Helpers.dll
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\System.Web.Http.dll
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\System.Web.Http.WebHost.dll
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\System.Web.Mvc.dll
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\System.Web.Optimization.dll
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\System.Web.Razor.dll
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\System.Web.WebPages.Deployment.dll
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\System.Web.WebPages.dll
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\System.Web.WebPages.Razor.dll
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\WebGrease.dll
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\Antlr3.Runtime.pdb
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\System.Net.Http.Formatting.xml
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\System.Web.Helpers.xml
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\System.Web.Http.xml
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\System.Web.Http.WebHost.xml
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\System.Web.Mvc.xml
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\System.Web.Optimization.xml
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\System.Web.Razor.xml
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\System.Web.WebPages.xml
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\System.Web.WebPages.Deployment.xml
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\System.Web.WebPages.Razor.xml
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\Recaptcha.dll
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\Recaptcha.pdb
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\Recaptcha.pdb
+D:\GitHub\ServiciosWeb\B-Cientificas-Cliente\B-Cientificas-Cliente\bin\itextsharp.dll

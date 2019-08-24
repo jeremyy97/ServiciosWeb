@@ -1,0 +1,36 @@
+C:\Users\Josue\Desktop\B-Cientificas-WS\ConexionBD\bin\Debug\ConexionBD.dll.config
+C:\Users\Josue\Desktop\B-Cientificas-WS\ConexionBD\bin\Debug\ConexionBD.dll
+C:\Users\Josue\Desktop\B-Cientificas-WS\ConexionBD\bin\Debug\ConexionBD.pdb
+C:\Users\Josue\Desktop\B-Cientificas-WS\ConexionBD\bin\Debug\EntityFramework.dll
+C:\Users\Josue\Desktop\B-Cientificas-WS\ConexionBD\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Josue\Desktop\B-Cientificas-WS\ConexionBD\bin\Debug\EntityFramework.xml
+C:\Users\Josue\Desktop\B-Cientificas-WS\ConexionBD\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Josue\Desktop\B-Cientificas-WS\ConexionBD\obj\Debug\ConexionBD.csprojAssemblyReference.cache
+C:\Users\Josue\Desktop\B-Cientificas-WS\ConexionBD\obj\Debug\ConexionBD.csproj.CoreCompileInputs.cache
+C:\Users\Josue\Desktop\B-Cientificas-WS\ConexionBD\obj\Debug\ConexionBD.csproj.CopyComplete
+C:\Users\Josue\Desktop\B-Cientificas-WS\ConexionBD\obj\Debug\ConexionBD.dll
+C:\Users\Josue\Desktop\B-Cientificas-WS\ConexionBD\obj\Debug\ConexionBD.pdb
+D:\GitHub\ServiciosWeb\B-Cientificas-WS\ConexionBD\bin\Debug\ConexionBD.dll.config
+D:\GitHub\ServiciosWeb\B-Cientificas-WS\ConexionBD\bin\Debug\ConexionBD.dll
+D:\GitHub\ServiciosWeb\B-Cientificas-WS\ConexionBD\bin\Debug\ConexionBD.pdb
+D:\GitHub\ServiciosWeb\B-Cientificas-WS\ConexionBD\bin\Debug\EntityFramework.dll
+D:\GitHub\ServiciosWeb\B-Cientificas-WS\ConexionBD\bin\Debug\EntityFramework.SqlServer.dll
+D:\GitHub\ServiciosWeb\B-Cientificas-WS\ConexionBD\bin\Debug\EntityFramework.xml
+D:\GitHub\ServiciosWeb\B-Cientificas-WS\ConexionBD\bin\Debug\EntityFramework.SqlServer.xml
+D:\GitHub\ServiciosWeb\B-Cientificas-WS\ConexionBD\obj\Debug\ConexionBD.csprojAssemblyReference.cache
+D:\GitHub\ServiciosWeb\B-Cientificas-WS\ConexionBD\obj\Debug\ConexionBD.csproj.CoreCompileInputs.cache
+D:\GitHub\ServiciosWeb\B-Cientificas-WS\ConexionBD\obj\Debug\ConexionBD.csproj.CopyComplete
+D:\GitHub\ServiciosWeb\B-Cientificas-WS\ConexionBD\obj\Debug\ConexionBD.dll
+D:\GitHub\ServiciosWeb\B-Cientificas-WS\ConexionBD\obj\Debug\ConexionBD.pdb
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-WS\ConexionBD\bin\Debug\ConexionBD.dll.config
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-WS\ConexionBD\bin\Debug\ConexionBD.dll
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-WS\ConexionBD\bin\Debug\ConexionBD.pdb
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-WS\ConexionBD\bin\Debug\EntityFramework.dll
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-WS\ConexionBD\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-WS\ConexionBD\bin\Debug\EntityFramework.xml
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-WS\ConexionBD\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-WS\ConexionBD\obj\Debug\ConexionBD.csprojAssemblyReference.cache
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-WS\ConexionBD\obj\Debug\ConexionBD.csproj.CoreCompileInputs.cache
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-WS\ConexionBD\obj\Debug\ConexionBD.csproj.CopyComplete
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-WS\ConexionBD\obj\Debug\ConexionBD.dll
+C:\Users\Jerem\source\repos\Proyecto Final - Servicios Web\ServiciosWeb\B-Cientificas-WS\ConexionBD\obj\Debug\ConexionBD.pdb

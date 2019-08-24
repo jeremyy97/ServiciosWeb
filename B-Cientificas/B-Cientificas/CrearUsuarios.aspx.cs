@@ -29,7 +29,19 @@ namespace B_Cientificas
                 txtPassword.Attributes["type"] = "password";
                 txtConfirmarPassword.Attributes["type"] = "password";
             }
-           
+
+            UsuarioLogica usuarioactual = (UsuarioLogica)Session["usuario"];
+            RolUsuarioLogica roles = new RolUsuarioLogica();
+            if (roles.RolAdministrador(usuarioactual.Usuario_id) || roles.RolSeguridad(usuarioactual.Usuario_id))
+            {
+
+            }
+            else
+            {
+                Response.Write("<script>alert('No cuenta con los permisos necesarios');</script>");
+                Response.Redirect("Default.aspx");
+            }
+
         }
 
         private void CargarUsuarios()
@@ -88,7 +100,7 @@ namespace B_Cientificas
             usuario = logica.BuscarUsuario(id);
 
             txtCelular.Text = usuario.Celular;
-            txtCodigo.Text = usuario.Usuario_ID;
+            txtCodigo.Text = usuario.Usuario_id;
             txtConfirmarPassword.Text = usuario.Password;
             txtNombre.Text = usuario.Nombre;
             txtNombreUsuario.Text = usuario.Usuario;
@@ -96,7 +108,7 @@ namespace B_Cientificas
             txtPrimerApellido.Text = usuario.Primer_Apellido;
             txtSegundoApellido.Text = usuario.Segundo_Apellido;
             ddlPuestos.SelectedValue = usuario.Puesto_Id;
-            ddlNivelesAcademicos.SelectedValue = usuario.Nivel_Academico;
+            ddlNivelesAcademicos.SelectedValue = usuario.NivelAcademico_Id;
             imgFirma.Visible = true;
             imgFoto.Visible = true;
             imgFirma.ImageUrl = usuario.UrlFirma;
@@ -120,7 +132,7 @@ namespace B_Cientificas
                 UsuarioLogica usuario = new UsuarioLogica();
                 if (txtPassword.Text == txtConfirmarPassword.Text)
                 {
-                    usuario.Usuario_ID = txtCodigo.Text;
+                    usuario.Usuario_id = txtCodigo.Text;
                     usuario.Usuario = txtNombreUsuario.Text;
                     if (fileupFirma.HasFile)
                     {
@@ -144,7 +156,7 @@ namespace B_Cientificas
                     usuario.Primer_Apellido = txtPrimerApellido.Text;
                     usuario.Password = txtPassword.Text;
                     usuario.Nombre = txtNombre.Text;
-                    usuario.Nivel_Academico = ddlNivelesAcademicos.SelectedValue;
+                    usuario.NivelAcademico_Id = ddlNivelesAcademicos.SelectedValue;
                     usuario.Celular = txtCelular.Text;
 
                     if (logica.ActualizarUsuario(usuario))

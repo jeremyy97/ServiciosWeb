@@ -30,6 +30,18 @@ namespace B_Cientificas
                     lblMensaje.Text = "Tipo Consecutivo " + txtNombre.Text + " creado correctamente";
                 }
             }
+
+            UsuarioLogica usuarioactual = (UsuarioLogica)Session["usuario"];
+            RolUsuarioLogica roles = new RolUsuarioLogica();
+            if (roles.RolAdministrador(usuarioactual.Usuario_id) || roles.RolConsecutivos(usuarioactual.Usuario_id))
+            {
+
+            }
+            else
+            {
+                Response.Write("<script>alert('No cuenta con los permisos necesarios');</script>");
+                Response.Redirect("Default.aspx");
+            }
         }
     }
 }

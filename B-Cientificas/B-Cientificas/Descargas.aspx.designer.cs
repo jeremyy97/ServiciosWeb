@@ -13,6 +13,15 @@ namespace B_Cientificas {
     public partial class Descargas {
         
         /// <summary>
+        /// Panel1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel Panel1;
+        
+        /// <summary>
         /// txtFechaInicio control.
         /// </summary>
         /// <remarks>
@@ -47,5 +56,14 @@ namespace B_Cientificas {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel panelResultados;
+        
+        /// <summary>
+        /// gvDescargas control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gvDescargas;
     }
 }

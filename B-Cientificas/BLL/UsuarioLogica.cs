@@ -13,7 +13,7 @@ namespace BLL
     public class UsuarioLogica
     {
         #region propiedades
-        public string Usuario_ID {set; get;}
+        public string Usuario_id {set; get;}
         public string Nombre { set; get; }
         public string Primer_Apellido { set; get; }
         public string Segundo_Apellido { set; get; }
@@ -23,7 +23,7 @@ namespace BLL
         public string Usuario { set; get; }
         public string Password { set; get; }
         public string Puesto_Id { set; get; }
-        public string Nivel_Academico { set; get; }
+        public string NivelAcademico_Id { set; get; }
         #endregion
 
         SqlConnection cnn;
@@ -102,12 +102,69 @@ namespace BLL
                     ds.Tables[0].Columns[2].ColumnName = "Primer_Apellido";
                     ds.Tables[0].Columns[3].ColumnName = "Segundo_Apellido";
                     ds.Tables[0].Columns[7].ColumnName = "Usuario";
-
                     return ds;
 
 
                     
                     /*return ds;*/
+                }
+            }
+        }
+
+        public UsuarioLogica BuscarUsuarioXUserName(string username)
+        {
+            cnn = DAL.DAL.trae_conexion("BDConnectionString", ref error, ref numeroError);
+            if (cnn == null)
+            {
+                //insertar en la table de errores
+                HttpContext.Current.Response.Redirect("Error.aspx?error=" + numeroError.ToString() + "&men=" + error);
+                return null;
+            }
+            else
+            {
+                sql = "sp_Lista_Usuario";
+                ParamStruct[] parametros = new ParamStruct[1];
+                DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@Password", SqlDbType.VarChar, "password");
+                ds = DAL.DAL.ejecuta_dataset(cnn, sql, true, parametros, ref error, ref numeroError);
+                if (numeroError != 0)
+                {
+                    //insertar en la table de errores
+                    HttpContext.Current.Response.Redirect("Error.aspx?error=" + numeroError.ToString() + "&men=" + error);
+                    return null;
+                }
+                else
+                {
+                   /* ds.Tables[0].Columns[0].ColumnName = "ID";
+                    ds.Tables[0].Columns[1].ColumnName = "Nombre";
+                    ds.Tables[0].Columns[2].ColumnName = "Primer_Apellido";
+                    ds.Tables[0].Columns[3].ColumnName = "Segundo_Apellido";
+                    ds.Tables[0].Columns[7].ColumnName = "Usuario";
+
+
+                    ds.Tables[0].Columns[0].ColumnName = "Usuario_id";
+                    ds.Tables[0].Columns[1].ColumnName = "Nombre";
+                    ds.Tables[0].Columns[2].ColumnName = "Primer_Apellido";
+                    ds.Tables[0].Columns[3].ColumnName = "Segundo_Apellido";
+                    ds.Tables[0].Columns[4].ColumnName = "Celular";
+                    ds.Tables[0].Columns[5].ColumnName = "urlFirma";
+                    ds.Tables[0].Columns[6].ColumnName = "urlFoto";
+                    ds.Tables[0].Columns[7].ColumnName = "Usuario";
+                    ds.Tables[0].Columns[8].ColumnName = "Password";
+                    ds.Tables[0].Columns[9].ColumnName = "Puesto_id";
+                    ds.Tables[0].Columns[10].ColumnName = "NivelAcademico_id";*/
+
+                    List<UsuarioLogica> lista = ds.Tables[0].ToList<UsuarioLogica>();
+
+                    foreach (var usuario in lista)
+                    {
+                        if (usuario.Usuario.Equals(username))
+                        {
+                            return usuario;
+                        }
+                    }
+
+                    return null;
+
                 }
             }
         }
@@ -171,7 +228,7 @@ namespace BLL
             {
                 sql = "sp_Inserta_Usuario";
                 ParamStruct[] parametros = new ParamStruct[12];
-                DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@Usuario_id", SqlDbType.VarChar, usuario.Usuario_ID);
+                DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@Usuario_id", SqlDbType.VarChar, usuario.Usuario_id);
                 DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 1, "@Nombre", SqlDbType.VarChar, usuario.Nombre);
                 DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 2, "@Primer_Apellido", SqlDbType.VarChar, usuario.Primer_Apellido);
                 DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 3, "@Segundo_Apellido", SqlDbType.VarChar, usuario.Segundo_Apellido);
@@ -181,7 +238,7 @@ namespace BLL
                 DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 7, "@Usuario", SqlDbType.VarChar, usuario.Usuario);
                 DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 8, "@Password", SqlDbType.VarChar, usuario.Password);
                 DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 9, "@Puesto_Id", SqlDbType.VarChar, usuario.Puesto_Id);
-                DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 10, "@NivelAcademico_Id", SqlDbType.VarChar, usuario.Nivel_Academico);
+                DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 10, "@NivelAcademico_Id", SqlDbType.VarChar, usuario.NivelAcademico_Id);
                 DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 11, "@PasswordE", SqlDbType.VarChar, "password");
                 DAL.DAL.conectar(cnn, ref error, ref numeroError);
                 DAL.DAL.ejecuta_sqlcommand(cnn, sql, true, parametros, ref error, ref numeroError);
@@ -226,7 +283,7 @@ namespace BLL
                 else
                 {
                     UsuarioLogica usuario = new UsuarioLogica();
-                    usuario.Usuario_ID = ds.Tables[0].Rows[0][0].ToString();
+                    usuario.Usuario_id = ds.Tables[0].Rows[0][0].ToString();
                     usuario.Nombre = ds.Tables[0].Rows[0][1].ToString();
                     usuario.Primer_Apellido = ds.Tables[0].Rows[0][2].ToString();
                     usuario.Segundo_Apellido = ds.Tables[0].Rows[0][3].ToString();
@@ -236,7 +293,7 @@ namespace BLL
                     usuario.Usuario = ds.Tables[0].Rows[0][7].ToString();
                     usuario.Password = ds.Tables[0].Rows[0][8].ToString();
                     usuario.Puesto_Id = ds.Tables[0].Rows[0][9].ToString();
-                    usuario.Nivel_Academico = ds.Tables[0].Rows[0][10].ToString();
+                    usuario.NivelAcademico_Id = ds.Tables[0].Rows[0][10].ToString();
 
                     return usuario;
                 }
@@ -257,7 +314,7 @@ namespace BLL
             {
                 sql = "sp_Actualiza_Usuario";
                 ParamStruct[] parametros = new ParamStruct[12];
-                DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@Usuario_id", SqlDbType.VarChar, usuario.Usuario_ID);
+                DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@Usuario_id", SqlDbType.VarChar, usuario.Usuario_id);
                 DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 1, "@Nombre", SqlDbType.VarChar, usuario.Nombre);
                 DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 2, "@Primer_Apellido", SqlDbType.VarChar, usuario.Primer_Apellido);
                 DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 3, "@Segundo_Apellido", SqlDbType.VarChar, usuario.Segundo_Apellido);
@@ -267,7 +324,7 @@ namespace BLL
                 DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 7, "@Usuario", SqlDbType.VarChar, usuario.Usuario);
                 DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 8, "@Password", SqlDbType.VarChar, usuario.Password);
                 DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 9, "@Puesto_Id", SqlDbType.VarChar, usuario.Puesto_Id);
-                DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 10, "@NivelAcademico_Id", SqlDbType.VarChar, usuario.Nivel_Academico);
+                DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 10, "@NivelAcademico_Id", SqlDbType.VarChar, usuario.NivelAcademico_Id);
                 DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 11, "@PasswordE", SqlDbType.VarChar, "password");
                 DAL.DAL.conectar(cnn, ref error, ref numeroError);
                 DAL.DAL.ejecuta_sqlcommand(cnn, sql, true, parametros, ref error, ref numeroError);

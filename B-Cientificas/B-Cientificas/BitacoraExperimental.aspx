@@ -3,52 +3,50 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container">
-        <form class="card">
+        <asp:Panel class="card" ID="Panel1" runat="server">
             <fieldset>
                 <legend>Bitacora Experimental</legend>
                 <label class="col-md-4 control-label" for="usuario">Administracion de experimentos</label>
+                <br>
+                <br>
                 <br></br>
                 <div>
                     <table align="center">
                         <tr>
                             <td align="left">
-                                <label class="" for="usuario">Proyecto: </label>
+                                <label class="" for="usuario">
+                                Proyecto:
+                                </label>
                             </td>
                             <td>
                                 <div class="form-group">
-                                    <asp:DropDownList class="form-control" ID="ddlProyectos" runat="server">
-                                        <asp:ListItem Value="0">Seleccione un Proyecto</asp:ListItem>
-                                        <asp:ListItem>Prueba</asp:ListItem>
+                                    <asp:DropDownList ID="ddlProyectos" runat="server" AutoPostBack="True" class="form-control" OnSelectedIndexChanged="ddlProyectos_SelectedIndexChanged">
+                                        <asp:ListItem Value="-8">Seleccione un proyecto</asp:ListItem>
                                     </asp:DropDownList>
                                 </div>
                             </td>
                         </tr>
-
                         <tr>
                             <td align="left">
-                                <label class="" for="usuario">Codigo del proyecto: </label>
+                                <label class="" for="usuario">
+                                Codigo del proyecto:
+                                </label>
                             </td>
                             <td>
                                 <div class="form-group">
-                                    <input
-                                        type="text"
-                                        placeholder=""
-                                        class="form-control"
-                                        name="usuario1" disabled/>
+                                    <asp:TextBox ID="txtCodProyecto" runat="server" class="form-control" ReadOnly="true"></asp:TextBox>
                                 </div>
                             </td>
                         </tr>
                         <tr>
                             <td align="left">
-                                <label class="" for="usuario">Codigo del experimento: </label>
+                                <label class="" for="usuario">
+                                Codigo del experimento:
+                                </label>
                             </td>
                             <td>
                                 <div class="form-group">
-                                    <input
-                                        type="text"
-                                        placeholder=""
-                                        class="form-control"
-                                        name="usuario1" disabled/>
+                                    <asp:TextBox ID="txtCodExperimento" runat="server" class="form-control" ReadOnly="true"></asp:TextBox>
                                 </div>
                             </td>
                         </tr>
@@ -57,42 +55,42 @@
                         </tr>
                         <tr>
                             <td align="left">
-                                <label class="" for="rama">Nombre del responsable: </label>
+                                <label class="" for="rama">
+                                Nombre del responsable:
+                                </label>
                             </td>
                             <td>
                                 <div class="form-group">
-                                    <asp:DropDownList class="form-control" ID="ddlResponsables" runat="server">
-                                        <asp:ListItem Value="0">Seleccione un usuario</asp:ListItem>
-                                        <asp:ListItem>Usuario De Prueba</asp:ListItem>
+                                    <asp:DropDownList ID="ddlResponsables" runat="server" class="form-control">
                                     </asp:DropDownList>
                                 </div>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <label class="" for="rama">Firma del responsable</label>
-                            </td>
+                                <label class="" for="rama">
+                                Firma del responsable</label> </td>
                             <td>
                                 <asp:Image ID="imgFirmaResponsable" runat="server" />
                             </td>
                         </tr>
-                         <tr>
+                        <tr>
                             <td align="left">
-                                <label class="" for="usuario">Nombre del experimento: </label>
+                                <label class="" for="usuario">
+                                Nombre del experimento:
+                                </label>
                             </td>
                             <td>
                                 <div class="form-group">
-                                    <input
-                                        type="text"
-                                        placeholder=""
-                                        class="form-control"
-                                        name="usuario1"/>
+                                    <asp:TextBox ID="txtNombre" runat="server" class="form-control"></asp:TextBox>
                                 </div>
                             </td>
                         </tr>
-                         <tr>
+                        <tr>
                             <td align="left">
-                                <label class="" for="usuario">Fecha: </label>
+                                <label class="" for="usuario">
+                                Fecha:
+                                </label>
                             </td>
                             <td>
                                 <div class="form-group">
@@ -102,7 +100,9 @@
                         </tr>
                         <tr>
                             <td align="left">
-                                <label class="" for="usuario">Muestra 1: </label>
+                                <label class="" for="usuario">
+                                Muestra 1:
+                                </label>
                             </td>
                             <td>
                                 <div class="form-group">
@@ -112,7 +112,9 @@
                         </tr>
                         <tr>
                             <td align="left">
-                                <label class="" for="usuario">Muestra 2: </label>
+                                <label class="" for="usuario">
+                                Muestra 2:
+                                </label>
                             </td>
                             <td>
                                 <div class="form-group">
@@ -122,7 +124,9 @@
                         </tr>
                         <tr>
                             <td align="left">
-                                <label class="" for="usuario">Muestra 3: </label>
+                                <label class="" for="usuario">
+                                Muestra 3:
+                                </label>
                             </td>
                             <td>
                                 <div class="form-group">
@@ -132,7 +136,9 @@
                         </tr>
                         <tr>
                             <td align="left">
-                                <label class="" for="usuario">Muestra 4: </label>
+                                <label class="" for="usuario">
+                                Muestra 4:
+                                </label>
                             </td>
                             <td>
                                 <div class="form-group">
@@ -142,7 +148,9 @@
                         </tr>
                         <tr>
                             <td align="left">
-                                <label class="" for="usuario">Muestra 5: </label>
+                                <label class="" for="usuario">
+                                Muestra 5:
+                                </label>
                             </td>
                             <td>
                                 <div class="form-group">
@@ -152,68 +160,85 @@
                         </tr>
                         <tr>
                             <td align="left">
-                                <label class="" for="usuario">Detalle: </label>
+                                <label class="" for="usuario">
+                                Detalle:
+                                </label>
                             </td>
-                            <td colspan="2"> 
+                            <td colspan="2">
                                 <div class="form-group">
-                                    <asp:TextBox ID="txtDetalle" TextMode="MultiLine" runat="server" Height="198px" Width="403px"></asp:TextBox>
+                                    <asp:TextBox ID="txtDetalle" runat="server" Height="198px" TextMode="MultiLine" Width="403px"></asp:TextBox>
                                 </div>
                             </td>
                         </tr>
                         <tr>
                             <td align="left">
-                                <label class="" for="usuario">Firma del testigo: </label>
+                                <label class="" for="usuario">
+                                Firma del testigo:
+                                </label>
                             </td>
                             <td>
                                 <div class="form-group">
-                                    <asp:DropDownList CssClass="form-control" ID="ddlTestigos" runat="server">
-                                        <asp:ListItem Value="0">Seleccione un usuario</asp:ListItem>
-                                        <asp:ListItem>Usuario De Prueba</asp:ListItem>
+                                    <asp:DropDownList ID="ddlFirmaTestigos" runat="server" CssClass="form-control">
                                     </asp:DropDownList>
                                 </div>
                             </td>
                         </tr>
                         <tr>
                             <td align="left">
-                                <label class="" for="usuario">Nombre del testigo: </label>
+                                <label class="" for="usuario">
+                                Nombre del testigo:
+                                </label>
                             </td>
                             <td>
                                 <div class="form-group">
-                                    <asp:DropDownList CssClass="form-control" ID="DropDownList1" runat="server">
-                                        <asp:ListItem Value="0">Seleccione un usuario</asp:ListItem>
-                                        <asp:ListItem>Usuario De Prueba</asp:ListItem>
+                                    <asp:DropDownList ID="ddlUsuariosTestigos" runat="server" CssClass="form-control">
                                     </asp:DropDownList>
                                 </div>
                             </td>
                         </tr>
                         <tr>
                             <td align="left">
-                                <label class="" for="usuario">Firma del testigo: </label>
+                                <label class="" for="usuario">
+                                Firma del testigo:
+                                </label>
                             </td>
                             <td>
                                 <div class="form-group">
-                                    <asp:Image ID="Image1" runat="server" />
+                                    <asp:Image ID="imgFirma" runat="server" />
                                 </div>
                             </td>
                         </tr>
+                        <tr>
                             <td></td>
                             <td>
                                 <div class="form-group">
-                                    <button id="crearUsuario"  name="crearUsuario" class="btn btn-primary">Guardar Experimento</button>
+                                    <asp:Button ID="btnGuardar" runat="server" class="btn btn-primary" Text="Guardar Experimento" />
                                 </div>
                             </td>
-                            
                             <td>
                                 <div class="form-group">
-                                    <button id="limpiar" name="limpiar" class="btn btn-primary">Limpiar</button>
+                                    <asp:Button ID="btnLimpiar" runat="server" class="btn btn-primary" Text="Limpiar" />
                                 </div>
                             </td>
                         </tr>
                     </table>
                     <div class="card">
                         <div class="form-group">
-                            <button id="ActualizarTabla" name="ActualizarTabla" class="btn btn-primary">Actualizar Tabla</button>
+                            <asp:Button ID="btnActualizar" runat="server" class="btn btn-primary" Text="Actualizar Tabla" />
                         </div>
+                        <asp:GridView ID="gvExperimentos" runat="server" CellPadding="4" class="table" ForeColor="#333333" GridLines="None">
+                            <AlternatingRowStyle BackColor="White" />
+                            <EditRowStyle BackColor="#7C6F57" />
+                            <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
+                            <HeaderStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
+                            <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
+                            <RowStyle BackColor="#E3EAEB" />
+                            <SelectedRowStyle BackColor="#C5BBAF" Font-Bold="True" ForeColor="#333333" />
+                            <SortedAscendingCellStyle BackColor="#F8FAFA" />
+                            <SortedAscendingHeaderStyle BackColor="#246B61" />
+                            <SortedDescendingCellStyle BackColor="#D4DFE1" />
+                            <SortedDescendingHeaderStyle BackColor="#15524A" />
+                        </asp:GridView>
                         <table class="table">
                             <thead class="thead-dark">
                                 <tr>
@@ -236,8 +261,11 @@
                         </table>
                     </div>
                 </div>
+                <br></br>
+                </br>
+                </br>
             </fieldset>
-        </form>
+        </asp:Panel>
         <script src="vendor/jquery/jquery.min.js"></script>
         <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 

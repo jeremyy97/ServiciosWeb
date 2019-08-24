@@ -1,5 +1,7 @@
-﻿using System;
+﻿using BLL;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -9,9 +11,50 @@ namespace B_Cientificas
 {
     public partial class BitacoraExperimental : System.Web.UI.Page
     {
+        BitacoraExperimentalLogica logica = new BitacoraExperimentalLogica();
+        ProyectosLogica proyectos = new ProyectosLogica();
         protected void Page_Load(object sender, EventArgs e)
         {
+            gvExperimentos.DataSource = logica.CargarBitacora();
+            gvExperimentos.DataBind();
 
+            if (!IsPostBack)
+            {
+                foreach (DataRow dr in proyectos.CargarProyectos().Rows)
+                {
+                    ListItem item = new ListItem();
+                    item.Value = dr[0].ToString();
+                    item.Text = dr[1].ToString();
+                    ddlProyectos.Items.Add(item);
+                }
+            }
+
+            UsuarioLogica usuarioactual = (UsuarioLogica)Session["usuario"];
+            RolUsuarioLogica roles = new RolUsuarioLogica();
+            if (roles.RolAdministrador(usuarioactual.Usuario_id) || roles.RolMantenimiento(usuarioactual.Usuario_id))
+            {
+
+            }
+            else
+            {
+                Response.Write("<script>alert('No cuenta con los permisos necesarios');</script>");
+                Response.Redirect("Default.aspx");
+            }
+
+
+        }
+
+        protected void ddlProyectos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(ddlProyectos.SelectedValue != "-8")
+            {
+                txtCodProyecto.Text = ddlProyectos.SelectedValue;
+                ConsecutivoLogica consecutivo = logica.GenerarID();
+                if (consecutivo != null)
+                {
+                    txtCodExperimento.Text = consecutivo.Consecutivo;
+                }
+            }        
         }
     }
 }
