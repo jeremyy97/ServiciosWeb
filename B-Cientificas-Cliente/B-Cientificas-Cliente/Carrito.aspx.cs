@@ -72,7 +72,7 @@ namespace B_Cientificas_Cliente
         }
         protected void btnProceder_Click(object sender, EventArgs e)
         {
-            if (IsValid)
+            if (!txtCaptcha.Equals(""))
             {
                 string opcion = ddlMetodoPago.SelectedValue;
 

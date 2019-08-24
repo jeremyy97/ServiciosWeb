@@ -52,13 +52,21 @@ namespace B_Cientificas_Cliente
                             tarjeta.DebitoCredito = "Credito";
                         }
 
+                        if (tarjeta.TipoTarjeta_Id == 0 || tarjeta.MesVencimiento.Equals("") || tarjeta.AnnoVencimiento.Equals("") || tarjeta.CVV.Equals(""))
 
-                        if (logica.CrearTarjeta(tarjeta))
                         {
-                            AsignarTarjeta("1",logica.BuscarIDTarjeta(tarjeta.NumeroTarjeta)); //AGREGAR AQUI EL ID DEL USUARIO
-                            Page.ClientScript.RegisterStartupScript(this.GetType(), "Scripts", "<script>alert('Tarjeta Actualizada correctamente');</script>");
-                            Response.Redirect("Tarjetas.aspx");
+                            Page.ClientScript.RegisterStartupScript(this.GetType(), "Scripts", "<script>alert('Datos Erróneos');</script>");
                         }
+                        else
+                        {
+                            if (logica.CrearTarjeta(tarjeta))
+                            {
+                                AsignarTarjeta("1", logica.BuscarIDTarjeta(tarjeta.NumeroTarjeta)); //AGREGAR AQUI EL ID DEL USUARIO
+                                Page.ClientScript.RegisterStartupScript(this.GetType(), "Scripts", "<script>alert('Tarjeta Actualizada correctamente');</script>");
+                                Response.Redirect("Tarjetas.aspx");
+                            }
+                        }
+                       
                     }
                 }
                 else

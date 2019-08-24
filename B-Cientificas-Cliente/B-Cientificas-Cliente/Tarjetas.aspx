@@ -29,7 +29,7 @@
                             <td colspan="2">
                                 <div class="form-group">
                                     <div class="col-md-12">
-                                        <asp:TextBox ID="txtNumeroTarjeta" runat="server" class="form-control"></asp:TextBox>
+                                        <asp:TextBox ID="txtNumeroTarjeta" runat="server" class="form-control" ReadOnly="True" TextMode="Number"></asp:TextBox>
                                     </div>
                                 </div>
                             </td>
@@ -42,7 +42,7 @@
                             <td>
                                 <div class="form-group">
                                     <div class="col-md-6">
-                                        <asp:TextBox ID="txtMes" runat="server" class="form-control input-md-6"></asp:TextBox>
+                                        <asp:TextBox ID="txtMes" runat="server" class="form-control input-md-6" TextMode="Number"></asp:TextBox>
                                     </div>
                                 </div>
                             </td>
@@ -52,7 +52,7 @@
                             <td>
                                 <div class="form-group">
                                     <div class="col-md-6">
-                                        <asp:TextBox ID="txtAnno" runat="server" class="form-control input-md-6"></asp:TextBox>
+                                        <asp:TextBox ID="txtAnno" runat="server" class="form-control input-md-6" TextMode="Number"></asp:TextBox>
                                     </div>
                                 </div>
                             </td>
@@ -76,7 +76,7 @@
                             <td>
                                 <div class="form-group">
                                     <div class="col-md-6">
-                                        <asp:TextBox ID="txtCVV" runat="server" class="form-control input-md-6"></asp:TextBox>
+                                        <asp:TextBox ID="txtCVV" runat="server" class="form-control input-md-6" TextMode="Number"></asp:TextBox>
                                     </div>
                                 </div>
                             </td>

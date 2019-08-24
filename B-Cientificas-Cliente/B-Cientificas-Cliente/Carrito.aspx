@@ -58,7 +58,6 @@
                             <div class="form-group">
                                 <div class="col-md-12">
                                     <asp:TextBox ID="txtCaptcha" runat="server" class="form-control input-md-12"></asp:TextBox>
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtCaptcha" ErrorMessage="Digite el captcha "></asp:RequiredFieldValidator>
                                 </div>
                             </div>
                         </td>
