@@ -9,6 +9,7 @@
                 <label class="col-md-4 control-label" for="usuario">Administracion de proyectos</label>
                 <br>
                 <br>
+                <br>
                 <br></br>
                 <div>
                     <table align="center">
@@ -33,6 +34,7 @@
                             <td>
                                 <div class="form-group">
                                     <asp:TextBox ID="txtNombre" runat="server" class="form-control" MaxLength="50"></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtNombre" ErrorMessage="Campo requrido" ForeColor="Red"></asp:RequiredFieldValidator>
                                 </div>
                             </td>
                         </tr>
@@ -58,6 +60,7 @@
                             <td>
                                 <div class="form-group">
                                     <asp:TextBox ID="txtPrecio" runat="server" class="form-control" MaxLength="20"></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtPrecio" ErrorMessage="Campo requrido" ForeColor="Red"></asp:RequiredFieldValidator>
                                 </div>
                             </td>
                         </tr>
@@ -116,7 +119,12 @@
                         </asp:GridView>
                     </div>
                 </div>
+                <br>
                 <br></br>
+                <br></br>
+                <br></br>
+                </br>
+                </br>
                 </br>
                 </br>
             </fieldset>

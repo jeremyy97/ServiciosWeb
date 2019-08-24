@@ -40,6 +40,15 @@ namespace B_Cientificas {
         protected global::System.Web.UI.WebControls.TextBox txtCodProyecto;
         
         /// <summary>
+        /// rfvCodProyecto control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvCodProyecto;
+        
+        /// <summary>
         /// txtCodExperimento control.
         /// </summary>
         /// <remarks>
@@ -76,13 +85,22 @@ namespace B_Cientificas {
         protected global::System.Web.UI.WebControls.TextBox txtNombre;
         
         /// <summary>
-        /// calendario control.
+        /// fechaInicio control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar calendario;
+        protected global::System.Web.UI.WebControls.Calendar fechaInicio;
+        
+        /// <summary>
+        /// fechaFinal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Calendar fechaFinal;
         
         /// <summary>
         /// fileupMuestra1 control.
@@ -130,13 +148,40 @@ namespace B_Cientificas {
         protected global::System.Web.UI.WebControls.FileUpload fileupMuestra5;
         
         /// <summary>
-        /// txtDetalle control.
+        /// txtObjGen control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDetalle;
+        protected global::System.Web.UI.WebControls.TextBox txtObjGen;
+        
+        /// <summary>
+        /// txtObjEsp control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtObjEsp;
+        
+        /// <summary>
+        /// txtEquipoUsado control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtEquipoUsado;
+        
+        /// <summary>
+        /// txtProcedimientos control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtProcedimientos;
         
         /// <summary>
         /// ddlFirmaTestigos control.
@@ -182,6 +227,15 @@ namespace B_Cientificas {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnLimpiar;
+        
+        /// <summary>
+        /// lblMensaje control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMensaje;
         
         /// <summary>
         /// btnActualizar control.

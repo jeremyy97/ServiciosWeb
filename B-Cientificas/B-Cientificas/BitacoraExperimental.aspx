@@ -9,6 +9,8 @@
                 <label class="col-md-4 control-label" for="usuario">Administracion de experimentos</label>
                 <br>
                 <br>
+                <br>
+                <br>
                 <br></br>
                 <div>
                     <table align="center">
@@ -35,6 +37,7 @@
                             <td>
                                 <div class="form-group">
                                     <asp:TextBox ID="txtCodProyecto" runat="server" class="form-control" ReadOnly="true"></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="rfvCodProyecto" runat="server" ControlToValidate="txtCodProyecto" ErrorMessage="Campo requerido" ForeColor="Red"></asp:RequiredFieldValidator>
                                 </div>
                             </td>
                         </tr>
@@ -62,6 +65,7 @@
                             <td>
                                 <div class="form-group">
                                     <asp:DropDownList ID="ddlResponsables" runat="server" class="form-control">
+                                        <asp:ListItem Value="-8">Seleccione un responsable</asp:ListItem>
                                     </asp:DropDownList>
                                 </div>
                             </td>
@@ -89,12 +93,17 @@
                         <tr>
                             <td align="left">
                                 <label class="" for="usuario">
-                                Fecha:
+                                Duración del proyecto:
                                 </label>
                             </td>
                             <td>
                                 <div class="form-group">
-                                    <asp:Calendar ID="calendario" runat="server"></asp:Calendar>
+                                    <asp:Calendar ID="fechaInicio" runat="server"></asp:Calendar>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="form-group">
+                                    <asp:Calendar ID="fechaFinal" runat="server"></asp:Calendar>
                                 </div>
                             </td>
                         </tr>
@@ -161,12 +170,48 @@
                         <tr>
                             <td align="left">
                                 <label class="" for="usuario">
-                                Detalle:
+                                Objetivo GENERAL:
                                 </label>
                             </td>
                             <td colspan="2">
                                 <div class="form-group">
-                                    <asp:TextBox ID="txtDetalle" runat="server" Height="198px" TextMode="MultiLine" Width="403px"></asp:TextBox>
+                                    <asp:TextBox ID="txtObjGen" runat="server" Height="198px" TextMode="MultiLine" Width="403px"></asp:TextBox>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="left">
+                                <label class="" for="usuario">
+                                Objetivos Específicos:
+                                </label>
+                            </td>
+                            <td colspan="2">
+                                <div class="form-group">
+                                    <asp:TextBox ID="txtObjEsp" runat="server" Height="198px" TextMode="MultiLine" Width="403px"></asp:TextBox>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="left">
+                                <label class="" for="usuario">
+                                Equipo utilizado:
+                                </label>
+                            </td>
+                            <td colspan="2">
+                                <div class="form-group">
+                                    <asp:TextBox ID="txtEquipoUsado" runat="server" Height="198px" TextMode="MultiLine" Width="403px"></asp:TextBox>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="left">
+                                <label class="" for="usuario">
+                                Procedimientos:
+                                </label>
+                            </td>
+                            <td colspan="2">
+                                <div class="form-group">
+                                    <asp:TextBox ID="txtProcedimientos" runat="server" Height="198px" TextMode="MultiLine" Width="403px"></asp:TextBox>
                                 </div>
                             </td>
                         </tr>
@@ -179,6 +224,7 @@
                             <td>
                                 <div class="form-group">
                                     <asp:DropDownList ID="ddlFirmaTestigos" runat="server" CssClass="form-control">
+                                        <asp:ListItem Value="-8">Seleccione Firma</asp:ListItem>
                                     </asp:DropDownList>
                                 </div>
                             </td>
@@ -192,6 +238,7 @@
                             <td>
                                 <div class="form-group">
                                     <asp:DropDownList ID="ddlUsuariosTestigos" runat="server" CssClass="form-control">
+                                        <asp:ListItem Value="-8">Seleccione Testigo</asp:ListItem>
                                     </asp:DropDownList>
                                 </div>
                             </td>
@@ -212,16 +259,17 @@
                             <td></td>
                             <td>
                                 <div class="form-group">
-                                    <asp:Button ID="btnGuardar" runat="server" class="btn btn-primary" Text="Guardar Experimento" />
+                                    <asp:Button ID="btnGuardar" runat="server" class="btn btn-primary" OnClick="btnGuardar_Click" Text="Guardar Experimento" />
                                 </div>
                             </td>
                             <td>
                                 <div class="form-group">
-                                    <asp:Button ID="btnLimpiar" runat="server" class="btn btn-primary" Text="Limpiar" />
+                                    <asp:Button ID="btnLimpiar" runat="server" class="btn btn-primary" OnClick="btnLimpiar_Click" Text="Limpiar" />
                                 </div>
                             </td>
                         </tr>
                     </table>
+                    <asp:Label ID="lblMensaje" runat="server" Text=""></asp:Label>
                     <div class="card">
                         <div class="form-group">
                             <asp:Button ID="btnActualizar" runat="server" class="btn btn-primary" Text="Actualizar Tabla" />
@@ -239,29 +287,25 @@
                             <SortedDescendingCellStyle BackColor="#D4DFE1" />
                             <SortedDescendingHeaderStyle BackColor="#15524A" />
                         </asp:GridView>
-                        <table class="table">
-                            <thead class="thead-dark">
-                                <tr>
-                                    <th>Codigo</th>
-                                    <th>Proyecto</th>
-                                    <th>Nombre</th>
-                                    <th>Responsable</th>
-                                    <th>Testigo</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Proyecto de Prueba</td>
-                                    <td>Experimento de Prueba</td>
-                                    <td>Usuario de Prueba</td>
-                                    <td>Otro Usuario</td>
-                                </tr>
-                            </tbody>
-                        </table>
                     </div>
                 </div>
+                <br>
+                <br>
                 <br></br>
+                <br>
+                <br></br>
+                <br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
                 </br>
                 </br>
             </fieldset>

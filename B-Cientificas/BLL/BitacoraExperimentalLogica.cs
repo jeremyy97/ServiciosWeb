@@ -62,9 +62,16 @@ namespace BLL
                 {
                     DataTable dt = new DataTable();
                     dt = ds.Tables[0];
+                    dt.Columns.RemoveAt(2);
+                    dt.Columns.RemoveAt(2);
+                    dt.Columns.RemoveAt(2);
+                    dt.Columns.RemoveAt(2);
+                    dt.Columns.RemoveAt(2);
+                    dt.Columns.RemoveAt(2);
+                    dt.Columns.RemoveAt(2);
+                    dt.Columns.RemoveAt(2);
+                    dt.Columns.RemoveAt(2);
                     dt.Columns[0].ColumnName = "Código";
-                    dt.Columns[1].ColumnName = "Nombre";
-                    dt.Columns[2].ColumnName = "Rama cientifica";
                     return dt;
                 }
             }
@@ -112,20 +119,20 @@ namespace BLL
             {
                 sql = "sp_Inserta_BitacoraExperimental";
                 ParamStruct[] parametros = new ParamStruct[15];
-                DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@Proyecto_id", SqlDbType.VarChar, bitacora.Experimento_id);
-                DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 1, "@Proyecto_id", SqlDbType.VarChar, bitacora.Experimento_id);
-                DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 2, "@Proyecto_id", SqlDbType.VarChar, bitacora.Experimento_id);
-                DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 3, "@Proyecto_id", SqlDbType.VarChar, bitacora.Experimento_id);
-                DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 4, "@Proyecto_id", SqlDbType.VarChar, bitacora.Experimento_id);
-                DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 5, "@Proyecto_id", SqlDbType.VarChar, bitacora.Experimento_id);
-                DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 6, "@Proyecto_id", SqlDbType.VarChar, bitacora.Experimento_id);
-                DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 7, "@Proyecto_id", SqlDbType.VarChar, bitacora.Experimento_id);
-                DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 8, "@Proyecto_id", SqlDbType.VarChar, bitacora.Experimento_id);
-                DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 9, "@Proyecto_id", SqlDbType.VarChar, bitacora.Experimento_id);
-                DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 10, "@Proyecto_id", SqlDbType.VarChar, bitacora.Experimento_id);
-                DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 11, "@Proyecto_id", SqlDbType.VarChar, bitacora.Experimento_id);
-                DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 12, "@Proyecto_id", SqlDbType.VarChar, bitacora.Experimento_id);
-                DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 13, "@Proyecto_id", SqlDbType.VarChar, bitacora.Experimento_id);
+                DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@Experimento_id", SqlDbType.VarChar, bitacora.Experimento_id);
+                DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 1, "@Nombre", SqlDbType.VarChar, bitacora.Nombre);
+                DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 2, "@FechaInicio", SqlDbType.VarChar, bitacora.FechaInicio);
+                DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 3, "@FechaFin", SqlDbType.VarChar, bitacora.FechaFin);
+                DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 4, "@urlMuestra1", SqlDbType.VarChar, bitacora.urlMuestra1);
+                DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 5, "@urlMuestra2", SqlDbType.VarChar, bitacora.urlMuestra2);
+                DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 6, "@urlMuestra3", SqlDbType.VarChar, bitacora.urlMuestra3);
+                DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 7, "@urlMuestra4", SqlDbType.VarChar, bitacora.urlMuestra4);
+                DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 8, "@urlMuestra5", SqlDbType.VarChar, bitacora.urlMuestra5);
+                DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 9, "@Detalle1", SqlDbType.VarChar, bitacora.Detalle1);
+                DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 10, "@Detalle2", SqlDbType.VarChar, bitacora.Detalle2);
+                DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 11, "@Usuario_Crea", SqlDbType.VarChar, bitacora.Usuario_Crea);
+                DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 12, "@Usuario_Testigo", SqlDbType.VarChar, bitacora.Usuario_Testigo);
+                DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 13, "@Proyecto_Id", SqlDbType.VarChar, bitacora.Proyecto_Id);
                 DAL.DAL.agregar_datos_estructura_parametros(ref parametros, 14, "@Password", SqlDbType.VarChar, "password");
                 DAL.DAL.conectar(cnn, ref error, ref numeroError);
                 DAL.DAL.ejecuta_sqlcommand(cnn, sql, true, parametros, ref error, ref numeroError);

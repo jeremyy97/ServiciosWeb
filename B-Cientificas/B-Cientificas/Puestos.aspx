@@ -27,6 +27,7 @@
                             <td>
                                 <div class="form-group">
                                      <asp:TextBox ID="txtNombre" runat="server" class="form-control input-md"></asp:TextBox>
+                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtNombre" ErrorMessage="Campo requrido" ForeColor="Red"></asp:RequiredFieldValidator>
                                 </div>
                             </td>
                         </tr>

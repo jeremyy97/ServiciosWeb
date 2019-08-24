@@ -15,6 +15,7 @@
                 <br>
                 <br>
                 <br>
+                <br>
                 <br></br>
                 <div>
                     <table align="center">
@@ -49,6 +50,7 @@
                                         <asp:ListItem>Maestría</asp:ListItem>
                                         <asp:ListItem>Doctorado</asp:ListItem>
                                     </asp:DropDownList>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtDetalle" ErrorMessage="Campo requerido" ForeColor="Red"></asp:RequiredFieldValidator>
                                 </div>
                             </td>
                         </tr>
@@ -102,7 +104,14 @@
                 <br>
                 <br>
                 <br>
+                <br>
                 <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                </br>
+                </br>
                 </br>
                 </br>
                 </br>

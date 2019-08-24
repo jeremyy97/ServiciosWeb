@@ -34,6 +34,7 @@
                             <td>
                                 <div class="form-group">
                                     <asp:TextBox ID="txtNombre" runat="server" class="form-control"></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtNombre" ErrorMessage="Campo requrido" ForeColor="Red"></asp:RequiredFieldValidator>
                                 </div>
                             </td>
                         </tr>
@@ -46,6 +47,7 @@
                             <td>
                                 <div class="form-group">
                                     <asp:TextBox ID="txtPrimerApellido" runat="server" class="form-control"></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtPrimerApellido" ErrorMessage="Campo requrido" ForeColor="Red"></asp:RequiredFieldValidator>
                                 </div>
                             </td>
                         </tr>
@@ -82,6 +84,7 @@
                             <td>
                                 <div class="form-group">
                                     <asp:TextBox ID="txtNombreUsuario" runat="server" class="form-control"></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtNombreUsuario" ErrorMessage="Campo requrido" ForeColor="Red"></asp:RequiredFieldValidator>
                                 </div>
                             </td>
                         </tr>
@@ -99,6 +102,7 @@
                             <td>
                                 <div class="form-group">
                                     <asp:TextBox ID="txtPassword" runat="server" class="form-control"></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="txtPassword" ErrorMessage="Campo requrido" ForeColor="Red"></asp:RequiredFieldValidator>
                                 </div>
                             </td>
                         </tr>
@@ -219,10 +223,19 @@
                 </div>
                 <br>
                 <br>
+                <br>
+                <br></br>
+                <br>
+                <br>
                 <br></br>
                 <br>
                 <br></br>
                 <br></br>
+                <br></br>
+                <br></br>
+                </br>
+                </br>
+                </br>
                 </br>
                 </br>
                 </br>
